@@ -132,7 +132,7 @@ private void PrintMain (PrintWriter out) // main index.html
    out.println("");
    out.println("");
    out.println("		This website allows students in the Volgenau School of Engineering to rate the George Mason Bookstore, Barnes and Noble, based on their 			experiences with buying textbooks. </p>");
-   out.println("		<form method=\"post\" action=\"https://cs.gmu.edu:8443/offutt/servlet/formHandler\" name=\"UserInfo\" onSubmit=\"return (CheckInput())\">");
+   out.println("		<form method=\"post\" action=\"userform\" name=\"UserInfo\" onSubmit=\"return (CheckInput())\">");
    out.println("			<table>	");
    out.println("				<tbody>");
    out.println("					<tr>");
@@ -257,7 +257,7 @@ private void PrintResponse (PrintWriter out, String[] parameters) // response to
    out.println("  The table below shows the responses you have submitted.");
    out.println("	</h1>");
 
-   out.println("	<table border=\"5\" width=\"85%\" align=\"left\">");
+   out.println("	<table border=\"5\" width=\"85%\" align=\"left\" cellSpacing=\"1\" cellPadding=\"1\">");
 
    out.println("    <tr>");
    out.println("      <th>Questions:</th>");
