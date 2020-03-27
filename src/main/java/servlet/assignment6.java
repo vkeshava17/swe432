@@ -33,8 +33,21 @@ public void doPost (HttpServletRequest request, HttpServletResponse response)
 {
    response.setContentType("text/html");
    PrintWriter out = response.getWriter();
-   PrintResponse(out);
+
+   String Major = request.getParameter("Major");
+   String Year = request.getParameter("Year");
+   String Q1 = request.getParameter("Q1");
+   String Q2 = request.getParameter("Q2");
+   String Q3 = request.getParameter("Q3");
+   String Q4 = request.getParameter("Q4");
+   String Q5 = request.getParameter("Q5");
+
+   String[] parameters = {Major, Year, Q1, Q2, Q3, Q4, Q5};
+
+   PrintResponse(out, parameters);
+   out.close();
 }  // End doPost
+
 
 
 /** *****************************************************
@@ -46,6 +59,7 @@ public void doGet (HttpServletRequest request, HttpServletResponse response)
    response.setContentType("text/html");
    PrintWriter out = response.getWriter();
    PrintMain(out);
+   out.close();
 } // End doGet
 
 
@@ -62,7 +76,7 @@ private void PrintMain (PrintWriter out) // main index.html
    out.println("		</style>");
    out.println("		<script>");
    out.println("			function focus() { ");
-   out.println("				document.UserInfo.MajorField.focus()");
+   out.println("				document.UserInfo.Major.focus()");
    out.println("			}");
    out.println("			function IsNum (string) {");
    out.println("				var value = parseInt (string);");
@@ -71,22 +85,22 @@ private void PrintMain (PrintWriter out) // main index.html
    out.println("			function CheckInput() {");
    out.println("				var ErrorMessage = \"\";");
    out.println("				var NumErrors = 0;");
-   out.println("				var MajorField = document.UserInfo.MajorField;");
-   out.println("				if (IsNum(MajorField.value)) { ");
+   out.println("				var Major = document.UserInfo.Major;");
+   out.println("				if (IsNum(Major.value)) { ");
    out.println("					NumErrors++;");
    out.println("					ErrorMessage += \"\n\" + NumErrors + \") Major should be a valid name, not a number. For example: CS, SWE, IT, etc.\";");
    out.println("				}");
-   out.println("				if (MajorField.value == \"\")");
+   out.println("				if (Major.value == \"\")");
    out.println("                            {");
    out.println("				NumErrors++;");
    out.println("			ErrorMessage += \"\n\" + NumErrors + \") Missing major.\";");
    out.println("			}");
-   out.println("				var YearField = document.UserInfo.YearField;");
-   out.println("		if (!IsNum(YearField.value)) { ");
+   out.println("				var Year = document.UserInfo.Year;");
+   out.println("		if (!IsNum(Year.value)) { ");
    out.println("				NumErrors++;");
    out.println("					ErrorMessage += \"\n\" + NumErrors + \") Year should be an integer (ex: 1 = Freshman, 2 = Sophomore, etc.)\";");
    out.println("				}");
-   out.println("				if (YearField.value == \"\")");
+   out.println("				if (Year.value == \"\")");
    out.println("                                {");
    out.println("					NumErrors++;");
    out.println("					ErrorMessage += \"\n\" + NumErrors + \") Missing year.\";");
@@ -125,14 +139,14 @@ private void PrintMain (PrintWriter out) // main index.html
    out.println("						<td>Major:");
    out.println("						</td>");
    out.println("						<td>");
-   out.println("							<input type=\"text\" name=\"MajorField\">");
+   out.println("							<input type=\"text\" name=\"Major\">");
    out.println("						</td>");
    out.println("					</tr>");
    out.println("					<tr>");
    out.println("						<td>Year:");
    out.println("							</td>");
    out.println("						<td>");
-   out.println("							<input type=\"text\" name=\"YearField\">");
+   out.println("							<input type=\"text\" name=\"Year\">");
    out.println("						</td>");
    out.println("					</tr>");
    out.println("				</tbody>");
@@ -227,12 +241,8 @@ private void PrintMain (PrintWriter out) // main index.html
 /** *****************************************************
  *  Prints the form data's html
 ********************************************************* */
-private void PrintResponse (PrintWriter out) // response to survey html
+private void PrintResponse (PrintWriter out, String[] parameters) // response to survey html
 {
-   out.println("");
-   out.println("");
-   out.println("");
-   out.println("");
    out.println("<html>");
    out.println("    <head>");
    out.println("		<title>Responses</title>");
@@ -240,7 +250,59 @@ private void PrintResponse (PrintWriter out) // response to survey html
    out.println("			body {background-color:#E1F3DB}");
    out.println("		</style>");
    out.println("	</head>");
+   out.println("	<body>");
+   out.println("	</br>");
+   out.println("  </br>");
+   out.println("	<h1>");
+   out.println("  The table below shows the responses you have submitted.");
+   out.println("	</h1>");
+
+   out.println("	<table border=\"5\" width=\"85%\" align=\"left\">");
+
+   out.println("    <tr>");
+   out.println("      <th>Questions:</th>");
+   out.println("       <th>Submitted Responses</th>");
+   out.println("    </tr>");
+
+   out.println("  <tr>");
+   out.println("    <td>Major</td>");
+   out.println("    <td>%s</td>" + parameters[0]);
+   out.println("  </tr>");
+
+   out.println("  <tr>");
+   out.println("    <td>Year</td>");
+   out.println("    <td>%s</td>" + parameters[1]);
+   out.println("  </tr>");
+
+   out.println("  <tr>");
+   out.println("    <td>Q1</td>");
+   out.println("    <td>%s</td>" + parameters[2]);
+   out.println("  </tr>");
+
+   out.println("  <tr>");
+   out.println("    <td>Q2</td>");
+   out.println("    <td>%s</td>" + parameters[3]);
+   out.println("  </tr>");
+
+   out.println("  <tr>");
+   out.println("    <td>Q3</td>");
+   out.println("    <td>%s</td>" + parameters[4]);
+   out.println("  </tr>");
+
+   out.println("  <tr>");
+   out.println("    <td>Q4</td>");
+   out.println("    <td>%s</td>" + parameters[5]);
+   out.println("  </tr>");
+
+   out.println("  <tr>");
+   out.println("    <td>Q5</td>");
+   out.println("    <td>%s</td>" + parameters[6]);
+   out.println("  </tr>");
+
+   out.println("</table>");
+   out.println("</body>");
    out.println("</html>");
+
 }
 
 }  // End twoButtons
