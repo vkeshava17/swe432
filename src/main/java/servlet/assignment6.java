@@ -253,11 +253,13 @@ private void PrintResponse (PrintWriter out, String[] parameters) // response to
    out.println("	<body>");
    out.println("	</br>");
    out.println("  </br>");
-   out.println("	<h1>");
-   out.println("  The table below shows the responses you have submitted.");
+   out.println("	<h1 align = \"center\">");
+   out.println("  User Responses");
    out.println("	</h1>");
 
-   out.println("	<table border=\"5\" width=\"85%\" align=\"left\" cellSpacing=\"1\" cellPadding=\"1\">");
+   out.println("  The table below shows the responses you have submitted.");
+
+   out.println("	<table border=\"2\" width=\"70%\" align=\"left\" cellSpacing=\"1\" cellPadding=\"1\">");
 
    out.println("    <tr>");
    out.println("      <th>Questions:</th>");
@@ -266,37 +268,37 @@ private void PrintResponse (PrintWriter out, String[] parameters) // response to
 
    out.println("  <tr>");
    out.println("    <td>Major</td>");
-   out.println("    <td>%s</td>" + parameters[0]);
+   out.println("    <td>" + parameters[0] + "</td>");
    out.println("  </tr>");
 
    out.println("  <tr>");
    out.println("    <td>Year</td>");
-   out.println("    <td>%s</td>" + parameters[1]);
+   out.println("    <td>" + parameters[1] + "</td>");
    out.println("  </tr>");
 
    out.println("  <tr>");
    out.println("    <td>Q1</td>");
-   out.println("    <td>%s</td>" + parameters[2]);
+   out.println("    <td>" + parameters[2] + "</td>");
    out.println("  </tr>");
 
    out.println("  <tr>");
    out.println("    <td>Q2</td>");
-   out.println("    <td>%s</td>" + parameters[3]);
+   out.println("    <td>" + parameters[3] + "</td>");
    out.println("  </tr>");
 
    out.println("  <tr>");
    out.println("    <td>Q3</td>");
-   out.println("    <td>%s</td>" + parameters[4]);
+   out.println("    <td>" + parameters[4] + "</td>");
    out.println("  </tr>");
 
    out.println("  <tr>");
    out.println("    <td>Q4</td>");
-   out.println("    <td>%s</td>" + parameters[5]);
+   out.println("    <td>" + parameters[5] + "</td>");
    out.println("  </tr>");
 
    out.println("  <tr>");
    out.println("    <td>Q5</td>");
-   out.println("    <td>%s</td>" + parameters[6]);
+   out.println("    <td>" + parameters[6] + "</td>");
    out.println("  </tr>");
 
    out.println("</table>");
