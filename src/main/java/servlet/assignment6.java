@@ -140,6 +140,7 @@ private void PrintMain (PrintWriter out) // main index.html
    out.println("							<input type=\"text\" name=\"Major\">");
    out.println("						</td>");
    out.println("					</tr>");
+   out.println("					</br>");
    out.println("					<tr>");
    out.println("						<td>Year:");
    out.println("							</td>");
