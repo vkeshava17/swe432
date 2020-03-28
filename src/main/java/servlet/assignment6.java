@@ -121,17 +121,14 @@ private void PrintMain (PrintWriter out) // main index.html
    out.println("	</head>");
    out.println("	<body onload=“focus()”>");
    out.println("		<p>");
-   out.println("		Assignment 5");
+   out.println("		Assignment 6");
    out.println("		</br>");
    out.println("		Developed by: Satyasaarika Putla, Vandana Keshavamurthy");
    out.println("		</br>");
    out.println("		For our collaboration summary, click");
-   out.println("		<a href=\"http://mason.gmu.edu/~sputla2\">here</a>.");
+   out.println("		<a href=\"http://mason.gmu.edu/~vkeshava\">here</a>.");
    out.println("		<h1 align=\"center\">George Mason Bookstore Ratings</h1>");
-   out.println("");
-   out.println("");
-   out.println("");
-   out.println("");
+
    out.println("		This website allows students in the Volgenau School of Engineering to rate the George Mason Bookstore, Barnes and Noble, based on their 			experiences with buying textbooks. </p>");
    out.println("		<form method=\"post\" action=\"asst6\" name=\"UserInfo\" onSubmit=\"return (CheckInput())\">");
    out.println("			<table>	");
@@ -252,14 +249,21 @@ private void PrintResponse (PrintWriter out, String[] parameters) // response to
    out.println("  </style>");
    out.println("  </head>");
    out.println("  <body>");
-   out.println("	<h1 align=\"center\">User Responses</h1>");
+   out.println("  <p>");
+   out.println("  Assignment 6");
+   out.println("     </br>");
+   out.println("     Developed by: Satyasaarika Putla, Vandana Keshavamurthy");
+   out.println("     </br>");
+   out.println("     For our collaboration summary, click");
+   out.println("     <a href=\"http://mason.gmu.edu/~vkeshava\">here</a>.");
+   out.println("  <h1 align=\"center\">User Responses</h1>");
    out.println("  </br>");
 
    out.println("  The table below shows the responses you have submitted.");
    out.println("  </br>");
    out.println("  </br>");
 
-   out.println("	<table border=\"2\" width=\"50%\" align=\"left\" cellSpacing=\"1\" cellPadding=\"1\">");
+   out.println("	<table border=\"2\" width=\"75%\" align=\"left\" cellSpacing=\"1\" cellPadding=\"1\">");
 
    out.println("    <tr>");
    out.println("      <th>Questions</th>");
