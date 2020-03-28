@@ -244,20 +244,19 @@ private void PrintMain (PrintWriter out) // main index.html
 private void PrintResponse (PrintWriter out, String[] parameters) // response to survey html
 {
    out.println("<html>");
-   out.println("    <head>");
-   out.println("		<title>Responses</title>");
-   out.println("		<style> ");
-   out.println("			body {background-color:#E1F3DB}");
-   out.println("		</style>");
-   out.println("	</head>");
-   out.println("	<body>");
-   out.println("	</br>");
+   out.println("  <head>");
+   out.println("  <title>Responses</title>");
+   out.println("  <style> ");
+   out.println("    body {background-color:#E1F3DB}");
+   out.println("  </style>");
+   out.println("  </head>");
+   out.println("  <body>");
+   out.println("	<h1 align=\"center\">User Responses</h1>");
    out.println("  </br>");
-   out.println("	<h1 align = \"center\">");
-   out.println("  User Responses");
-   out.println("	</h1>");
 
    out.println("  The table below shows the responses you have submitted.");
+   out.println("  </br>");
+   out.println("  </br>");
 
    out.println("	<table border=\"2\" width=\"70%\" align=\"left\" cellSpacing=\"1\" cellPadding=\"1\">");
 
