@@ -131,6 +131,7 @@ private void PrintMain (PrintWriter out) // main index.html
 
    out.println("		This website allows students in the Volgenau School of Engineering to rate the George Mason Bookstore, Barnes and Noble, based on their 			experiences with buying textbooks. </p>");
    out.println("		<form method=\"post\" action=\"asst6\" name=\"UserInfo\" onSubmit=\"return (CheckInput())\">");
+   out.println("			<div>");
    out.println("			<table>	");
    out.println("				<tbody>");
    out.println("					<tr>");
@@ -150,6 +151,7 @@ private void PrintMain (PrintWriter out) // main index.html
    out.println("					</tr>");
    out.println("				</tbody>");
    out.println("			</table>") ;
+   out.println("			</div>");
    out.println("			<br>");
 
 
