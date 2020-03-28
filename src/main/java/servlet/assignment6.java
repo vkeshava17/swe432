@@ -89,22 +89,22 @@ private void PrintMain (PrintWriter out) // main index.html
    out.println("				var Major = document.UserInfo.Major;");
    out.println("				if (IsNum(Major.value)) { ");
    out.println("					NumErrors++;");
-   out.println("					ErrorMessage += <br/> + NumErrors + ') Major should be a valid name, not a number. For example: CS, SWE, IT, etc.  ';");
+   out.println("					ErrorMessage += '\n' + NumErrors + \") Major should be a valid name, not a number. For example: CS, SWE, IT, etc.  \";");
    out.println("				}");
    out.println("				if (Major.value == '')");
    out.println("                            {");
    out.println("				NumErrors++;");
-   out.println("			ErrorMessage += <br/> + NumErrors + ') Missing major.  ';");
+   out.println("			ErrorMessage += '\n' + NumErrors + \") Missing major.  \";");
    out.println("			}");
    out.println("				var Year = document.UserInfo.Year;");
    out.println("		if (!IsNum(Year.value)) { ");
    out.println("				NumErrors++;");
-   out.println("					ErrorMessage += <br/> + NumErrors + ') Year should be an integer (ex: 1 = Freshman, 2 = Sophomore, etc.)  ';");
+   out.println("					ErrorMessage += '\n' + NumErrors + \") Year should be an integer (ex: 1 = Freshman, 2 = Sophomore, etc.)  \";");
    out.println("				}");
    out.println("				if (Year.value == '')");
    out.println("                                {");
    out.println("					NumErrors++;");
-   out.println("					ErrorMessage += <br/> + NumErrors + ') Missing year.  ';");
+   out.println("					ErrorMessage += '\n' + NumErrors + \") Missing year.  \";");
    out.println("				}");
    out.println("				if (NumErrors > 0)");
    out.println("				{");
@@ -126,7 +126,7 @@ private void PrintMain (PrintWriter out) // main index.html
    out.println("		Developed by: Satyasaarika Putla, Vandana Keshavamurthy");
    out.println("		</br>");
    out.println("		For our collaboration summary, click");
-   out.println("		<a href=\"http://mason.gmu.edu/~sputla2\">here</a>.");
+   out.println("		<a href=\"http://mason.gmu.edu/~vkeshava\">here</a>.");
    out.println("		<h1 align=\"center\">George Mason Bookstore Ratings</h1>");
 
    out.println("		This website allows students in the Volgenau School of Engineering to rate the George Mason Bookstore, Barnes and Noble, based on their 			experiences with buying textbooks. </p>");
