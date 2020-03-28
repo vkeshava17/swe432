@@ -41,8 +41,9 @@ public void doPost (HttpServletRequest request, HttpServletResponse response)
    String Q3 = request.getParameter("Q3");
    String Q4 = request.getParameter("Q4");
    String Q5 = request.getParameter("Q5");
+   String Comments = request.getParameter("Comments");
 
-   String[] parameters = {Major, Year, Q1, Q2, Q3, Q4, Q5};
+   String[] parameters = {Major, Year, Q1, Q2, Q3, Q4, Q5, Comments};
 
    PrintResponse(out, parameters);
    out.close();
@@ -220,10 +221,10 @@ private void PrintMain (PrintWriter out) // main index.html
    out.println("			<input type=\"radio\" name=\"Q5\" id=\"Very Accurate\" value=\"Very Accurate\"/>");
    out.println("			<label for=\"Very Accurate\">Very Accurate, used all textbooks frequently</label>");
    out.println("			<br/>");
-   out.println("			<input type=\"radio\" name=\"Q5\" id=\"Acc\" value=\"Acc\"/>");
-   out.println("			<label for=\"Acc\">Somewhat Accurate, occasionally used some textbooks</label>");
+   out.println("			<input type=\"radio\" name=\"Q5\" id=\"Accurate\" value=\"Accurate\"/>");
+   out.println("			<label for=\"Accurate\">Somewhat Accurate, occasionally used some textbooks</label>");
    out.println("			<br/>");
-   out.println("			<input type=\"radio\" name=\"Q5\" id=\"NA\" value=\"NA\"/>");
+   out.println("			<input type=\"radio\" name=\"Q5\" id=\"Not Accurate\" value=\"NA\"/>");
    out.println("			<label for=\"NA\">Not Accurate, never used any textbooks</label>");
    out.println("			<br>");
    out.println("			<p> Additional Comments, Suggestions, and Concerns:</p>");
@@ -258,10 +259,10 @@ private void PrintResponse (PrintWriter out, String[] parameters) // response to
    out.println("  </br>");
    out.println("  </br>");
 
-   out.println("	<table border=\"2\" width=\"70%\" align=\"left\" cellSpacing=\"1\" cellPadding=\"1\">");
+   out.println("	<table border=\"2\" width=\"50%\" align=\"left\" cellSpacing=\"1\" cellPadding=\"1\">");
 
    out.println("    <tr>");
-   out.println("      <th>Questions:</th>");
+   out.println("      <th>Questions</th>");
    out.println("       <th>Submitted Responses</th>");
    out.println("    </tr>");
 
@@ -276,28 +277,33 @@ private void PrintResponse (PrintWriter out, String[] parameters) // response to
    out.println("  </tr>");
 
    out.println("  <tr>");
-   out.println("    <td>Q1</td>");
+   out.println("    <td>Q1: How easy was it for you to find your textbooks in the store?</td>");
    out.println("    <td>" + parameters[2] + "</td>");
    out.println("  </tr>");
 
    out.println("  <tr>");
-   out.println("    <td>Q2</td>");
+   out.println("    <td>Q2: How many times were the textbooks you needed (digital or hard copy) out of stock?</td>");
    out.println("    <td>" + parameters[3] + "</td>");
    out.println("  </tr>");
 
    out.println("  <tr>");
-   out.println("    <td>Q3</td>");
+   out.println("    <td>Q3: How reasonable do you think the textbook prices were compared to other sellers?</td>");
    out.println("    <td>" + parameters[4] + "</td>");
    out.println("  </tr>");
 
    out.println("  <tr>");
-   out.println("    <td>Q4</td>");
+   out.println("    <td>Q4: If given the option, do you prefer digital or hard copy textbooks? </td>");
    out.println("    <td>" + parameters[5] + "</td>");
    out.println("  </tr>");
 
    out.println("  <tr>");
-   out.println("    <td>Q5</td>");
+   out.println("    <td>Q5: How accurate are the recommended and required textbook lists that the bookstore provides online?</td>");
    out.println("    <td>" + parameters[6] + "</td>");
+   out.println("  </tr>");
+
+   out.println("  <tr>");
+   out.println("    <td>Additional Comments</td>");
+   out.println("    <td>" + parameters[7] + "</td>");
    out.println("  </tr>");
 
    out.println("</table>");
