@@ -75,7 +75,6 @@ private void PrintMain (PrintWriter out) // main index.html
    out.println("		<style> ");
    out.println("			body {background-color:#E1F3DB}");
    out.println("		</style>");
-   out.println("		<pre>");
    out.println("		<script type='text/javascript'>");
    out.println("			function focus() { ");
    out.println("				document.UserInfo.Major.focus()");
@@ -119,7 +118,6 @@ private void PrintMain (PrintWriter out) // main index.html
    out.println("				}");
    out.println("			}");
    out.println("		</script>");
-   out.println("		</pre>");
    out.println("	</head>");
    out.println("	<body onload=\"focus()\">");
    out.println("		<p>");
