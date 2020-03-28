@@ -228,7 +228,7 @@ private void PrintMain (PrintWriter out) // main index.html
    out.println("			<textarea id=\"textArea\" name=\"Comments\" rows=\"6\" cols=\"40\"></textarea>"); 
    out.println("			<br/>");
    out.println("			<br/>");
-   out.println("			<button type=\"submit\"onclick=\"submitSuccess()\">Submit Answers</button>");
+   out.println("			<button type=\"submit\"onclick=\"submitSuccess()\" style=\"width: 20%; height: 20%;\">Submit Answers</button>");
    out.println("			<br/>");
    out.println("			<br/>");
    out.println("		</form>");
