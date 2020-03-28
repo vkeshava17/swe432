@@ -89,7 +89,7 @@ private void PrintMain (PrintWriter out) // main index.html
    out.println("				var Major = document.UserInfo.Major;");
    out.println("				if (IsNum(Major.value)) { ");
    out.println("					NumErrors++;");
-   out.println("					ErrorMessage += '<p><br>' + NumErrors + ') Major should be a valid name, not a number. For example: CS, SWE, IT, etc. '</p>';");
+   out.println("					ErrorMessage += '<p><br>' + NumErrors + ') Major should be a valid name, not a number. For example: CS, SWE, IT, etc. </p>';");
    out.println("				}");
    out.println("				if (Major.value == '')");
    out.println("                            {");
@@ -142,7 +142,7 @@ private void PrintMain (PrintWriter out) // main index.html
    out.println("					</tr>");
 
    out.println("					<tr>");
-   out.println("						<td style=\"margin: 5px; padding: 5px;\">Year:");
+   out.println("						<td>Year:");
    out.println("							</td>");
    out.println("						<td>");
    out.println("							<input type=\"text\" name=\"Year\">");
