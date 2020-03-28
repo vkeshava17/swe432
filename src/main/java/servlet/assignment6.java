@@ -101,7 +101,7 @@ private void PrintMain (PrintWriter out) // main index.html
    out.println("				NumErrors++;");
    out.println("					ErrorMessage += \n + NumErrors + ') Year should be an integer (ex: 1 = Freshman, 2 = Sophomore, etc.). ';");
    out.println("				}");
-   out.println("				if (Year.value == '')");
+   out.println("				if (Year.value == '')"); 
    out.println("                                {");
    out.println("					NumErrors++;");
    out.println("					ErrorMessage += \n + NumErrors + ') Missing year.  ';");
