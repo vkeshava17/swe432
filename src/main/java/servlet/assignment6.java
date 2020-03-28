@@ -89,7 +89,7 @@ private void PrintMain (PrintWriter out) // main index.html
    out.println("				var Major = document.UserInfo.Major;");
    out.println("				if (IsNum(Major.value)) { ");
    out.println("					NumErrors++;");
-   out.println("					ErrorMessage += NumErrors + ') Major should be a valid name, not a number. For example: CS, SWE, IT, etc. ';");
+   out.println("					ErrorMessage += '<p><br>' + NumErrors + ') Major should be a valid name, not a number. For example: CS, SWE, IT, etc. '</p>';");
    out.println("				}");
    out.println("				if (Major.value == '')");
    out.println("                            {");
@@ -131,11 +131,10 @@ private void PrintMain (PrintWriter out) // main index.html
 
    out.println("		This website allows students in the Volgenau School of Engineering to rate the George Mason Bookstore, Barnes and Noble, based on their 			experiences with buying textbooks. </p>");
    out.println("		<form method=\"post\" action=\"asst6\" name=\"UserInfo\" onSubmit=\"return (CheckInput())\">");
-   out.println("			<div>");
    out.println("			<table>	");
    out.println("				<tbody>");
    out.println("					<tr>");
-   out.println("						<td>Major:");
+   out.println("						<td style=\"margin: 5px; padding: 5px;\">Major:"); 
    out.println("						</td>");
    out.println("						<td>");
    out.println("							<input type=\"text\" name=\"Major\">");
@@ -143,7 +142,7 @@ private void PrintMain (PrintWriter out) // main index.html
    out.println("					</tr>");
 
    out.println("					<tr>");
-   out.println("						<td>Year:");
+   out.println("						<td style=\"margin: 5px; padding: 5px;\">Year:");
    out.println("							</td>");
    out.println("						<td>");
    out.println("							<input type=\"text\" name=\"Year\">");
@@ -151,7 +150,6 @@ private void PrintMain (PrintWriter out) // main index.html
    out.println("					</tr>");
    out.println("				</tbody>");
    out.println("			</table>") ;
-   out.println("			</div>");
    out.println("			<br>");
 
 
