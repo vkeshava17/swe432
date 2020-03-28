@@ -89,7 +89,7 @@ private void PrintMain (PrintWriter out) // main index.html
    out.println("				var Major = document.UserInfo.Major;");
    out.println("				if (IsNum(Major.value)) { ");
    out.println("					NumErrors++;");
-   out.println("					ErrorMessage += \\n + NumErrors + ') Major should be a valid name, not a number. For example: CS, SWE, IT, etc.';");
+   out.println("					ErrorMessage += '\\n' + NumErrors + ') Major should be a valid name, not a number. For example: CS, SWE, IT, etc.';");
    out.println("				}");
    out.println("				if (Major.value == '')");
    out.println("                            {");
