@@ -222,10 +222,10 @@ private void PrintMain (PrintWriter out) // main index.html
    out.println("			<label for=\"Accurate\">Somewhat Accurate, occasionally used some textbooks</label>");
    out.println("			<br/>");
    out.println("			<input type=\"radio\" name=\"Q5\" id=\"Not Accurate\" value=\"NA\"/>");
-   out.println("			<label for=\"NA\">Not Accurate, never used any textbooks</label>");
+   out.println("			<label for=\"Not Accurate\">Not Accurate, never used any textbooks</label>");
    out.println("			<br>");
    out.println("			<p> Additional Comments, Suggestions, and Concerns:</p>");
-   out.println("			<textarea rows=\"4\" id=\"Comments\"></textarea>");
+   out.println("			<textarea id=\"textArea\" name=\"Comments\" rows=\"7\" cols=\"50\"></textarea>"); 
    out.println("			<br/>");
    out.println("			<br/>");
    out.println("			<button type=\"submit\"onclick=\"submitSuccess()\">Submit Answers</button>");
