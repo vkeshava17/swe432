@@ -101,7 +101,7 @@ private void PrintMain (PrintWriter out) // main index.html
    out.println("				NumErrors++;");
    out.println("					ErrorMessage += '\\n' + NumErrors + ') Year should be an integer (ex: 1 = Freshman, 2 = Sophomore, etc.). ';");
    out.println("				}");
-   out.println("				if (Year.value == '')"); 
+   out.println("				if (Year.value == '')");
    out.println("                                {");
    out.println("					NumErrors++;");
    out.println("					ErrorMessage += '\\n' + NumErrors + ') Missing year.  ';");
@@ -126,7 +126,7 @@ private void PrintMain (PrintWriter out) // main index.html
    out.println("		Developed by: Satyasaarika Putla, Vandana Keshavamurthy");
    out.println("		</br>");
    out.println("		For our collaboration summary, click");
-   out.println("		<a href=\"http://mason.gmu.edu/~sputla2\">here</a>");
+   out.println("		<a href=\"http://mason.gmu.edu/~vkeshava/asst6Collab\">here</a>");
    out.println("		<h1 align=\"center\">George Mason Bookstore Ratings</h1>");
 
    out.println("		This website allows students in the Volgenau School of Engineering to rate the George Mason Bookstore, Barnes and Noble, based on their 			experiences with buying textbooks. </p>");
@@ -134,7 +134,7 @@ private void PrintMain (PrintWriter out) // main index.html
    out.println("			<table>	");
    out.println("				<tbody>");
    out.println("					<tr>");
-   out.println("						<td style=\"margin: 5px; padding: 5px;\">Major:"); 
+   out.println("						<td style=\"margin: 5px; padding: 5px;\">Major:");
    out.println("						</td>");
    out.println("						<td>");
    out.println("							<input type=\"text\" name=\"Major\">");
@@ -214,7 +214,7 @@ private void PrintMain (PrintWriter out) // main index.html
    out.println("			<br/>");
    out.println("			<br>");
 
-   out.println("			5. How accurate are the recommended and required textbook lists that the bookstore provides online?");      
+   out.println("			5. How accurate are the recommended and required textbook lists that the bookstore provides online?");
    out.println("			<br>");
    out.println("			<input type=\"radio\" name=\"Q5\" id=\"Very Accurate\" value=\"Very Accurate\"/>");
    out.println("			<label for=\"Very Accurate\">Very Accurate, used all textbooks frequently</label>");
@@ -226,7 +226,7 @@ private void PrintMain (PrintWriter out) // main index.html
    out.println("			<label for=\"Not Accurate\">Not Accurate, never used any textbooks</label>");
    out.println("			<br>");
    out.println("			<p> Additional Comments, Suggestions, and Concerns:</p>");
-   out.println("			<textarea id=\"textArea\" name=\"Comments\" rows=\"6\" cols=\"40\"></textarea>"); 
+   out.println("			<textarea id=\"textArea\" name=\"Comments\" rows=\"6\" cols=\"40\"></textarea>");
    out.println("			<br/>");
    out.println("			<br/>");
    out.println("			<button type=\"submit\"onclick=\"submitSuccess()\" style=\"width: 10%; height: 4%; font-size: 13px;\">Submit Answers</button>");
