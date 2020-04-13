@@ -22,7 +22,7 @@ Try the Hello Servlet:
 <button onclick="window.location.assign(servletURL);"> Click me! </button>
 </br>
 </br>
-Try the TwoButtons servlet:
+Try the TwoButtons Servlet:
 <button onclick="window.location.assign(servletURL2);"> Click me! </button>
 </br>
 </br>
