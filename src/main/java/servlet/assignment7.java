@@ -1,4 +1,3 @@
-
 /** *****************************************************************
     assignment7.java
 ********************************************************************* */
@@ -67,8 +66,10 @@ public void doPost (HttpServletRequest request, HttpServletResponse response)
 public void doGet (HttpServletRequest request, HttpServletResponse response)
        throws ServletException, IOException
 {
-    RequestDispatcher fd = request.getRequestDispatcher("/resources/index.html");
-	fd.forward(request,response);
+  setCORS(res);
+  res.sendRedirect("https://swe-432-react.herokuapp.com/");
+//    RequestDispatcher fd = request.getRequestDispatcher("/resources/index.html");
+//	fd.forward(request,response);
 
 } // End doGet
 }
