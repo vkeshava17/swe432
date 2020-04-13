@@ -54,7 +54,7 @@ public void doPost (HttpServletRequest request, HttpServletResponse response)
    request.setAttribute("Q5", Question5);
    request.setAttribute("Comments", Comments);
 
-   RequestDispatcher fd = request.getRequestDispatcher("printresults.js");
+   RequestDispatcher fd = request.getRequestDispatcher("/resources/printresults.js");
    fd.forward(request,response);
 
 }  // End doPost
@@ -67,7 +67,7 @@ public void doPost (HttpServletRequest request, HttpServletResponse response)
 public void doGet (HttpServletRequest request, HttpServletResponse response)
        throws ServletException, IOException
 {
-    RequestDispatcher fd = request.getRequestDispatcher("/index.html");
+    RequestDispatcher fd = request.getRequestDispatcher("/resources/index.html");
 	fd.forward(request,response);
 
 } // End doGet
