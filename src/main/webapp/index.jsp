@@ -16,12 +16,23 @@
 <body>
 <h2>Hello Heroku! I am JSP</h2>
 <strong>Current Time is</strong>: <%=new Date() %>
-<button onclick="window.location.assign(servletURL);"> Try the Hello servlet </button>
 </br>
-<button onclick="window.location.assign(servletURL2);"> Try the TwoButtons servlet </button>
 </br>
-<button onclick="window.location.assign(servletURL3);"> Try the Restaurant Form (Assignment 6) servlet </button>
+Try the Hello Servlet:
+<button onclick="window.location.assign(servletURL);"> Click me! </button>
 </br>
-<button onclick="window.location.assign(servletURL4);"> Try the Restaurant Form (Assignment 7) ReactJS app </button>
+</br>
+Try the TwoButtons servlet:
+<button onclick="window.location.assign(servletURL2);"> Click me! </button>
+</br>
+</br>
+Try Assignment 6  - GMU Bookstore Survey:
+<button onclick="window.location.assign(servletURL3);"> Click me! </button>
+</br>
+</br>
+Try Assignment 7 (ReactJS app) - GMU Bookstore Survey:
+<button onclick="window.location.assign(servletURL4);"> Click me! </button>
+</br>
+</br>
 </body>
 </html>
