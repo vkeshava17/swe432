@@ -9,6 +9,7 @@
     var servletURL2 = window.location.origin + "/twoButtons";
     var servletURL3 = window.location.origin + "/asst6";
     var servletURL4 = window.location.origin + "/asst7";
+    var servletURL5 = window.location.origin + "/file";
   </script>
 <title>First JSP</title>
 </head>
@@ -32,6 +33,10 @@ Try Assignment 6  - GMU Bookstore Survey:
 </br>
 Try Assignment 7 (ReactJS app) - GMU Bookstore Survey:
 <button onclick="window.location.assign(servletURL4);"> Click me! </button>
+</br>
+</br>
+Try the persistenceFile Servlet:
+<button onclick="window.location.assign(servletURL5);"> Click me! </button>
 </br>
 </br>
 </body>
