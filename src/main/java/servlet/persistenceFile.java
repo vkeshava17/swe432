@@ -46,11 +46,17 @@ public class persistenceFile extends HttpServlet{
   {
      String name = request.getParameter(Data.NAME.name());
      String age = request.getParameter(Data.AGE.name());
+     String food = request.getParamter(Data.FOOD.name());
 
      String error = "";
      if(name == null){
        error= "<li>Name is required</li>";
        name = "";
+     }
+
+     if(food == null){
+       error= "<li>Favorite Food is required</li>";
+       food = "";
      }
 
      if(age == null){
@@ -79,7 +85,7 @@ public class persistenceFile extends HttpServlet{
 
      if (error.length() == 0){
        PrintWriter entriesPrintWriter = new PrintWriter(new FileWriter(RESOURCE_FILE, true), true);
-       entriesPrintWriter.println(name+VALUE_SEPARATOR+age);
+       entriesPrintWriter.println(name+VALUE_SEPARATOR+age+VALUE_SEPARATOR+food);
        entriesPrintWriter.close();
 
        PrintHead(out);
@@ -87,7 +93,7 @@ public class persistenceFile extends HttpServlet{
        PrintTail(out);
      }else{
        PrintHead(out);
-       PrintBody(out, name, age, error);
+       PrintBody(out, name, age, food, error);
        PrintTail(out);
      }
   }
@@ -155,6 +161,11 @@ public class persistenceFile extends HttpServlet{
       +"\" oninput=\"this.value=this.value.replace(/[^0-9]/g,'');\" value=\""
       +age+"\" size=3 required></td>");
      out.println("  </tr>");
+     out.println("  <tr>");
+     out.println("   <td>Favorite Food:</td>");
+     out.println("   <td><input type=\"text\" name=\""+Data.FOOD.name()
+      +"\" value=\""+food+"\" size=30 required></td>");
+     out.println("  </tr>");
      out.println(" </table>");
      out.println(" <br>");
      out.println(" <br>");
@@ -181,6 +192,7 @@ public class persistenceFile extends HttpServlet{
         out.println("  <tr>");
         out.println("   <th>Name</th>");
         out.println("   <th>Age</th>");
+        out.println("   <th>Favorite Food</th>");
         out.println("  </tr>");
         File file = new File(resourcePath);
         if(!file.exists()){
