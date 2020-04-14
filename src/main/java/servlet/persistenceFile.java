@@ -46,7 +46,7 @@ public class persistenceFile extends HttpServlet{
   {
      String name = request.getParameter(Data.NAME.name());
      String age = request.getParameter(Data.AGE.name());
-     String food = request.getParamter(Data.FOOD.name());
+     String food = request.getParameter(Data.FOOD.name());
 
      String error = "";
      if(name == null){
