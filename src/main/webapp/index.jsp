@@ -8,7 +8,7 @@
     var servletURL = window.location.origin + "/hello";
     var servletURL2 = window.location.origin + "/twoButtons";
     var servletURL3 = window.location.origin + "/asst6";
-    var servletURL4 = window.location.origin + "/asst7";
+    var servletURL4 = "swe-432-react.herokuapp.com/asst7";
     var servletURL5 = window.location.origin + "/file";
   </script>
 <title>First JSP</title>
