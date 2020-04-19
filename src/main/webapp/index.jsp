@@ -32,7 +32,7 @@ Try Assignment 6  - GMU Bookstore Survey:
 </br>
 </br>
 Try Assignment 7 (ReactJS app) - GMU Bookstore Survey:
-<button onclick="https://swe-432-react.herokuapp.com/asst7"> Click me! </button>
+<button onclick="window.location.href = 'https://swe-432-react.herokuapp.com/asst7';"> Click me! </button>
 </br>
 </br>
 Try the persistenceFile Servlet:
