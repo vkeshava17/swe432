@@ -44,7 +44,7 @@ public void doPost (HttpServletRequest request, HttpServletResponse response)
    String Comments = request.getParameter("Comments");
 
    String[] parameters = {Major, Year, Q1, Q2, Q3, Q4, Q5, Comments};
-   processResponses(parameters)
+   parameters = processResponses(parameters)
    PrintResponse(out, parameters);
    out.close();
 }  // End doPost
@@ -57,6 +57,7 @@ private void processResponses(String[] responses) {
     responses[i] = (r.replaceAll("(shit)|(fuck)|(damn)|(bitch)", "*"));
     i += 1
   }
+  return responses;
 }
 
 /** *****************************************************
