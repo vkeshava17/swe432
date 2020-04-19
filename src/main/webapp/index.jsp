@@ -32,7 +32,7 @@ Try Assignment 6  - GMU Bookstore Survey:
 </br>
 </br>
 Try Assignment 7 (ReactJS app) - GMU Bookstore Survey:
-<button onclick="window.location.assign(servletURL4);"> Click me! </button>
+<button onclick=servletURL4> Click me! </button>
 </br>
 </br>
 Try the persistenceFile Servlet:
