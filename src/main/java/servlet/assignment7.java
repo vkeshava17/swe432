@@ -65,12 +65,12 @@ private void PrintResponse (PrintWriter out, String[] parameters) // response to
    out.println("  </head>");
    out.println("  <body>");
    out.println("  <p>");
-   out.println("  Assignment 6");
+   out.println("  Assignment 7");
    out.println("     </br>");
    out.println("     Developed by: Satyasaarika Putla, Vandana Keshavamurthy");
    out.println("     </br>");
    out.println("     For our collaboration summary, click");
-   out.println("     <a href=\"http://mason.gmu.edu/~vkeshava\">here</a>");
+   out.println("     <a href=\"http://mason.gmu.edu/~vkeshava/asst7Collab\">here</a>");
    out.println("  <h1 align=\"center\">User Responses</h1>");
    out.println("  </br>");
 
