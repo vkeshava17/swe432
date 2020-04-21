@@ -25,34 +25,7 @@ public void doGet (HttpServletRequest request, HttpServletResponse response)
    String remove = request.getParameter("attrib_remove");
    String action = request.getParameter("action");
 
-   if (action != null && action.equals("invalidate"))
-   {  // Called from the invalidate button, kill the session.
-      // Get session object
-      session.invalidate();
-
-      response.setContentType("text/html");
-      PrintWriter out = response.getWriter();
-
-      out.println("<html>");
-      out.println("<head>");
-      out.println(" <title>Session lifecycle</title>");
-      out.println("</head>");
-      out.println("");
-      out.println("<body>");
-
-      out.println("<p>Your session has been invalidated.</P>");
-
-      // Create a link so the user can create a new session.
-      // The link will have a parameter builtin
-      String lifeCycleURL = "sessionLifeCycle";
-      out.println("<a href=\"" + lifeCycleURL + "?action=newSession\">");
-      out.println("Create new session</A>");
-
-      out.println("</body>");
-      out.println("</html>");
-      out.close();
-   } //end if
-   else if (remove != null && remove.equals("on"))
+   if (remove != null && remove.equals("on"))
    {
       session.removeAttribute(name);
    }
