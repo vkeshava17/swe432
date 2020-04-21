@@ -10,7 +10,7 @@ import java.util.Enumeration;
 
 import javax.servlet.annotation.WebServlet;
 
-@WebServlet( name = "attributeServlet", urlPatterns = {"/attributeServlet"} )
+@WebServlet( name = "attributeServlet", urlPatterns = {"attributeServlet"} )
 
 public class attributeServlet extends HttpServlet
 {
@@ -23,8 +23,37 @@ public void doGet (HttpServletRequest request, HttpServletResponse response)
    String name   = request.getParameter("attrib_name");
    String value  = request.getParameter("attrib_value");
    String remove = request.getParameter("attrib_remove");
+   String action = request.getParameter("action");
 
-   if (remove != null && remove.equals("on"))
+   if (action != null && action.equals("invalidate"))
+   {  // Called from the invalidate button, kill the session.
+      // Get session object
+      HttpSession session = request.getSession();
+      session.invalidate();
+
+      response.setContentType("text/html");
+      PrintWriter out = response.getWriter();
+
+      out.println("<html>");
+      out.println("<head>");
+      out.println(" <title>Session lifecycle</title>");
+      out.println("</head>");
+      out.println("");
+      out.println("<body>");
+
+      out.println("<p>Your session has been invalidated.</P>");
+
+      // Create a link so the user can create a new session.
+      // The link will have a parameter builtin
+      String lifeCycleURL = "sessionLifeCycle";
+      out.println("<a href=\"" + lifeCycleURL + "?action=newSession\">");
+      out.println("Create new session</A>");
+
+      out.println("</body>");
+      out.println("</html>");
+      out.close();
+   } //end if
+   else if (remove != null && remove.equals("on"))
    {
       session.removeAttribute(name);
    }
@@ -64,7 +93,10 @@ public void doGet (HttpServletRequest request, HttpServletResponse response)
 
    out.println(" <br><input type=\"checkbox\" name=\"attrib_remove\">Remove");
    out.println(" <input type=\"submit\" name=\"update\" value=\"Update\">");
-   out.println(" <input type=\"submit\" name=\"Invalidate\" value=\"Invalidate\">");
+   out.print  ("<br><br><a href=\"" + lifeCycleURL + "?action=invalidate\">");
+   out.println("Invalidate the session</a>");
+   out.print  ("<br><a href=\"" + lifeCycleURL + "\">");
+   out.println("Reload this page</a>");
    out.println("</form>");
    out.println("<hr>");
 
