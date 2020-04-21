@@ -67,9 +67,7 @@ public void doGet (HttpServletRequest request, HttpServletResponse response)
    out.println(" <input type=\"submit\" name=\"update\" value=\"Update\">");
 
    out.print  ("<br><br><a href=\"" + url + "?action=invalidate\">");
-   out.println("Invalidate the session</a>");
-   out.print  ("<br><a href=\"" + url + "\">");
-   out.println("Reload this page</a>");
+   out.println("Invalidate the session</a><br>");
    out.println("</form>");
    out.println("<hr>");
 
