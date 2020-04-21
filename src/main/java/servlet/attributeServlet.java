@@ -28,7 +28,6 @@ public void doGet (HttpServletRequest request, HttpServletResponse response)
    if (action != null && action.equals("invalidate"))
    {  // Called from the invalidate button, kill the session.
       // Get session object
-      HttpSession session = request.getSession();
       session.invalidate();
 
       response.setContentType("text/html");
@@ -93,9 +92,9 @@ public void doGet (HttpServletRequest request, HttpServletResponse response)
 
    out.println(" <br><input type=\"checkbox\" name=\"attrib_remove\">Remove");
    out.println(" <input type=\"submit\" name=\"update\" value=\"Update\">");
-   out.print  ("<br><br><a href=\"" + lifeCycleURL + "?action=invalidate\">");
+   out.print  ("<br><br><a href=\"" + url + "?action=invalidate\">");
    out.println("Invalidate the session</a>");
-   out.print  ("<br><a href=\"" + lifeCycleURL + "\">");
+   out.print  ("<br><a href=\"" + url + "\">");
    out.println("Reload this page</a>");
    out.println("</form>");
    out.println("<hr>");
