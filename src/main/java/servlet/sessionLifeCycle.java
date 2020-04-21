@@ -8,6 +8,10 @@ import javax.servlet.http.*;
 import java.io.*;
 import java.util.Date;
 
+import javax.servlet.annotation.WebServlet;
+
+@WebServlet( name = "sessionLifeCycle", urlPatterns = {"/sessionLifeCycle"} )
+
 public class sessionLifeCycle extends HttpServlet
 {
 public void doGet (HttpServletRequest request, HttpServletResponse response)
