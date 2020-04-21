@@ -10,7 +10,7 @@ import java.util.Enumeration;
 
 import javax.servlet.annotation.WebServlet;
 
-@WebServlet( name = "attributeServlet", urlPatterns = {"attributeServlet"} )
+@WebServlet( name = "attributeServlet", urlPatterns = {"/attributeServlet"} )
 
 public class attributeServlet extends HttpServlet
 {
