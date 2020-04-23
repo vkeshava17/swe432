@@ -13,7 +13,7 @@
     var servletURL6 = window.location.origin + "/sessionLifeCycle";
     var servletURL7 = window.location.origin + "/attributeServlet";
   </script>
-<title>First JSP</title>
+<title>SWE JSPs</title>
 </head>
 <%@ page import="java.util.Date" %>
 <body>
