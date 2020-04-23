@@ -10,6 +10,8 @@
     var servletURL3 = window.location.origin + "/asst6";
     var servletURL4 = "swe-432-react.herokuapp.com/asst7";
     var servletURL5 = window.location.origin + "/file";
+    var servletURL6 = window.location.origin + "/sessionLifeCycle";
+    var servletURL7 = window.location.origin + "/attributeServlet";
   </script>
 <title>First JSP</title>
 </head>
@@ -27,16 +29,24 @@ Try the TwoButtons Servlet:
 <button onclick="window.location.assign(servletURL2);"> Click me! </button>
 </br>
 </br>
+Try the persistenceFile Servlet:
+<button onclick="window.location.assign(servletURL5);"> Click me! </button>
+</br>
+</br>
+Try the sessionLifeCycle Servlet:
+<button onclick="window.location.assign(servletURL6);"> Click me! </button>
+</br>
+</br>
+Try the attributeServlet Servlet:
+<button onclick="window.location.assign(servletURL7);"> Click me! </button>
+</br>
+</br>
 Try Assignment 6  - GMU Bookstore Survey:
 <button onclick="window.location.assign(servletURL3);"> Click me! </button>
 </br>
 </br>
 Try Assignment 7 (ReactJS app) - GMU Bookstore Survey:
 <button onclick="window.location.href = 'https://swe-432-react.herokuapp.com/asst7';"> Click me! </button>
-</br>
-</br>
-Try the persistenceFile Servlet:
-<button onclick="window.location.assign(servletURL5);"> Click me! </button>
 </br>
 </br>
 </body>
