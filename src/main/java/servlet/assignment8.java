@@ -289,6 +289,8 @@ public class assignment8 extends HttpServlet
       }
     }
 
+    File file = null;
+
     try {
       File file = new File(resourcePath);
       if(!file.exists()){
@@ -298,12 +300,6 @@ public class assignment8 extends HttpServlet
         out.println("  <h1 align=\"center\">CODE GOT HERE</h1>");
         return;
       }
-    }
-    catch (FileNotFoundException ex) {
-      ex.printStackTrace();
-    } catch (IOException ex) {
-      ex.printStackTrace();
-    }
 
     int i = 0;
     BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
@@ -312,7 +308,7 @@ public class assignment8 extends HttpServlet
 
     out.println("Submission #" + submissionCounter + ":");
     out.println("</br>");
-    
+
     while ((line = bufferedReader.readLine()) != null) {
 
       String[] entry = line.split(VALUE_SEPARATOR);
@@ -393,6 +389,12 @@ public class assignment8 extends HttpServlet
     }
 
     bufferedReader.close();
+  }
+  catch (FileNotFoundException ex) {
+    ex.printStackTrace();
+  } catch (IOException ex) {
+    ex.printStackTrace();
+  }
 
     out.println("</body>");
     out.println("</html>");
