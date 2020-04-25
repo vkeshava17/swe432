@@ -301,6 +301,7 @@ private void PrintResponse (PrintWriter out, String resourcePath) // response to
        BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
        String line;
        while ((line = bufferedReader.readLine()) != null) {
+         out.println(line);
          String[] entry = line.split(VALUE_SEPARATOR);
          i = 0;
          for(String value: entry){
