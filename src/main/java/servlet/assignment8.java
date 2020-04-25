@@ -311,6 +311,7 @@ private void PrintResponse (PrintWriter out, String resourcePath) // response to
              if (i == 7) {
                if (commentsTF == true) {
                  parameters[i] = "No comments";
+                 commentsTF = false;
                }
                else {
                  parameters[i] = value;
