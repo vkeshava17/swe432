@@ -297,10 +297,10 @@ private void PrintResponse (PrintWriter out, String resourcePath) // response to
          return;
        }
 
-       int i;
+       int i = 0;
        BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
-       String line;
-       String last;
+       String line = "";
+       String last = "";
 
        while ((line = bufferedReader.readLine()) != null) {
          out.println(line);
@@ -329,7 +329,7 @@ private void PrintResponse (PrintWriter out, String resourcePath) // response to
            }
            i += 1;
          }
-      
+
        bufferedReader.close();
      } catch (FileNotFoundException ex) {
            ex.printStackTrace();
