@@ -48,6 +48,11 @@ public void doPost (HttpServletRequest request, HttpServletResponse response)
    String Comments = request.getParameter("Comments");
 
    String[] parameters = {Major, Year, Q1, Q2, Q3, Q4, Q5, Comments};
+   for (String s: parameters) {
+     if (s == null) {
+       s = "";
+     }
+   }
    parameters = processResponses(parameters);
 
    PrintWriter entriesPrintWriter = new PrintWriter(new FileWriter(RESOURCE_FILE, true), true);
