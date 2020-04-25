@@ -282,7 +282,9 @@ private void PrintResponse (PrintWriter out, String resourcePath) // response to
    String[] parameters = new String[8];
 
    for (String s: parameters) {
-     if (s == "" || s == null) s = "No response";
+     if (s == "" || s == null) {
+       s = "No response";
+     }
    }
 
    try {
@@ -298,10 +300,15 @@ private void PrintResponse (PrintWriter out, String resourcePath) // response to
        BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
        String line;
        while ((line = bufferedReader.readLine()) != null) {
-         String[] entry= line.split(VALUE_SEPARATOR);
+         String[] entry = line.split(VALUE_SEPARATOR);
          i = 0;
          for(String value: entry){
-           parameters[i] = value;
+           if (value == "" || value == null) {
+             parameters[i] = "No response";
+           }
+           else {
+             parameters[i] = value;
+           }
            i += 1;
          }
        }
