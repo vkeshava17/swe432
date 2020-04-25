@@ -298,6 +298,11 @@ public class assignment8 extends HttpServlet
         out.println("  <h1 align=\"center\">CODE GOT HERE</h1>");
         return;
       }
+      catch (FileNotFoundException ex) {
+      ex.printStackTrace();
+      } catch (IOException ex) {
+      ex.printStackTrace();
+      }
 
       int i = 0;
       BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
@@ -307,7 +312,6 @@ public class assignment8 extends HttpServlet
       out.println("Submission #%d", submissionCounter);
 
       while ((line = bufferedReader.readLine()) != null) {
-
 
         String[] entry = line.split(VALUE_SEPARATOR);
         for(String value: entry){
@@ -329,12 +333,7 @@ public class assignment8 extends HttpServlet
           i += 1;
         }
 
-        bufferedReader.close();
-      } catch (FileNotFoundException ex) {
-        ex.printStackTrace();
-      } catch (IOException ex) {
-        ex.printStackTrace();
-      }
+
 
       out.println("  The table below shows the responses you have submitted.");
       out.println("  </br>");
@@ -390,7 +389,9 @@ public class assignment8 extends HttpServlet
       out.println("</table>");
       submissionCounter += 1;
     }
-    
+
+    bufferedReader.close();
+
     out.println("</body>");
     out.println("</html>");
 
