@@ -309,7 +309,6 @@ public class assignment8 extends HttpServlet
     String line = "";
     int submissionCounter = 1;
     //out.println("Submission #" + submissionCounter + ":");
-    out.println("</br>");
 
     while ((line = bufferedReader.readLine()) != null) {
       parameters = new String[8];
@@ -365,7 +364,7 @@ public class assignment8 extends HttpServlet
       out.println("  </tr>");
 
       out.println("  <tr>");
-      out.println("    <td>Q5: How accurate are the recommended and required textbook lists that the bookstore provides online?</td>");
+      out.println("    <td>Q5: How accurate are the recommended and required textbook lists that the bookstore provides online? </td>");
       out.println("    <td>" + parameters[6] + "</td>");
       out.println("  </tr>");
 
