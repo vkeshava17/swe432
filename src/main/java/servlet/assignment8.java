@@ -304,31 +304,31 @@ private void PrintResponse (PrintWriter out, String resourcePath) // response to
 
        while ((line = bufferedReader.readLine()) != null) {
          out.println(line);
+         out.println("\n")
          last = line;
        }
 
-         String[] entry = last.split(VALUE_SEPARATOR);
-         i = 0;
-         for(String value: entry){
-           if (value == null || value.equals("") || value.equals("null")) {
-             parameters[i] = "No response";
-           }
-           else {
-             if (i == 7) {
-               if (commentsTF == true) {
-                 parameters[i] = "No comments";
-                 commentsTF = false;
-               }
-               else {
-                 parameters[i] = value;
-               }
+       String[] entry = last.split(VALUE_SEPARATOR);
+       for(String value: entry){
+         if (value == null || value.equals("") || value.equals("null")) {
+           parameters[i] = "No response";
+         }
+         else {
+           if (i == 7) {
+             if (commentsTF == true) {
+               parameters[i] = "No comments";
+               commentsTF = false;
              }
              else {
                parameters[i] = value;
              }
            }
-           i += 1;
+           else {
+             parameters[i] = value;
+           }
          }
+         i += 1;
+       }
 
        bufferedReader.close();
      } catch (FileNotFoundException ex) {
