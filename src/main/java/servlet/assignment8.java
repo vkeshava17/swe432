@@ -300,9 +300,14 @@ private void PrintResponse (PrintWriter out, String resourcePath) // response to
        int i;
        BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
        String line;
+       String last;
+
        while ((line = bufferedReader.readLine()) != null) {
          out.println(line);
-         String[] entry = line.split(VALUE_SEPARATOR);
+         last = line;
+       }
+
+         String[] entry = last.split(VALUE_SEPARATOR);
          i = 0;
          for(String value: entry){
            if (value == null || value.equals("") || value.equals("null")) {
@@ -324,7 +329,7 @@ private void PrintResponse (PrintWriter out, String resourcePath) // response to
            }
            i += 1;
          }
-       }
+      
        bufferedReader.close();
      } catch (FileNotFoundException ex) {
            ex.printStackTrace();
