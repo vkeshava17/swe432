@@ -289,8 +289,6 @@ public class assignment8 extends HttpServlet
       }
     }
 
-    File file = null;
-
     try {
       File file = new File(resourcePath);
       if(!file.exists()){
@@ -305,7 +303,6 @@ public class assignment8 extends HttpServlet
     BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
     String line = "";
     int submissionCounter = 1;
-
     out.println("Submission #" + submissionCounter + ":");
     out.println("</br>");
 
