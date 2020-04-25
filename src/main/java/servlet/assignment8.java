@@ -293,6 +293,7 @@ private void PrintResponse (PrintWriter out, String resourcePath) // response to
          out.println("  <tr>");
          out.println("   <td>No entries persisted yet.</td>");
          out.println("  </tr>");
+         out.println("  <h1 align=\"center\">CODE GOT HERE</h1>");
          return;
        }
 
