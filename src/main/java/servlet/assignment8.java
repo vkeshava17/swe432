@@ -65,7 +65,7 @@ public void doPost (HttpServletRequest request, HttpServletResponse response)
 }  // End doPost
 
 //censors inappropriate words
-private String[] processResponses(String comments) {
+private String processResponses(String comments) {
   return comments.replaceAll("(shit)|(fuck)|(damn)|(bitch)", "*");
 }
 
