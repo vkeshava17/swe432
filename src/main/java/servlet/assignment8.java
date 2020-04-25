@@ -304,7 +304,7 @@ private void PrintResponse (PrintWriter out, String resourcePath) // response to
 
        while ((line = bufferedReader.readLine()) != null) {
          out.println(line);
-         out.println("\n")
+         out.println("\n");
          last = line;
        }
 
