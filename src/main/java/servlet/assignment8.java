@@ -303,7 +303,7 @@ private void PrintResponse (PrintWriter out, String resourcePath) // response to
          String[] entry = line.split(VALUE_SEPARATOR);
          i = 0;
          for(String value: entry){
-           if (value == "" || value == null) {
+           if (value == null || value.equals("") || value.equals("null")) {
              parameters[i] = "No response";
            }
            else {
