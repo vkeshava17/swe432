@@ -48,12 +48,12 @@ public void doPost (HttpServletRequest request, HttpServletResponse response)
    String Comments = request.getParameter("Comments");
 
    String[] parameters = {Major, Year, Q1, Q2, Q3, Q4, Q5, Comments};
-   for (String s: parameters) {
-     if (s == null) {
-       s = "";
-     }
+
+   if (Comments == null) {
+       Comments = "";
    }
-   parameters = processResponses(parameters);
+
+   Comments = processResponses(Comments);
 
    PrintWriter entriesPrintWriter = new PrintWriter(new FileWriter(RESOURCE_FILE, true), true);
    entriesPrintWriter.println(Major+VALUE_SEPARATOR+Year+VALUE_SEPARATOR+Q1+VALUE_SEPARATOR+Q2+VALUE_SEPARATOR+Q3+VALUE_SEPARATOR+Q4+VALUE_SEPARATOR+Q5+VALUE_SEPARATOR+Comments);
@@ -65,14 +65,8 @@ public void doPost (HttpServletRequest request, HttpServletResponse response)
 }  // End doPost
 
 //censors inappropriate words
-private String[] processResponses(String[] responses) {
-  int i = 0;
-  for (String r: responses) {
-    // filter some bad words
-    responses[i] = (r.replaceAll("(shit)|(fuck)|(damn)|(bitch)", "*"));
-    i += 1;
-  }
-  return responses;
+private String[] processResponses(String comments) {
+  return comments.replaceAll("(shit)|(fuck)|(damn)|(bitch)", "*");
 }
 
 /** *****************************************************
@@ -288,7 +282,7 @@ private void PrintResponse (PrintWriter out, String resourcePath) // response to
    String[] parameters = new String[8];
 
    for (String s: parameters) {
-     s = "No response";
+     if (s == "" || s == null) s = "No response";
    }
 
    try {
