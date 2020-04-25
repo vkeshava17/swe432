@@ -51,7 +51,7 @@ public void doPost (HttpServletRequest request, HttpServletResponse response)
    parameters = processResponses(parameters);
 
    PrintWriter entriesPrintWriter = new PrintWriter(new FileWriter(RESOURCE_FILE, true), true);
-   entriesPrintWriter.println(Major+VALUE_SEPARATOR+Year+VALUE_SEPARATOR+Q1+VALUE_SEPARATOR+Q2+VALUE_SEPARATOR+Q3+VALUE_SEPARATOR+Q4+VALUE_SEPARATOR+Q5);
+   entriesPrintWriter.println(Major+VALUE_SEPARATOR+Year+VALUE_SEPARATOR+Q1+VALUE_SEPARATOR+Q2+VALUE_SEPARATOR+Q3+VALUE_SEPARATOR+Q4+VALUE_SEPARATOR+Q5+VALUE_SEPARATOR+Comments);
    entriesPrintWriter.close();
 
    PrintResponse(out, RESOURCE_FILE);
@@ -282,6 +282,10 @@ private void PrintResponse (PrintWriter out, String resourcePath) // response to
 
    String[] parameters = new String[8];
 
+   for (String s: parameters) {
+     s = "No response";
+   }
+
    try {
        File file = new File(resourcePath);
        if(!file.exists()){
@@ -295,7 +299,7 @@ private void PrintResponse (PrintWriter out, String resourcePath) // response to
        BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
        String line;
        while ((line = bufferedReader.readLine()) != null) {
-         String []  entry= line.split(VALUE_SEPARATOR);
+         String[] entry= line.split(VALUE_SEPARATOR);
          i = 0;
          for(String value: entry){
            parameters[i] = value;
