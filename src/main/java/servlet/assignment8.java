@@ -298,40 +298,41 @@ public class assignment8 extends HttpServlet
         out.println("  <h1 align=\"center\">CODE GOT HERE</h1>");
         return;
       }
-      catch (FileNotFoundException ex) {
+    }
+    catch (FileNotFoundException ex) {
       ex.printStackTrace();
-      } catch (IOException ex) {
+    } catch (IOException ex) {
       ex.printStackTrace();
-      }
+    }
 
-      int i = 0;
-      BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
-      String line = "";
-      int submissionCounter = 1;
+    int i = 0;
+    BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
+    String line = "";
+    int submissionCounter = 1;
 
-      out.println("Submission #%d", submissionCounter);
+    out.println("Submission #%d", submissionCounter);
 
-      while ((line = bufferedReader.readLine()) != null) {
+    while ((line = bufferedReader.readLine()) != null) {
 
-        String[] entry = line.split(VALUE_SEPARATOR);
-        for(String value: entry){
-          if (i == 7) {
-            if (commentsTF == true) {
-              parameters[i] = "No comments";
-              commentsTF = false;
-            }
-            else {
-              parameters[i] = value;
-            }
-          }
-          else if (value == null || value.equals("") || value.equals("null")) {
-            parameters[i] = "No response";
+      String[] entry = line.split(VALUE_SEPARATOR);
+      for(String value: entry){
+        if (i == 7) {
+          if (commentsTF == true) {
+            parameters[i] = "No comments";
+            commentsTF = false;
           }
           else {
             parameters[i] = value;
           }
-          i += 1;
         }
+        else if (value == null || value.equals("") || value.equals("null")) {
+          parameters[i] = "No response";
+        }
+        else {
+          parameters[i] = value;
+        }
+        i += 1;
+      }
 
 
 
