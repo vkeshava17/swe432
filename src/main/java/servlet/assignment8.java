@@ -16,10 +16,9 @@ import javax.servlet.annotation.WebServlet;
 
 public class assignment8 extends HttpServlet
 {
-
-static enum Data {MAJOR, YEAR, Q1, Q2, Q3, Q4, Q5};
 static String RESOURCE_FILE = "entries.txt";
 static final String VALUE_SEPARATOR = ";";
+boolean commentsTF = false;
 
 // Location of servlet.
 static String Domain  = "swe432vkeshava.herokuapp.com";
@@ -49,8 +48,9 @@ public void doPost (HttpServletRequest request, HttpServletResponse response)
 
    String[] parameters = {Major, Year, Q1, Q2, Q3, Q4, Q5, Comments};
 
-   if (Comments == null) {
+   if (Comments == null || Comments.equals("") || Comments.equals("null") {
        Comments = "";
+       commentsTF = true;
    }
 
    Comments = processResponses(Comments);
@@ -308,7 +308,17 @@ private void PrintResponse (PrintWriter out, String resourcePath) // response to
              parameters[i] = "No response";
            }
            else {
-             parameters[i] = value;
+             if (i == 7) {
+               if (commentsTF == true) {
+                 parameters[i] = "No comments";
+               }
+               else {
+                 parameters[i] = value;
+               }
+             }
+             else {
+               parameters[i] = value;
+             }
            }
            i += 1;
          }
