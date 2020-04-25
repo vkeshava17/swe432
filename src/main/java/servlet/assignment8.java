@@ -280,6 +280,7 @@ public class assignment8 extends HttpServlet
     out.println("     <a href=\"http://mason.gmu.edu/~vkeshava/asst8Collab\">here</a>");
     out.println("  <h1 align=\"center\">User Responses</h1>");
     out.println("  </br>");
+    out.println("	<table border=\"2\" width=\"75%\" align=\"left\" cellSpacing=\"1\" cellPadding=\"1\">");
 
     String[] parameters = new String[8];
 
@@ -290,6 +291,10 @@ public class assignment8 extends HttpServlet
     }
 
     try {
+      out.println("    <tr>");
+      out.println("      <th>Questions</th>");
+      out.println("       <th>Submitted Responses</th>");
+      out.println("    </tr>");
       File file = new File(resourcePath);
       if(!file.exists()){
         out.println("  <tr>");
@@ -303,17 +308,12 @@ public class assignment8 extends HttpServlet
     BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
     String line = "";
     int submissionCounter = 1;
-    out.println("Submission #" + submissionCounter + ":");
+    //out.println("Submission #" + submissionCounter + ":");
     out.println("</br>");
 
     while ((line = bufferedReader.readLine()) != null) {
-      out.println(line);
-      out.println("</br>");
-      out.println("  </br>");
-      out.println("  </br>");
-
       parameters = new String[8];
-      
+
       String[] entry = line.split(VALUE_SEPARATOR);
       for(String value: entry){
         if (i == 7) {
@@ -336,13 +336,7 @@ public class assignment8 extends HttpServlet
 
       out.println("  </br>");
       out.println("  </br>");
-
-      out.println("	<table border=\"2\" width=\"75%\" align=\"left\" cellSpacing=\"1\" cellPadding=\"1\">");
-
-      out.println("    <tr>");
-      out.println("      <th>Questions</th>");
-      out.println("       <th>Submitted Responses</th>");
-      out.println("    </tr>");
+      out.println("  <tr>");
 
       out.println("  <tr>");
       out.println("    <td>Major</td>");
@@ -384,10 +378,7 @@ public class assignment8 extends HttpServlet
       out.println("    <td>" + parameters[7] + "</td>");
       out.println("  </tr>");
 
-      out.println("</table>");
       submissionCounter += 1;
-      out.println("  </br>");
-      out.println("  </br>");
     }
 
     bufferedReader.close();
@@ -398,6 +389,7 @@ public class assignment8 extends HttpServlet
     ex.printStackTrace();
   }
 
+      out.println("</table>");
     out.println("</body>");
     out.println("</html>");
 
