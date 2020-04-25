@@ -48,6 +48,10 @@ public void doPost (HttpServletRequest request, HttpServletResponse response)
 
    String[] parameters = {Major, Year, Q1, Q2, Q3, Q4, Q5, Comments};
 
+
+   commentsTF = false;
+   out.println(Comments);
+   out.println("</br>")
    if (Comments == null || Comments.equals("") || Comments.equals("null")) {
        Comments = "";
        commentsTF = true;
