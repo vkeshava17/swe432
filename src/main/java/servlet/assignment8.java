@@ -312,6 +312,8 @@ public class assignment8 extends HttpServlet
       out.println("  </br>");
       out.println("  </br>");
 
+      parameters = new String[8];
+      
       String[] entry = line.split(VALUE_SEPARATOR);
       for(String value: entry){
         if (i == 7) {
