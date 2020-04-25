@@ -309,6 +309,8 @@ public class assignment8 extends HttpServlet
     while ((line = bufferedReader.readLine()) != null) {
       out.println(line);
       out.println("</br>");
+      out.println("  </br>");
+      out.println("  </br>");
 
       String[] entry = line.split(VALUE_SEPARATOR);
       for(String value: entry){
@@ -382,6 +384,8 @@ public class assignment8 extends HttpServlet
 
       out.println("</table>");
       submissionCounter += 1;
+      out.println("  </br>");
+      out.println("  </br>");
     }
 
     bufferedReader.close();
