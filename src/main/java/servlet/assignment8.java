@@ -310,8 +310,9 @@ public class assignment8 extends HttpServlet
     String line = "";
     int submissionCounter = 1;
 
-    out.println("Submission #%d", submissionCounter);
-
+    out.println("Submission #" + submissionCounter + ":");
+    out.println("</br>");
+    
     while ((line = bufferedReader.readLine()) != null) {
 
       String[] entry = line.split(VALUE_SEPARATOR);
