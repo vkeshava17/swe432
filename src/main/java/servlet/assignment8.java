@@ -280,7 +280,7 @@ public class assignment8 extends HttpServlet
     out.println("     <a href=\"http://mason.gmu.edu/~vkeshava/asst8Collab\">here</a>");
     out.println("  <h1 align=\"center\">User Responses</h1>");
     out.println("  </br>");
-    out.println("	<table border=\"2\" width=\"75%\" align=\"left\" cellSpacing=\"1\" cellPadding=\"1\">");
+    out.println("	<table>");
 
     String[] parameters = new String[8];
 
@@ -333,10 +333,6 @@ public class assignment8 extends HttpServlet
         }
         i += 1;
       }
-
-      out.println("  </br>");
-      out.println("  </br>");
-      out.println("  <tr>");
 
       out.println("  <tr>");
       out.println("    <td>Major</td>");
