@@ -51,7 +51,7 @@ public void doPost (HttpServletRequest request, HttpServletResponse response)
 
    commentsTF = false;
    out.println(Comments);
-   out.println("</br>")
+   out.println("</br>");
    if (Comments == null || Comments.equals("") || Comments.equals("null")) {
        Comments = "";
        commentsTF = true;
