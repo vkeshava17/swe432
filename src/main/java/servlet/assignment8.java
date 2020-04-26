@@ -287,6 +287,7 @@ public class assignment8 extends HttpServlet
     out.println("<p>Q3: How reasonable do you think the textbook prices were compared to other sellers?</p>");
     out.println("<p>Q4: If given the option, do you prefer digital or hard copy textbooks?</p>");
     out.println("<p>Q5: How accurate are the recommended and required textbook lists that the bookstore provides online?</p>");
+		out.println("  </br>");
 
     String[] parameters = new String[8];
 
@@ -302,7 +303,9 @@ public class assignment8 extends HttpServlet
       String line = "";
       int submissionCounter = 1;
       while ((line = bufferedReader.readLine()) != null) {
-        parameters = new String[8];
+      	out.println(line);
+				out.println("  </br>");
+				parameters = new String[8];
         String[] entry = line.split(VALUE_SEPARATOR);
         for(String value: entry){
           if (i == 7) {
