@@ -319,6 +319,8 @@ public class assignment8 extends HttpServlet
         }
         i += 1;
 
+        }
+
         out.println("<p><b><u>Submission #" + submissionCounter ":</u></b></p>");
         out.println("Major: %s", parameters[0]);
         out.println("Year: %s", parameters[1])
@@ -328,8 +330,6 @@ public class assignment8 extends HttpServlet
         out.println("Q4: If given the option, do you prefer digital or hard copy textbooks? : %s", parameters[5]);
         out.println("Q5: How accurate are the recommended and required textbook lists that the bookstore provides online?: %s", parameters[6]);
         out.println("Additional Comments: %s", parameters[7]);
-
-      }
 
       submissionCounter += 1;
     }
