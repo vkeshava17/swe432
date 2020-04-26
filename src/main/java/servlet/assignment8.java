@@ -328,7 +328,7 @@ public class assignment8 extends HttpServlet
 
         }
 
-        out.println("<p><b><u>Submission #" + submissionCounter ":</u></b></p>");
+        out.println("<p><b><u>Submission #" + submissionCounter + ":</u></b></p>");
         out.println("Major: %s", parameters[0]);
         out.println("Year:  %s", parameters[1])
         out.println("Q1 --- %s", parameters[2]);
