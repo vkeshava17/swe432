@@ -289,7 +289,7 @@ public class assignment8 extends HttpServlet
     out.println("<p>Q5: How accurate are the recommended and required textbook lists that the bookstore provides online?</p>");
 		out.println("  </br>");
 
-    String[][] allParams = new String[8][8];
+    ArrayList<String[]> allParams = new ArrayList<String[]>();
 
     try {
       File file = new File(resourcePath);
@@ -328,7 +328,7 @@ public class assignment8 extends HttpServlet
           }
           i += 1;
         }
-        allParams[index] = parameters;
+        allParams.add(parameters);
         index += 1;
       }
 
