@@ -287,6 +287,7 @@ public class assignment8 extends HttpServlet
     out.println("Q3: How reasonable do you think the textbook prices were compared to other sellers?");
     out.println("Q4: If given the option, do you prefer digital or hard copy textbooks?");
     out.println("Q5: How accurate are the recommended and required textbook lists that the bookstore provides online?");
+		out.println("</br>");
 
     String[] parameters = new String[8];
 
@@ -329,14 +330,17 @@ public class assignment8 extends HttpServlet
         }
 
         out.println("<p><b><u>Submission #" + submissionCounter + ":</u></b></p>");
-        out.println("Major: %s", parameters[0]);
-        out.println("Year:  %s", parameters[1]);
-        out.println("Q1 --- %s", parameters[2]);
-        out.println("Q2 --- %s", parameters[3]);
-        out.println("Q3 --- %s", parameters[4]);
-        out.println("Q4 --- %s", parameters[5]);
-        out.println("Q5 --- %s", parameters[6]);
-        out.println("Comments: %s", parameters[7]);
+        out.println("</br>");
+        out.println("Major: " + parameters[0]);
+        out.println("Year:  " + parameters[1]);
+        out.println("Q1: " + parameters[2]);
+        out.println("Q2: " + parameters[3]);
+        out.println("Q3: " + parameters[4]);
+        out.println("Q4: " + parameters[5]);
+        out.println("Q5: " + parameters[6]);
+        out.println("Comments: " + parameters[7]);
+        out.println("</br>");
+        out.println("</br>");
 
         submissionCounter += 1;
       }
