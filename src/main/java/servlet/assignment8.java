@@ -342,7 +342,6 @@ public class assignment8 extends HttpServlet
 
     int submissionCounter = 1;
     for (String[] parameters : allParams) {
-        out.println("</br>");
         out.println("<h3><b><u>Submission #" + submissionCounter + ":</u></b></h3>");
         out.println("<p>Major: " + parameters[0] + "</p>");
         out.println("<p>Year:  " + parameters[1] + "</p>");
