@@ -299,7 +299,7 @@ public class assignment8 extends HttpServlet
       }
 
       int i = 0;
-      int index = 0
+      int index = 0;
       BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
       String line = "";
       while ((line = bufferedReader.readLine()) != null) {
