@@ -337,7 +337,8 @@ public class assignment8 extends HttpServlet
       ex.printStackTrace();
     }
 
-    for (parameters in allParams) {
+    for (String[] listParams : allParams) {
+      for (String parameters : listParams) {
         int submissionCounter = 1;
         out.println("</br>");
         out.println("<p><b><u>Submission #" + submissionCounter + ":</u></b></p>");
@@ -351,6 +352,7 @@ public class assignment8 extends HttpServlet
         out.println("<p>Comments: " + parameters[7] + "</p>");
         out.println("</br>");
         submissionCounter += 1;
+      }
     }
 
     out.println("</body>");
