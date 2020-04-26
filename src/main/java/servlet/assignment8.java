@@ -303,8 +303,6 @@ public class assignment8 extends HttpServlet
       BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
       String line = "";
       while ((line = bufferedReader.readLine()) != null) {
-      	out.println(line);
-				out.println("  </br>");
 				String[] parameters = new String[8];
         String[] entry = line.split(VALUE_SEPARATOR);
         i = 0;

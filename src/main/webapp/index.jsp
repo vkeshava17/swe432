@@ -12,6 +12,7 @@
     var servletURL5 = window.location.origin + "/file";
     var servletURL6 = window.location.origin + "/sessionLifeCycle";
     var servletURL7 = window.location.origin + "/attributeServlet";
+    var servletURL8 = window.location.origin + "/asst8";
   </script>
 <title>SWE JSPs</title>
 </head>
@@ -41,12 +42,20 @@ Try the attributeServlet Servlet:
 <button onclick="window.location.assign(servletURL7);"> Click me! </button>
 </br>
 </br>
-Try Assignment 6  - GMU Bookstore Survey:
+Try Assignment 5 - GMU Bookstore Survey - Plain HTML:
+<button onclick="window.location.href = 'http://mason.gmu.edu/~vkeshava/assignment5';"> Click me! </button>
+</br>
+</br>
+Try Assignment 6 - GMU Bookstore Survey - DoGet & DoPost:
 <button onclick="window.location.assign(servletURL3);"> Click me! </button>
 </br>
 </br>
-Try Assignment 7 (ReactJS app) - GMU Bookstore Survey:
+Try Assignment 7 - GMU Bookstore Survey - ReactJS app:
 <button onclick="window.location.href = 'https://swe-432-react.herokuapp.com/asst7';"> Click me! </button>
+</br>
+</br>
+Try Assignment 8 - GMU Bookstore Survey - Persisting Data:
+<button onclick="window.location.assign(servletURL8);"> Click me! </button>
 </br>
 </br>
 </body>
