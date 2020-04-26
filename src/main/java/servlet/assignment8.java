@@ -320,14 +320,14 @@ public class assignment8 extends HttpServlet
         i += 1;
 
         out.println("<p><b><u>Submission #" + submissionCounter ":</u></b></p>");
-        out.println("Major: %s", parameters[0])
+        out.println("Major: %s", parameters[0]);
         out.println("Year: %s", parameters[1])
-        out.println("Q1: How easy was it for you to find your textbooks in the store?: %s", parameters[2])
-        out.println("Q2: How many times were the textbooks you needed (digital or hard copy) out of stock?: %s", parameters[3])
-        out.println("Q3: How reasonable do you think the textbook prices were compared to other sellers?: %s", parameters[4])
-        out.println("Q4: If given the option, do you prefer digital or hard copy textbooks? : %s", parameters[5])
-        out.println("Q5: How accurate are the recommended and required textbook lists that the bookstore provides online?: %s", parameters[6])
-        out.println("Additional Comments: %s", parameters[7])
+        out.println("Q1: How easy was it for you to find your textbooks in the store?: %s", parameters[2]);
+        out.println("Q2: How many times were the textbooks you needed (digital or hard copy) out of stock?: %s", parameters[3]);
+        out.println("Q3: How reasonable do you think the textbook prices were compared to other sellers?: %s", parameters[4]);
+        out.println("Q4: If given the option, do you prefer digital or hard copy textbooks? : %s", parameters[5]);
+        out.println("Q5: How accurate are the recommended and required textbook lists that the bookstore provides online?: %s", parameters[6]);
+        out.println("Additional Comments: %s", parameters[7]);
 
       }
 
