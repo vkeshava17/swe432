@@ -13,7 +13,7 @@
     var servletURL6 = window.location.origin + "/sessionLifeCycle";
     var servletURL7 = window.location.origin + "/attributeServlet";
     var servletURL8 = window.location.origin + "/asst8";
-    var servletURL8 = window.location.origin + "/asst8part2";
+    var servletURL9 = window.location.origin + "/asst8part2";
   </script>
 <title>SWE JSPs</title>
 </head>
