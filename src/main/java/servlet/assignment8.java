@@ -334,7 +334,7 @@ public class assignment8 extends HttpServlet
         out.println("<p>Major: " + parameters[0] + "</p>");
         out.println("<p>Year:  " + parameters[1] + "</p>");
         out.println("<p>Q1: " + parameters[2] + "</p>");
-        out.println("Q2: " + parameters[3]);
+        out.println("<p>Q2: " + parameters[3] + "</p>");
         out.println("Q3: " + parameters[4]);
         out.println("Q4: " + parameters[5]);
         out.println("Q5: " + parameters[6]);
