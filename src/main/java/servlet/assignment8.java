@@ -282,12 +282,11 @@ public class assignment8 extends HttpServlet
     out.println("  </br>");
 
     out.println("<h1 align=\"left\">Questions Key</h1>");
-    out.println("Q1: How easy was it for you to find your textbooks in the store?");
-    out.println("Q2: How many times were the textbooks you needed (digital or hard copy) out of stock?");
-    out.println("Q3: How reasonable do you think the textbook prices were compared to other sellers?");
-    out.println("Q4: If given the option, do you prefer digital or hard copy textbooks?");
-    out.println("Q5: How accurate are the recommended and required textbook lists that the bookstore provides online?");
-		out.println("</br>");
+    out.println("<p>Q1: How easy was it for you to find your textbooks in the store?</p>");
+    out.println("<p>Q2: How many times were the textbooks you needed (digital or hard copy) out of stock?</p>");
+    out.println("<p>Q3: How reasonable do you think the textbook prices were compared to other sellers?</p>");
+    out.println("<p>Q4: If given the option, do you prefer digital or hard copy textbooks?</p>");
+    out.println("<p>Q5: How accurate are the recommended and required textbook lists that the bookstore provides online?</p>");
 
     String[] parameters = new String[8];
 
@@ -335,13 +334,11 @@ public class assignment8 extends HttpServlet
         out.println("<p>Year:  " + parameters[1] + "</p>");
         out.println("<p>Q1: " + parameters[2] + "</p>");
         out.println("<p>Q2: " + parameters[3] + "</p>");
-        out.println("Q3: " + parameters[4]);
-        out.println("Q4: " + parameters[5]);
-        out.println("Q5: " + parameters[6]);
-        out.println("Comments: " + parameters[7]);
+        out.println("<p>Q3: " + parameters[4] + "</p>");
+        out.println("<p>Q4: " + parameters[5] + "</p>");
+        out.println("<p>Q5: " + parameters[6] + "</p>");
+        out.println("<p>Comments: " + parameters[7] + "</p>");
         out.println("</br>");
-        out.println("</br>");
-
         submissionCounter += 1;
       }
 
