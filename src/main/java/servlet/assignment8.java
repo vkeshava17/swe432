@@ -340,10 +340,10 @@ public class assignment8 extends HttpServlet
       ex.printStackTrace();
     }
 
+    int submissionCounter = 1;
     for (String[] parameters : allParams) {
-        int submissionCounter = 1;
         out.println("</br>");
-        out.println("<p><b><u>Submission #" + submissionCounter + ":</u></b></p>");
+        out.println("<h3><b><u>Submission #" + submissionCounter + ":</u></b></h3>");
         out.println("<p>Major: " + parameters[0] + "</p>");
         out.println("<p>Year:  " + parameters[1] + "</p>");
         out.println("<p>Q1: " + parameters[2] + "</p>");
