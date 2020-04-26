@@ -281,7 +281,7 @@ public class assignment8 extends HttpServlet
     out.println("  <h1 align=\"center\">All User Responses</h1>");
     out.println("  </br>");
 
-    out.println("<h1 align=\"left\">Questions Key</h1>");
+    out.println("<h2 align=\"left\">Questions Key</h2>");
     out.println("<p>Q1: How easy was it for you to find your textbooks in the store?</p>");
     out.println("<p>Q2: How many times were the textbooks you needed (digital or hard copy) out of stock?</p>");
     out.println("<p>Q3: How reasonable do you think the textbook prices were compared to other sellers?</p>");
@@ -328,8 +328,8 @@ public class assignment8 extends HttpServlet
 
         }
 
-        out.println("<p><b><u>Submission #" + submissionCounter + ":</u></b></p>");
         out.println("</br>");
+        out.println("<p><b><u>Submission #" + submissionCounter + ":</u></b></p>");
         out.println("<p>Major: " + parameters[0] + "</p>");
         out.println("<p>Year:  " + parameters[1] + "</p>");
         out.println("<p>Q1: " + parameters[2] + "</p>");
