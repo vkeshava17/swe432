@@ -281,6 +281,13 @@ public class assignment8 extends HttpServlet
     out.println("  <h1 align=\"center\">All User Responses</h1>");
     out.println("  </br>");
 
+    out.println("<h1 align=\"left\">Questions Key</h1>");
+    out.println("Q1: How easy was it for you to find your textbooks in the store?");
+    out.println("Q2: How many times were the textbooks you needed (digital or hard copy) out of stock?");
+    out.println("Q3: How reasonable do you think the textbook prices were compared to other sellers?");
+    out.println("Q4: If given the option, do you prefer digital or hard copy textbooks?");
+    out.println("Q5: How accurate are the recommended and required textbook lists that the bookstore provides online?");
+
     String[] parameters = new String[8];
 
     try {
@@ -290,34 +297,34 @@ public class assignment8 extends HttpServlet
         return;
       }
 
-    int i = 0;
-    BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
-    String line = "";
-    int submissionCounter = 1;
-    while ((line = bufferedReader.readLine()) != null) {
-      parameters = new String[8];
-      String[] entry = line.split(VALUE_SEPARATOR);
-      for(String value: entry){
-        if (i == 7) {
-          if (commentsTF == true) {
-            parameters[i] = "No comments";
-            commentsTF = false;
+      int i = 0;
+      BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
+      String line = "";
+      int submissionCounter = 1;
+      while ((line = bufferedReader.readLine()) != null) {
+        parameters = new String[8];
+        String[] entry = line.split(VALUE_SEPARATOR);
+        for(String value: entry){
+          if (i == 7) {
+            if (commentsTF == true) {
+              parameters[i] = "No comments";
+              commentsTF = false;
+            }
+            else {
+              value = processResponses(value);
+              parameters[i] = value;
+
+
+            }
+          }
+          else if (value == null || value.equals("") || value.equals("null")) {
+            parameters[i] = "No response";
           }
           else {
             value = processResponses(value);
             parameters[i] = value;
-
-
           }
-        }
-        else if (value == null || value.equals("") || value.equals("null")) {
-          parameters[i] = "No response";
-        }
-        else {
-          value = processResponses(value);
-          parameters[i] = value;
-        }
-        i += 1;
+          i += 1;
 
         }
 
@@ -331,16 +338,16 @@ public class assignment8 extends HttpServlet
         out.println("Q5: How accurate are the recommended and required textbook lists that the bookstore provides online?: %s", parameters[6]);
         out.println("Additional Comments: %s", parameters[7]);
 
-      submissionCounter += 1;
-    }
+        submissionCounter += 1;
+      }
 
-    bufferedReader.close();
-  }
-  catch (FileNotFoundException ex) {
-    ex.printStackTrace();
-  } catch (IOException ex) {
-    ex.printStackTrace();
-  }
+      bufferedReader.close();
+    }
+    catch (FileNotFoundException ex) {
+      ex.printStackTrace();
+    } catch (IOException ex) {
+      ex.printStackTrace();
+    }
 
     out.println("</body>");
     out.println("</html>");
