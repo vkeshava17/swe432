@@ -299,6 +299,7 @@ public class assignment8 extends HttpServlet
       }
 
       int i = 0;
+      int index = 0
       BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
       String line = "";
       while ((line = bufferedReader.readLine()) != null) {
@@ -306,6 +307,7 @@ public class assignment8 extends HttpServlet
 				out.println("  </br>");
 				String[] parameters = new String[8];
         String[] entry = line.split(VALUE_SEPARATOR);
+        i = 0;
         for(String value: entry){
           if (i == 7) {
             if (commentsTF == true) {
@@ -326,7 +328,8 @@ public class assignment8 extends HttpServlet
           }
           i += 1;
         }
-        allParams.append(parameters);
+        allParams[index] = parameters;
+        index += 1;
       }
 
       bufferedReader.close();
