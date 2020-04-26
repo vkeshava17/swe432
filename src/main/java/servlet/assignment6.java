@@ -318,4 +318,4 @@ private void PrintResponse (PrintWriter out, String[] parameters) // response to
 
 }
 
-}  // End twoButtons
+}  // End assignment6

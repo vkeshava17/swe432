@@ -1,5 +1,5 @@
 /** *****************************************************************
-assignment6.java
+assignment8.java
 ********************************************************************* */
 
 // Import Java Libraries
@@ -67,8 +67,8 @@ public class assignment8 extends HttpServlet
   }  // End doPost
 
   //censors inappropriate words
-  private String processResponses(String comments) {
-    return comments.replaceAll("(shit)|(fuck)|(damn)|(bitch)", "*");
+  private String processResponses(String text) {
+    return text.replaceAll("(shit)|(fuck)|(damn)|(bitch)", "*");
   }
 
   /** *****************************************************
@@ -278,29 +278,15 @@ public class assignment8 extends HttpServlet
     out.println("     </br>");
     out.println("     For our collaboration summary, click");
     out.println("     <a href=\"http://mason.gmu.edu/~vkeshava/asst8Collab\">here</a>");
-    out.println("  <h1 align=\"center\">User Responses</h1>");
+    out.println("  <h1 align=\"center\">All User Responses</h1>");
     out.println("  </br>");
-    out.println("	<table>");
 
     String[] parameters = new String[8];
 
-    for (String s: parameters) {
-      if (s == "" || s == null) {
-        s = "No response";
-      }
-    }
-
     try {
-      out.println("    <tr>");
-      out.println("      <th>Questions</th>");
-      out.println("       <th>Submitted Responses</th>");
-      out.println("    </tr>");
       File file = new File(resourcePath);
       if(!file.exists()){
-        out.println("  <tr>");
-        out.println("   <td>No entries persisted yet.</td>");
-        out.println("  </tr>");
-        out.println("  <h1 align=\"center\">CODE GOT HERE</h1>");
+        out.println("No entries persisted yet");
         return;
       }
 
@@ -308,11 +294,8 @@ public class assignment8 extends HttpServlet
     BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
     String line = "";
     int submissionCounter = 1;
-    //out.println("Submission #" + submissionCounter + ":");
-
     while ((line = bufferedReader.readLine()) != null) {
       parameters = new String[8];
-
       String[] entry = line.split(VALUE_SEPARATOR);
       for(String value: entry){
         if (i == 7) {
@@ -321,57 +304,32 @@ public class assignment8 extends HttpServlet
             commentsTF = false;
           }
           else {
+            value = processResponses(value);
             parameters[i] = value;
+
+
           }
         }
         else if (value == null || value.equals("") || value.equals("null")) {
           parameters[i] = "No response";
         }
         else {
+          value = processResponses(value);
           parameters[i] = value;
         }
         i += 1;
+
+        out.println("<p><b><u>Submission #" + submissionCounter ":</u></b></p>");
+        out.println("Major: %s", parameters[0])
+        out.println("Year: %s", parameters[1])
+        out.println("Q1: How easy was it for you to find your textbooks in the store?: %s", parameters[2])
+        out.println("Q2: How many times were the textbooks you needed (digital or hard copy) out of stock?: %s", parameters[3])
+        out.println("Q3: How reasonable do you think the textbook prices were compared to other sellers?: %s", parameters[4])
+        out.println("Q4: If given the option, do you prefer digital or hard copy textbooks? : %s", parameters[5])
+        out.println("Q5: How accurate are the recommended and required textbook lists that the bookstore provides online?: %s", parameters[6])
+        out.println("Additional Comments: %s", parameters[7])
+
       }
-
-      out.println("  <tr>");
-      out.println("    <td>Major</td>");
-      out.println("    <td>" + parameters[0] + "</td>");
-      out.println("  </tr>");
-
-      out.println("  <tr>");
-      out.println("    <td>Year</td>");
-      out.println("    <td>" + parameters[1] + "</td>");
-      out.println("  </tr>");
-
-      out.println("  <tr>");
-      out.println("    <td>Q1: How easy was it for you to find your textbooks in the store?</td>");
-      out.println("    <td>" + parameters[2] + "</td>");
-      out.println("  </tr>");
-
-      out.println("  <tr>");
-      out.println("    <td>Q2: How many times were the textbooks you needed (digital or hard copy) out of stock?</td>");
-      out.println("    <td>" + parameters[3] + "</td>");
-      out.println("  </tr>");
-
-      out.println("  <tr>");
-      out.println("    <td>Q3: How reasonable do you think the textbook prices were compared to other sellers?</td>");
-      out.println("    <td>" + parameters[4] + "</td>");
-      out.println("  </tr>");
-
-      out.println("  <tr>");
-      out.println("    <td>Q4: If given the option, do you prefer digital or hard copy textbooks? </td>");
-      out.println("    <td>" + parameters[5] + "</td>");
-      out.println("  </tr>");
-
-      out.println("  <tr>");
-      out.println("    <td>Q5: How accurate are the recommended and required textbook lists that the bookstore provides online? </td>");
-      out.println("    <td>" + parameters[6] + "</td>");
-      out.println("  </tr>");
-
-      out.println("  <tr>");
-      out.println("    <td>Additional Comments</td>");
-      out.println("    <td>" + parameters[7] + "</td>");
-      out.println("  </tr>");
 
       submissionCounter += 1;
     }
@@ -384,10 +342,9 @@ public class assignment8 extends HttpServlet
     ex.printStackTrace();
   }
 
-      out.println("</table>");
     out.println("</body>");
     out.println("</html>");
 
   }
 
-}  // End twoButtons
+}  // End assignment 8
