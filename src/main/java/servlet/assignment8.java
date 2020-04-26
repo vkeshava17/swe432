@@ -287,7 +287,7 @@ public class assignment8 extends HttpServlet
     out.println("<p>Q3: How reasonable do you think the textbook prices were compared to other sellers?</p>");
     out.println("<p>Q4: If given the option, do you prefer digital or hard copy textbooks?</p>");
     out.println("<p>Q5: How accurate are the recommended and required textbook lists that the bookstore provides online?</p>");
-		out.println("  </br>");
+    out.println("  </br>");
 
     ArrayList<String[]> allParams = new ArrayList<String[]>();
 
@@ -303,7 +303,7 @@ public class assignment8 extends HttpServlet
       BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
       String line = "";
       while ((line = bufferedReader.readLine()) != null) {
-				String[] parameters = new String[8];
+        String[] parameters = new String[8];
         String[] entry = line.split(VALUE_SEPARATOR);
         i = 0;
         for(String value: entry){
@@ -340,18 +340,22 @@ public class assignment8 extends HttpServlet
 
     int submissionCounter = 1;
     for (String[] parameters : allParams) {
-        out.println("<h3><b><u>Submission #" + submissionCounter + ":</u></b></h3>");
-        out.println("<p>Major: " + parameters[0] + "</p>");
-        out.println("<p>Year:  " + parameters[1] + "</p>");
-        out.println("<p>Q1: " + parameters[2] + "</p>");
-        out.println("<p>Q2: " + parameters[3] + "</p>");
-        out.println("<p>Q3: " + parameters[4] + "</p>");
-        out.println("<p>Q4: " + parameters[5] + "</p>");
-        out.println("<p>Q5: " + parameters[6] + "</p>");
-        out.println("<p>Comments: " + parameters[7] + "</p>");
-        out.println("</br>");
-        submissionCounter += 1;
+      out.println("<h3><b><u>Submission #" + submissionCounter + ":</u></b></h3>");
+      out.println("<p>Major: " + parameters[0] + "</p>");
+      out.println("<p>Year:  " + parameters[1] + "</p>");
+      out.println("<p>Q1: " + parameters[2] + "</p>");
+      out.println("<p>Q2: " + parameters[3] + "</p>");
+      out.println("<p>Q3: " + parameters[4] + "</p>");
+      out.println("<p>Q4: " + parameters[5] + "</p>");
+      out.println("<p>Q5: " + parameters[6] + "</p>");
+      out.println("<p>Comments: " + parameters[7] + "</p>");
+      out.println("</br>");
+      submissionCounter += 1;
     }
+    
+    int mostQ1 = 5;
+    String lifeCycleURL = "swe432vkeshava.herokuapp.com/asst8part2";
+    out.println("<a href=\"" + lifeCycleURL + "?commonQ1=mostQ1\">");
 
     out.println("</body>");
     out.println("</html>");

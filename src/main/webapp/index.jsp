@@ -13,6 +13,7 @@
     var servletURL6 = window.location.origin + "/sessionLifeCycle";
     var servletURL7 = window.location.origin + "/attributeServlet";
     var servletURL8 = window.location.origin + "/asst8";
+    var servletURL8 = window.location.origin + "/asst8part2";
   </script>
 <title>SWE JSPs</title>
 </head>
@@ -56,6 +57,10 @@ Try Assignment 7 - GMU Bookstore Survey - ReactJS app:
 </br>
 Try Assignment 8 - GMU Bookstore Survey - Persisting Data:
 <button onclick="window.location.assign(servletURL8);"> Click me! </button>
+</br>
+</br>
+Try Assignment 8 Part 2 - GMU Bookstore Survey Results Summary:
+<button onclick="window.location.assign(servletURL9);"> Click me! </button>
 </br>
 </br>
 </body>
