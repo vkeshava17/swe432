@@ -263,7 +263,7 @@ public class assignment8 extends HttpServlet
   {
     out.println("<html>");
     out.println("  <head>");
-    out.println("  <title>Responses</title>");
+    out.println("  <title>GMU Bookstore Survey</title>");
     out.println("  <style> ");
     out.println("    body {background-color:#E1F3DB}");
     out.println("  </style>");
