@@ -47,15 +47,14 @@ public class assignment8part2 extends HttpServlet
 private void PrintMain (PrintWriter out, String Q1, String Q2, String Q3, String Q4, String Q5, String allLines) // main index.html
 {
 
-			lines = allLines.split(';');
-
+			String[] lines = allLines.split(";");
       ArrayList<String[]> allParams = new ArrayList<String[]>();
-      String[] parameters = new String[8];
+      String[] params = new String[8];
       int currLine = 0;
       for (int i = 0; i < lines.length; i++) {
-      	parameters[currLine] = lines[i];
+      	params[currLine] = lines[i];
       	if (i % 7 == 0) {
-        	allParams.add(parameters);
+        	allParams.add(params);
         	currLine += 1;
         }
       }
@@ -83,7 +82,7 @@ private void PrintMain (PrintWriter out, String Q1, String Q2, String Q3, String
    		out.println("<th style=\"background-color:springgreen\" align=\"center\"><b>Additional Comments</b></td>");
   		out.println("</tr>");
 
-			int submissionCounter += 0;
+			int submissionCounter = 0;
 			for (String[] parameters : allParams) {
       	out.println("<tr>");
       	out.println("<td>" + submissionCounter + "</td>");
