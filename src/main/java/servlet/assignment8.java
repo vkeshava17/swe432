@@ -433,7 +433,7 @@ public class assignment8 extends HttpServlet
     out.println("  <h1 align=\"center\">All User Responses</h1>");
 
     String lifeCycleURL = "asst8part2";
-    out.println("<h2>*Second Servlet with Aggregate Summary of all Reviews:");
+    out.println("<h2>Second Servlet with Aggregate Summary of all Reviews:");
     out.println("<a href=\"" + lifeCycleURL + "?commonQ1=" + Q1Values[Q1index] + "&commonQ2=" + Q2Values[Q2index] +  "&commonQ3=" + Q3Values[Q3index] + "&commonQ4=" + Q4Values[Q4index] + "&commonQ5=" + Q5Values[Q5index] + "&allSubmissions=" + allLines + "\">");
     out.println("Click here!</a></h2>");
 
