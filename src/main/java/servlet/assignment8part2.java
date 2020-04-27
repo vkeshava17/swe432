@@ -116,14 +116,14 @@ public class assignment8part2 extends HttpServlet
     }
 
     out.println("<tr>");
+    out.println("<td style=\"background-color:#E1F3DB; border-left-color:#E1F3DB; border-bottom-color:#E1F3DB; border-right-color:#E1F3DB;\"></td>");
     out.println("<td style=\"background-color:#E1F3DB; border-left-color:#E1F3DB; border-bottom-color:#E1F3DB;\"></td>");
-    out.println("<td style=\"background-color:#E1F3DB; border-left-color:#E1F3DB; border-bottom-color:#E1F3DB;\"></td>");
-    out.println("<td style=\"background-color:lightgoldenrodyellow\">Most Common Responses</td>");
-    out.println("<td style=\"background-color:lightgoldenrodyellow\">" + Q1 + "</td>");
-    out.println("<td style=\"background-color:lightgoldenrodyellow\">" + Q2 + "</td>");
-    out.println("<td style=\"background-color:lightgoldenrodyellow\">" + Q3 + "</td>");
-    out.println("<td style=\"background-color:lightgoldenrodyellow\">" + Q4 + "</td>");
-    out.println("<td style=\"background-color:lightgoldenrodyellow\">" + Q5 + "</td>");
+    out.println("<td style=\"background-color:lightgoldenrodyellow\"><b>Most Common Responses</b></td>");
+    out.println("<td style=\"background-color:lightgoldenrodyellow\"><b>" + Q1 + "</b></td>");
+    out.println("<td style=\"background-color:lightgoldenrodyellow\"><b>" + Q2 + "</b></td>");
+    out.println("<td style=\"background-color:lightgoldenrodyellow\"><b>" + Q3 + "</b></td>");
+    out.println("<td style=\"background-color:lightgoldenrodyellow\"><b>" + Q4 + "</b></td>");
+    out.println("<td style=\"background-color:lightgoldenrodyellow\"><b>" + Q5 + "</b></td>");
     out.println("<td style=\"background-color:#E1F3DB; border-color:#E1F3DB;\"></td>");
 
     out.println("</tr>");
