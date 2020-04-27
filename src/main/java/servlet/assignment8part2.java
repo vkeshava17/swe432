@@ -36,98 +36,118 @@ public class assignment8part2 extends HttpServlet
     String Q4 = request.getParameter("commonQ4");
     String Q5 = request.getParameter("commonQ5");
     String allSubmissions = request.getParameter("allSubmissions");
+    allSubmissions = processResponses(allSubmissions);
 
     response.setContentType("text/html");
     PrintWriter out = response.getWriter();
-		PrintMain(out, Q1, Q2, Q3, Q4, Q5, allSubmissions);
+    PrintMain(out, Q1, Q2, Q3, Q4, Q5, allSubmissions);
     out.close();
 
   } // End doGet
 
-private void PrintMain (PrintWriter out, String Q1, String Q2, String Q3, String Q4, String Q5, String allLines) // main index.html
-{
+  //censors inappropriate words
+  private String processResponses(String text) {
+    return text.replaceAll("(shit)|(fuck)|(damn)|(bitch)", "*");
+  }
 
-			String[] lines = allLines.split(";");
-      ArrayList<String[]> allParams = new ArrayList<String[]>();
-      String[] params = new String[8];
-      int current = 0;
-      for (int i = 0; i < lines.length; i++) {
-        if (lines[i] == null || lines[i].equals("") || lines[i].equals("null")) {
-          params[current] = "No response";
-        }
-      	else {
-          params[current] = lines[i];
-        }
-      	if (i % 7 == 0) {
-          current = 0;
-        	allParams.add(params);
-        }
-        current += 1;
+  private void PrintMain (PrintWriter out, String Q1, String Q2, String Q3, String Q4, String Q5, String allLines) // main index.html
+  {
+
+    String[] lines = allLines.split(";");
+    ArrayList<String[]> allParams = new ArrayList<String[]>();
+    String[] params = new String[8];
+    int current = 0;
+    for (int i = 0; i < lines.length; i++) {
+      if (lines[i] == null || lines[i].equals("") || lines[i].equals("null")) {
+        params[current] = "No response";
       }
+      else {
+        params[current] = lines[i];
+      }
+      if (i % 7 == 0) {
+        current = 0;
+        allParams.add(params);
+      }
+      current += 1;
+    }
 
-	    out.println("<html>");
-      out.println("<head>");
-      out.println(" <title>Aggregate Summary of all Reviews</title>");
-      out.println("		<style> ");
-   		out.println("			body {background-color:#E1F3DB}");
-   		out.println("		</style>");
-      out.println("  <h1 align=\"center\">Aggregate Summary of all Reviews</h1>");
-      out.println("</head>");
-      out.println("");
-      out.println("<body>");
+    out.println("<html>");
+    out.println("<head>");
+    out.println(" <title>Aggregate Summary of all Reviews</title>");
+    out.println("		<style> ");
+    out.println("			body {background-color:#E1F3DB}");
+    out.println("		</style>");
+    out.println("  <h1 align=\"center\">Aggregate Summary of all Reviews</h1>");
+    out.println("</head>");
+    out.println("");
+    out.println("<body>");
 
-			out.println("<table align=\"center\">");
-  		out.println("<tr>");
-   		out.println("<th style=\"background-color:springgreen\" align=\"center\"><b>Submission #</b></td>");
-   		out.println("<th style=\"background-color:springgreen\" align=\"center\"><b>Major</b></td>");
-  		out.println("<th style=\"background-color:springgreen\" align=\"center\"><b>Year</b></td>");
-   		out.println("<th style=\"background-color:springgreen\" align=\"center\"><b>Q1</b></td>");
-   		out.println("<th style=\"background-color:springgreen\" align=\"center\"><b>Q2</b></td>");
-   		out.println("<th style=\"background-color:springgreen\" align=\"center\"><b>Q3</b></td>");
-   		out.println("<th style=\"background-color:springgreen\" align=\"center\"><b>Q4</b></td>");
-      out.println("<th style=\"background-color:springgreen\" align=\"center\"><b>Q5</b></td>");
-   		out.println("<th style=\"background-color:springgreen\" align=\"center\"><b>Additional Comments</b></td>");
-  		out.println("</tr>");
+    out.println("<table align=\"center\">");
+    out.println("<tr>");
+    out.println("<th style=\"background-color:springgreen\" align=\"center\"><b>Submission #</b></td>");
+    out.println("<th style=\"background-color:springgreen\" align=\"center\"><b>Major</b></td>");
+    out.println("<th style=\"background-color:springgreen\" align=\"center\"><b>Year</b></td>");
+    out.println("<th style=\"background-color:springgreen\" align=\"center\"><b>Q1</b></td>");
+    out.println("<th style=\"background-color:springgreen\" align=\"center\"><b>Q2</b></td>");
+    out.println("<th style=\"background-color:springgreen\" align=\"center\"><b>Q3</b></td>");
+    out.println("<th style=\"background-color:springgreen\" align=\"center\"><b>Q4</b></td>");
+    out.println("<th style=\"background-color:springgreen\" align=\"center\"><b>Q5</b></td>");
+    out.println("<th style=\"background-color:springgreen\" align=\"center\"><b>Additional Comments</b></td>");
+    out.println("</tr>");
 
-			int submissionCounter = 0;
-			for (String[] parameters : allParams) {
-      	out.println("<tr>");
-      	out.println("<td>" + submissionCounter + "</td>");
-      	out.println("<td>" + parameters[0] + "</td>");
-      	out.println("<td>" + parameters[1] + "</td>");
-      	out.println("<td>" + parameters[2] + "</td>");
-      	out.println("<td>" + parameters[3] + "</td>");
-      	out.println("<td>" + parameters[4] + "</td>");
-      	out.println("<td>" + parameters[5] + "</td>");
-      	out.println("<td>" + parameters[6] + "</td>");
-      	out.println("<td>" + parameters[7] + "</td>");
-        out.println("</tr>");
-        submissionCounter += 1;
-    	}
+    int submissionCounter = 0;
+    for (String[] parameters : allParams) {
+      out.println("<tr>");
+      out.println("<td>" + submissionCounter + "</td>");
+      out.println("<td>" + parameters[0] + "</td>");
+      out.println("<td>" + parameters[1] + "</td>");
+      out.println("<td>" + parameters[2] + "</td>");
+      out.println("<td>" + parameters[3] + "</td>");
+      out.println("<td>" + parameters[4] + "</td>");
+      out.println("<td>" + parameters[5] + "</td>");
+      out.println("<td>" + parameters[6] + "</td>");
+      out.println("<td>" + parameters[7] + "</td>");
+      out.println("</tr>");
+      submissionCounter += 1;
+    }
 
-			out.println("<tr>");
-			out.println("<td style=\"background-color:#E1F3DB; border-left-color:#E1F3DB; border-bottom-color:#E1F3DB;\"></td>");
-      out.println("<td style=\"background-color:#E1F3DB; border-left-color:#E1F3DB; border-bottom-color:#E1F3DB;\"></td>");
-			out.println("<td style=\"background-color:gold\">Most Common Responses</td>");
-			out.println("<td style=\"background-color:gold\">" + Q1 + "</td>");
-			out.println("<td style=\"background-color:gold\">" + Q2 + "</td>");
-			out.println("<td style=\"background-color:gold\">" + Q3 + "</td>");
-			out.println("<td style=\"background-color:gold\">" + Q4 + "</td>");
-			out.println("<td style=\"background-color:gold\">" + Q5 + "</td>");
-			out.println("<td style=\"background-color:#E1F3DB; border-color:#E1F3DB;\"></td>");
+    out.println("<tr>");
+    out.println("<td style=\"background-color:#E1F3DB; border-left-color:#E1F3DB; border-bottom-color:#E1F3DB;\"></td>");
+    out.println("<td style=\"background-color:#E1F3DB; border-left-color:#E1F3DB; border-bottom-color:#E1F3DB;\"></td>");
+    out.println("<td style=\"background-color:gold\">Most Common Responses</td>");
+    out.println("<td style=\"background-color:gold\">" + Q1 + "</td>");
+    out.println("<td style=\"background-color:gold\">" + Q2 + "</td>");
+    out.println("<td style=\"background-color:gold\">" + Q3 + "</td>");
+    out.println("<td style=\"background-color:gold\">" + Q4 + "</td>");
+    out.println("<td style=\"background-color:gold\">" + Q5 + "</td>");
+    out.println("<td style=\"background-color:#E1F3DB; border-color:#E1F3DB;\"></td>");
 
-			out.println("</tr>");
-      out.println("</table>");
+    out.println("</tr>");
+    out.println("</table>");
 
-      out.println("<p>" + Q1 + "</p>");
-      out.println("<p>" + Q2 + "</p>");
-      out.println("<p>" + Q3 + "</p>");
-      out.println("<p>" + Q4 + "</p>");
-      out.println("<p>" + Q5 + "</p>");
-      out.println("<p>" + allLines + "</p>");
+    out.println("<p>" + Q1 + "</p>");
+    out.println("<p>" + Q2 + "</p>");
+    out.println("<p>" + Q3 + "</p>");
+    out.println("<p>" + Q4 + "</p>");
+    out.println("<p>" + Q5 + "</p>");
+    out.println("<p>" + allLines + "</p>");
 
-      out.println("</body>");
-      out.println("</html>");
-}
+    for (String[] parameters : allParams) {
+      out.println("<h3><b><u>Submission #" + submissionCounter + ":</u></b></h3>");
+      out.println("<p>Major: " + parameters[0] + "</p>");
+      out.println("<p>Year:  " + parameters[1] + "</p>");
+      out.println("<p>Q1: " + parameters[2] + "</p>");
+      out.println("<p>Q2: " + parameters[3] + "</p>");
+      out.println("<p>Q3: " + parameters[4] + "</p>");
+      out.println("<p>Q4: " + parameters[5] + "</p>");
+      out.println("<p>Q5: " + parameters[6] + "</p>");
+      out.println("<p>Comments: " + parameters[7] + "</p>");
+      out.println("</br>");
+      submissionCounter += 1;
+    }
+
+    out.println("</body>");
+    out.println("</html>");
+  }
 
 }  // End assignment 8 part 2
