@@ -50,14 +50,20 @@ private void PrintMain (PrintWriter out, String Q1, String Q2, String Q3, String
 			String[] lines = allLines.split(";");
       ArrayList<String[]> allParams = new ArrayList<String[]>();
       String[] params = new String[8];
-      int currLine = 0;
+      int current = 0;
       for (int i = 0; i < lines.length; i++) {
-      	params[currLine] = lines[i];
+        if (lines[i] == null || lines[i].equals("") || lines[i].equals("null")) {
+          params[current] = "No response";
+        }
+      	else {
+          params[current] = lines[i];
+        }
       	if (i % 7 == 0) {
         	allParams.add(params);
-        	currLine += 1;
         }
+        current += 1;
       }
+
 	    out.println("<html>");
       out.println("<head>");
       out.println(" <title>Aggregate Summary of all Reviews</title>");
