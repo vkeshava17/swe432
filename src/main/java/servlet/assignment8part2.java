@@ -88,15 +88,15 @@ public class assignment8part2 extends HttpServlet
 
     out.println("<table align=\"center\">");
     out.println("<tr>");
-    out.println("<th style=\"background-color:yellowgreen\" align=\"center\"><b>Submission #</b></td>");
-    out.println("<th style=\"background-color:yellowgreen\" align=\"center\"><b>Major</b></td>");
-    out.println("<th style=\"background-color:yellowgreen\" align=\"center\"><b>Year</b></td>");
-    out.println("<th style=\"background-color:yellowgreen\" align=\"center\"><b>Q1</b></td>");
-    out.println("<th style=\"background-color:yellowgreen\" align=\"center\"><b>Q2</b></td>");
-    out.println("<th style=\"background-color:yellowgreen\" align=\"center\"><b>Q3</b></td>");
-    out.println("<th style=\"background-color:yellowgreen\" align=\"center\"><b>Q4</b></td>");
-    out.println("<th style=\"background-color:yellowgreen\" align=\"center\"><b>Q5</b></td>");
-    out.println("<th style=\"background-color:yellowgreen\" align=\"center\"><b>Additional Comments</b></td>");
+    out.println("<th style=\"background-color:lightgreen\" align=\"center\"><b>Submission #</b></td>");
+    out.println("<th style=\"background-color:lightgreen\" align=\"center\"><b>Major</b></td>");
+    out.println("<th style=\"background-color:lightgreen\" align=\"center\"><b>Year</b></td>");
+    out.println("<th style=\"background-color:lightgreen\" align=\"center\"><b>Q1</b></td>");
+    out.println("<th style=\"background-color:lightgreen\" align=\"center\"><b>Q2</b></td>");
+    out.println("<th style=\"background-color:lightgreen\" align=\"center\"><b>Q3</b></td>");
+    out.println("<th style=\"background-color:lightgreen\" align=\"center\"><b>Q4</b></td>");
+    out.println("<th style=\"background-color:lightgreen\" align=\"center\"><b>Q5</b></td>");
+    out.println("<th style=\"background-color:lightgreen\" align=\"center\"><b>Additional Comments</b></td>");
     out.println("</tr>");
 
     int submissionCounter = 0;
