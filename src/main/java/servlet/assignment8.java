@@ -51,7 +51,7 @@ public class assignment8 extends HttpServlet
 
     commentsTF = false;
     if (Comments == null || Comments.equals("") || Comments.equals("null")) {
-      Comments = "null";
+      Comments = "No comments";
       commentsTF = true;
     }
 

@@ -131,26 +131,6 @@ public class assignment8part2 extends HttpServlet
     out.println("</tr>");
     out.println("</table>");
 
-    out.println("<p>" + Q1 + "</p>");
-    out.println("<p>" + Q2 + "</p>");
-    out.println("<p>" + Q3 + "</p>");
-    out.println("<p>" + Q4 + "</p>");
-    out.println("<p>" + Q5 + "</p>");
-    out.println("<p>" + allLines + "</p>");
-
-    for (String[] parameters : allParams) {
-      out.println("<h3><b><u>Submission #" + submissionCounter + ":</u></b></h3>");
-      out.println("<p>Major: " + parameters[0] + "</p>");
-      out.println("<p>Year:  " + parameters[1] + "</p>");
-      out.println("<p>Q1: " + parameters[2] + "</p>");
-      out.println("<p>Q2: " + parameters[3] + "</p>");
-      out.println("<p>Q3: " + parameters[4] + "</p>");
-      out.println("<p>Q4: " + parameters[5] + "</p>");
-      out.println("<p>Q5: " + parameters[6] + "</p>");
-      out.println("<p>Comments: " + parameters[7] + "</p>");
-      out.println("</br>");
-      submissionCounter += 1;
-    }
 
     out.println("</body>");
     out.println("</html>");
