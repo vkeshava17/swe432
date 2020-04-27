@@ -69,6 +69,8 @@ public class assignment8part2 extends HttpServlet
         current = 0;
         counter = 1;
         allParams.add(params);
+        params = new String[8];
+        continue;
       }
       current += 1;
       counter += 1;
