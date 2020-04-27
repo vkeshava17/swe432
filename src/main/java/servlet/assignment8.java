@@ -353,9 +353,39 @@ public class assignment8 extends HttpServlet
       submissionCounter += 1;
     }
 
-    int mostQ1 = 5;
+		String mostQ1 = "";
+    String mostQ2 = "";
+    String mostQ3 = "";
+    String mostQ4 = "";
+    String mostQ5 = "";
+
+		//Very Easy, Easy, Hard, Very Hard
+    String[] Q1Values = {"Very Easy", "Easy", "Hard", "Very Hard"};
+    int[] Q1 = new int[4];
+    int[] Q2 = new int[4];
+    int[] Q3 = new int[4];
+    int[] Q4 = new int[3];
+    int[] Q5 = new int[3];
+		for (String[] parameters : allParams) {
+      if (parameters[0].equals("Very Easy")) {Q1[0] += 1;}
+      else if (parameters[0].equals("Easy")) {Q1[1] += 1;}
+      else if (parameters[0].equals("Hard")) {Q1[2] += 1;}
+      else if (parameters[0].equals("Very Hard")) {Q1[3] += 1;}
+    }
+
+    int max = Q1[0];
+		int Q1index = 0;
+		for (int i = 0; i < Q1.length; i++)
+		{
+			if (max < Q1[i])
+			{
+				max = Q1[i];
+				Q1index = i;
+			}
+		}
+
     String lifeCycleURL = "asst8part2";
-    out.println("<a href=\"" + lifeCycleURL + "?commonQ1=mostQ1\">");
+    out.println("<a href=\"" + lifeCycleURL + "?commonQ1=" + Q1Values[Q1index] + "\">");
     out.println("Aggregate Summary</a>");
 
     out.println("</body>");
