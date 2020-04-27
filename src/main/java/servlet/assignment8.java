@@ -361,7 +361,7 @@ public class assignment8 extends HttpServlet
 
 		//Very Easy, Easy, Hard, Very Hard
     String[] Q1Values = {"Very Easy", "Easy", "Hard", "Very Hard"};
-    int[] Q1 = new int[4];
+    int[] Q1 = {0,0,0,0};
     int[] Q2 = new int[4];
     int[] Q3 = new int[4];
     int[] Q4 = new int[3];
@@ -371,12 +371,18 @@ public class assignment8 extends HttpServlet
       else if (parameters[0].equals("Easy")) {Q1[1] += 1;}
       else if (parameters[0].equals("Hard")) {Q1[2] += 1;}
       else if (parameters[0].equals("Very Hard")) {Q1[3] += 1;}
+
     }
+
 
     int max = Q1[0];
 		int Q1index = 0;
 		for (int i = 0; i < Q1.length; i++)
 		{
+      out.println("</br>");
+    	out.println("<p>Q1[i]</p>");
+      out.println("<p>" + Q1[i] + "</p>");
+      out.println("</br>");
 			if (max < Q1[i])
 			{
 				max = Q1[i];
