@@ -44,7 +44,7 @@ public class assignment8 extends HttpServlet
     String Q3 = request.getParameter("Q3");
     String Q4 = request.getParameter("Q4");
     String Q5 = request.getParameter("Q5");
-    String Comments = request.getElementById("textarea").value;
+    String Comments = request.getParameter("Comments");
 
     String[] parameters = {Major, Year, Q1, Q2, Q3, Q4, Q5, Comments};
 
