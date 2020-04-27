@@ -287,7 +287,7 @@ public class assignment8 extends HttpServlet
       String line = "";
       String allLines = "";
       while ((line = bufferedReader.readLine()) != null) {
-      	allLines += line;
+      	allLines += line
         String[] parameters = new String[8];
         String[] entry = line.split(VALUE_SEPARATOR);
         i = 0;
@@ -435,7 +435,7 @@ public class assignment8 extends HttpServlet
 
     String lifeCycleURL = "asst8part2";
     out.println("<h2>*Second Servlet with Aggregate Summary of all Reviews:");
-    out.println("<a href=\"" + lifeCycleURL + "?commonQ1=" + Q1Values[Q1index] + "&commonQ2=" + Q2Values[Q2index] +  "&commonQ3=" + Q3Values[Q3index] + "&commonQ4=" + Q4Values[Q4index] + "&commonQ5=" + Q5Values[Q5index] + "\">");
+    out.println("<a href=\"" + lifeCycleURL + "?commonQ1=" + Q1Values[Q1index] + "&commonQ2=" + Q2Values[Q2index] +  "&commonQ3=" + Q3Values[Q3index] + "&commonQ4=" + Q4Values[Q4index] + "&commonQ5=" + Q5Values[Q5index] + + "&allSubmissions=" + allLines + "\">");
     out.println("Click here!</a></h2>");
 
     out.println("<h3 align=\"left\">Questions Key</h3>");

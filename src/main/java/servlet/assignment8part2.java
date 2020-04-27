@@ -36,6 +36,7 @@ public class assignment8part2 extends HttpServlet
     String Q3 = request.getParameter("commonQ3");
     String Q4 = request.getParameter("commonQ4");
     String Q5 = request.getParameter("commonQ5");
+    String allSubmissions = request.getParameter("allSubmissions");
 
     //PrintWriter out = response.getWriter();
     //PrintMain(out);
@@ -60,6 +61,7 @@ public class assignment8part2 extends HttpServlet
       out.println("<p>" + Q3 + "</p>");
       out.println("<p>" + Q4 + "</p>");
       out.println("<p>" + Q5 + "</p>");
+      out.println("<p>" + allSubmissions + "</p>");
 
       out.println("</body>");
       out.println("</html>");
