@@ -78,7 +78,7 @@ public class assignment8part2 extends HttpServlet
     out.println("<head>");
     out.println(" <title>Aggregate Summary of all Reviews</title>");
     out.println("		<style> ");
-    out.println("   table, th, td {padding: 10px; border: 1px solid black; border-collapse: collapse; font: 15px Georgia; table-layout: fixed; width: 98%; background-color: #0b6620;}");
+    out.println("   table, th, td {padding: 5px; border: 1px solid black; border-collapse: collapse; font: 15px; table-layout: fixed; width: 98%; background-color: #F5FFFA;}");
     out.println("			body {background-color:#E1F3DB}");
     out.println("		</style>");
     out.println("  <h1 align=\"center\">Aggregate Summary of all Reviews</h1>");
@@ -88,15 +88,15 @@ public class assignment8part2 extends HttpServlet
 
     out.println("<table align=\"center\">");
     out.println("<tr>");
-    out.println("<th style=\"background-color:darkseagreen\" align=\"center\"><b>Submission #</b></td>");
-    out.println("<th style=\"background-color:darkseagreen\" align=\"center\"><b>Major</b></td>");
-    out.println("<th style=\"background-color:darkseagreen\" align=\"center\"><b>Year</b></td>");
-    out.println("<th style=\"background-color:darkseagreen\" align=\"center\"><b>Q1</b></td>");
-    out.println("<th style=\"background-color:darkseagreen\" align=\"center\"><b>Q2</b></td>");
-    out.println("<th style=\"background-color:darkseagreen\" align=\"center\"><b>Q3</b></td>");
-    out.println("<th style=\"background-color:darkseagreen\" align=\"center\"><b>Q4</b></td>");
-    out.println("<th style=\"background-color:darkseagreen\" align=\"center\"><b>Q5</b></td>");
-    out.println("<th style=\"background-color:darkseagreen\" align=\"center\"><b>Additional Comments</b></td>");
+    out.println("<th style=\"background-color:yellowgreen\" align=\"center\"><b>Submission #</b></td>");
+    out.println("<th style=\"background-color:yellowgreen\" align=\"center\"><b>Major</b></td>");
+    out.println("<th style=\"background-color:yellowgreen\" align=\"center\"><b>Year</b></td>");
+    out.println("<th style=\"background-color:yellowgreen\" align=\"center\"><b>Q1</b></td>");
+    out.println("<th style=\"background-color:yellowgreen\" align=\"center\"><b>Q2</b></td>");
+    out.println("<th style=\"background-color:yellowgreen\" align=\"center\"><b>Q3</b></td>");
+    out.println("<th style=\"background-color:yellowgreen\" align=\"center\"><b>Q4</b></td>");
+    out.println("<th style=\"background-color:yellowgreen\" align=\"center\"><b>Q5</b></td>");
+    out.println("<th style=\"background-color:yellowgreen\" align=\"center\"><b>Additional Comments</b></td>");
     out.println("</tr>");
 
     int submissionCounter = 0;
@@ -118,12 +118,12 @@ public class assignment8part2 extends HttpServlet
     out.println("<tr>");
     out.println("<td style=\"background-color:#E1F3DB; border-left-color:#E1F3DB; border-bottom-color:#E1F3DB;\"></td>");
     out.println("<td style=\"background-color:#E1F3DB; border-left-color:#E1F3DB; border-bottom-color:#E1F3DB;\"></td>");
-    out.println("<td style=\"background-color:lemonchiffon\">Most Common Responses</td>");
-    out.println("<td style=\"background-color:lemonchiffon\">" + Q1 + "</td>");
-    out.println("<td style=\"background-color:lemonchiffon\">" + Q2 + "</td>");
-    out.println("<td style=\"background-color:lemonchiffon\">" + Q3 + "</td>");
-    out.println("<td style=\"background-color:lemonchiffon\">" + Q4 + "</td>");
-    out.println("<td style=\"background-color:lemonchiffon\">" + Q5 + "</td>");
+    out.println("<td style=\"background-color:lightgoldenrodyellow\">Most Common Responses</td>");
+    out.println("<td style=\"background-color:lightgoldenrodyellow\">" + Q1 + "</td>");
+    out.println("<td style=\"background-color:lightgoldenrodyellow\">" + Q2 + "</td>");
+    out.println("<td style=\"background-color:lightgoldenrodyellow\">" + Q3 + "</td>");
+    out.println("<td style=\"background-color:lightgoldenrodyellow\">" + Q4 + "</td>");
+    out.println("<td style=\"background-color:lightgoldenrodyellow\">" + Q5 + "</td>");
     out.println("<td style=\"background-color:#E1F3DB; border-color:#E1F3DB;\"></td>");
 
     out.println("</tr>");
