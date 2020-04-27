@@ -287,7 +287,7 @@ public class assignment8 extends HttpServlet
       String line = "";
       String allLines = "";
       while ((line = bufferedReader.readLine()) != null) {
-      	allLines += line
+      	allLines += line;
         String[] parameters = new String[8];
         String[] entry = line.split(VALUE_SEPARATOR);
         i = 0;
