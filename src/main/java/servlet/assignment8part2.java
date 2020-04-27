@@ -88,7 +88,7 @@ private void PrintMain (PrintWriter out, String Q1, String Q2, String Q3, String
       out.println("<p>" + Q3 + "</p>");
       out.println("<p>" + Q4 + "</p>");
       out.println("<p>" + Q5 + "</p>");
-      out.println("<p>" + allSubmissions + "</p>");
+      out.println("<p>" + allLines + "</p>");
 
       out.println("</body>");
       out.println("</html>");
