@@ -30,7 +30,6 @@ public class assignment8part2 extends HttpServlet
   public void doGet (HttpServletRequest request, HttpServletResponse response)
   throws ServletException, IOException
   {
-    //response.setContentType("text/html");
     String Q1 = request.getParameter("commonQ1");
     String Q2 = request.getParameter("commonQ2");
     String Q3 = request.getParameter("commonQ3");
@@ -38,23 +37,51 @@ public class assignment8part2 extends HttpServlet
     String Q5 = request.getParameter("commonQ5");
     String allSubmissions = request.getParameter("allSubmissions");
 
-    //PrintWriter out = response.getWriter();
-    //PrintMain(out);
-    //out.close();
-    if (Q1 != null){
-    	// Called from the invalidate button, kill the session.
-      // Get session object
+    response.setContentType("text/html");
+    PrintWriter out = response.getWriter();
+		PrintMain(out, Q1, Q2, Q3, Q4, Q5, allSubmissions);
+    out.close();
 
-      response.setContentType("text/html");
-      PrintWriter out = response.getWriter();
+  } // End doGet
 
-      out.println("<html>");
+private void PrintMain (PrintWriter out, String Q1, String Q2, String Q3, String Q4, String Q5, String allLines) // main index.html
+{
+	    out.println("<html>");
       out.println("<head>");
       out.println(" <title>Aggregate Summary of all Reviews</title>");
+      out.println("		<style> ");
+   		out.println("			body {background-color:#E1F3DB}");
+   		out.println("		</style>");
       out.println("  <h1 align=\"center\">Aggregate Summary of all Reviews</h1>");
       out.println("</head>");
       out.println("");
       out.println("<body>");
+
+			out.println("<table align=\"center\">");
+  		out.println("<tr>");
+   		out.println("<th style=\"background-color:darkblue\" align=\"center\"><b>Submission #</b></td>");
+   		out.println("<th style=\"background-color:darkblue\" align=\"center\"><b>Major</b></td>
+  		out.println("<th style=\"background-color:darkblue\" align=\"center\"><b>Year</b></td>");
+   		out.println("<th style=\"background-color:darkblue\" align=\"center\"><b>Q1</b></td>");
+   		out.println("<th style=\"background-color:darkblue\" align=\"center\"><b>Q2</b></td>");
+   		out.println("<th style=\"background-color:darkblue\" align=\"center\"><b>Q3</b></td>");
+   		out.println("<th style=\"background-color:darkblue\" align=\"center\"><b>Q4</b></td>");
+      out.println("<th style=\"background-color:darkblue\" align=\"center\"><b>Q5</b></td>");
+   		out.println("<th style=\"background-color:darkblue\" align=\"center\"><b>Additional Comments</b></td>");
+  		out.println("</tr>");
+
+			out.println("<tr>");
+			out.println("<td style=\"background-color:#E1F3DB; border-left-color:#E1F3DB; border-bottom-color:#E1F3DB;\"></td>);
+      out.println("<td style=\"background-color:#E1F3DB; border-left-color:#E1F3DB; border-bottom-color:#E1F3DB;\"></td>);
+			out.println("<td style=\"background-color:gold\">Most Common Responses</td>");
+			out.println("<td style=\"background-color:gold\">" + Q1 + "</td>");
+			out.println("<td style=\"background-color:gold\">" + Q2 + "</td>");
+			out.println("<td style=\"background-color:gold\">" + Q3 + "</td>");
+			out.println("<td style=\"background-color:gold\">" + Q4 + "</td>");
+			out.println("<td style=\"background-color:gold\">" + Q5 + "</td>");
+			out.println("<td style=\"background-color:#E1F3DB; border-color:#E1F3DB;\"></td>");
+			out.println("</tr>");
+      out.println("</table>");
 
       out.println("<p>" + Q1 + "</p>");
       out.println("<p>" + Q2 + "</p>");
@@ -65,9 +92,6 @@ public class assignment8part2 extends HttpServlet
 
       out.println("</body>");
       out.println("</html>");
-      out.close();
-   }
-
-  } // End doGet
+}
 
 }  // End assignment 8 part 2
