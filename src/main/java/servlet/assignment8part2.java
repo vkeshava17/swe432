@@ -78,7 +78,7 @@ public class assignment8part2 extends HttpServlet
 
     out.println("<html>");
     out.println("<head>");
-    out.println(" <title>All Reviews + Aggregate Summary</title>");
+    out.println(" <title>Reviews Aggregate Summary</title>");
     out.println("		<style> ");
     out.println("   table, th, td {padding: 5px; border: 1px solid black; border-collapse: collapse; font: 15px; table-layout: fixed; width: 98%; background-color: #F5FFFA;}");
     out.println("			body {background-color:#E1F3DB}");
