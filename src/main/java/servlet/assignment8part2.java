@@ -57,6 +57,7 @@ public class assignment8part2 extends HttpServlet
     ArrayList<String[]> allParams = new ArrayList<String[]>();
     String[] params = new String[8];
     int current = 0;
+    int counter = 1;
     for (int i = 0; i < lines.length; i++) {
       if (lines[i] == null || lines[i].equals("") || lines[i].equals("null")) {
         params[current] = "No response";
@@ -64,11 +65,13 @@ public class assignment8part2 extends HttpServlet
       else {
         params[current] = lines[i];
       }
-      if (i % 7 == 0) {
+      if (counter % 8 == 0) {
         current = 0;
+        counter = 1;
         allParams.add(params);
       }
       current += 1;
+      counter += 1;
     }
 
     out.println("<html>");
