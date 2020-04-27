@@ -372,10 +372,6 @@ public class assignment8 extends HttpServlet
 		int Q1index = 0;
 		for (int i = 0; i < Q1.length; i++)
 		{
-      out.println("</br>");
-    	out.println("<p>Q1[i]:</p>");
-      out.println("<p>" + Q1[i] + "</p>");
-      out.println("</br>");
 			if (max < Q1[i])
 			{
 				max = Q1[i];
@@ -439,9 +435,9 @@ public class assignment8 extends HttpServlet
     out.println("  </br>");
 
     String lifeCycleURL = "asst8part2";
-    out.println("Second Servlet with Aggregate Summary of all Reviews:");
+    out.println("<h2>*Second Servlet with Aggregate Summary of all Reviews:");
     out.println("<a href=\"" + lifeCycleURL + "?commonQ1=" + Q1Values[Q1index] + "&commonQ2=" + Q2Values[Q2index] +  "&commonQ3=" + Q3Values[Q3index] + "&commonQ4=" + Q4Values[Q4index] + "&commonQ5=" + Q5Values[Q5index] + "\">");
-    out.println("Click here!</a>");
+    out.println("Click here!</a></h2>");
 
     out.println("<h3 align=\"left\">Questions Key</h3>");
     out.println("<p>Q1: How easy was it for you to find your textbooks in the store?</p>");
