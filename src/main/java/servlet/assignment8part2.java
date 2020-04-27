@@ -46,6 +46,19 @@ public class assignment8part2 extends HttpServlet
 
 private void PrintMain (PrintWriter out, String Q1, String Q2, String Q3, String Q4, String Q5, String allLines) // main index.html
 {
+
+			lines = allLines.split(';');
+
+      ArrayList<String[]> allParams = new ArrayList<String[]>();
+      String[] parameters = new String[8];
+      int currLine = 0;
+      for (int i = 0; i < lines.length; i++) {
+      	parameters[currLine] = lines[i];
+      	if (i % 7 == 0) {
+        	allParams.add(parameters);
+        	currLine += 1;
+        }
+      }
 	    out.println("<html>");
       out.println("<head>");
       out.println(" <title>Aggregate Summary of all Reviews</title>");
@@ -70,6 +83,22 @@ private void PrintMain (PrintWriter out, String Q1, String Q2, String Q3, String
    		out.println("<th style=\"background-color:springgreen\" align=\"center\"><b>Additional Comments</b></td>");
   		out.println("</tr>");
 
+			int submissionCounter += 0;
+			for (String[] parameters : allParams) {
+      	out.println("<tr>");
+      	out.println("<td>" + submissionCounter + "</td>");
+      	out.println("<td>" + parameters[0] + "</td>");
+      	out.println("<td>" + parameters[1] + "</td>");
+      	out.println("<td>" + parameters[2] + "</td>");
+      	out.println("<td>" + parameters[3] + "</td>");
+      	out.println("<td>" + parameters[4] + "</td>");
+      	out.println("<td>" + parameters[5] + "</td>");
+      	out.println("<td>" + parameters[6] + "</td>");
+      	out.println("<td>" + parameters[7] + "</td>");
+        out.println("</tr>");
+        submissionCounter += 1;
+    	}
+
 			out.println("<tr>");
 			out.println("<td style=\"background-color:#E1F3DB; border-left-color:#E1F3DB; border-bottom-color:#E1F3DB;\"></td>");
       out.println("<td style=\"background-color:#E1F3DB; border-left-color:#E1F3DB; border-bottom-color:#E1F3DB;\"></td>");
@@ -80,6 +109,7 @@ private void PrintMain (PrintWriter out, String Q1, String Q2, String Q3, String
 			out.println("<td style=\"background-color:gold\">" + Q4 + "</td>");
 			out.println("<td style=\"background-color:gold\">" + Q5 + "</td>");
 			out.println("<td style=\"background-color:#E1F3DB; border-color:#E1F3DB;\"></td>");
+
 			out.println("</tr>");
       out.println("</table>");
 
