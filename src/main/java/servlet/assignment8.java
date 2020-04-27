@@ -274,6 +274,7 @@ public class assignment8 extends HttpServlet
 
     ArrayList<String[]> allParams = new ArrayList<String[]>();
 
+    String allLines = "";
     try {
       File file = new File(resourcePath);
       if(!file.exists()){
@@ -285,7 +286,6 @@ public class assignment8 extends HttpServlet
       int index = 0;
       BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
       String line = "";
-      String allLines = "";
       while ((line = bufferedReader.readLine()) != null) {
       	allLines += line;
         String[] parameters = new String[8];
