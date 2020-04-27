@@ -1,5 +1,5 @@
 /** *****************************************************************
-assignment8prt2.java
+assignment8part2.java
 ********************************************************************* */
 
 // Import Java Libraries
@@ -12,14 +12,14 @@ import javax.servlet.http.*;
 
 import javax.servlet.annotation.WebServlet;
 
-@WebServlet( name = "assignment8part2", urlPatterns = {"/asst8prt2"} )
+@WebServlet( name = "assignment8part2", urlPatterns = {"/asst8part2"} )
 
 public class assignment8part2 extends HttpServlet
 {
   // Location of servlet.
   static String Domain  = "swe432vkeshava.herokuapp.com";
   static String Path    = "/";
-  static String Servlet = "asst8prt2";
+  static String Servlet = "asst8part2";
 
   // Other strings.
   static String Style ="https://www.cs.gmu.edu/~offutt/classes/432/432-style.css";
