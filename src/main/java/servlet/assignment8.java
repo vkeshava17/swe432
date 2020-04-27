@@ -293,6 +293,7 @@ public class assignment8 extends HttpServlet
             if (commentsTF == true) {
               parameters[i] = "No comments";
               commentsTF = false;
+              allLines += "null;";
             }
             else {
               value = processResponses(value);

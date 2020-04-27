@@ -65,7 +65,7 @@ public class assignment8part2 extends HttpServlet
       else {
         params[current] = lines[i];
       }
-      if (counter % 9 == 0) {
+      if (counter % 8 == 0) {
         current = 0;
         counter = 1;
         allParams.add(params);
