@@ -354,7 +354,7 @@ public class assignment8 extends HttpServlet
     }
 
     int mostQ1 = 5;
-    String lifeCycleURL = "swe432vkeshava.herokuapp.com/asst8part2";
+    String lifeCycleURL = "asst8part2";
     out.println("<a href=\"" + lifeCycleURL + "?commonQ1=mostQ1\">");
     out.println("Aggregate Summary</a>");
 
