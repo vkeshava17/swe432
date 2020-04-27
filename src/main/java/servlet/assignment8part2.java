@@ -47,7 +47,7 @@ public class assignment8part2 extends HttpServlet
 
   //censors inappropriate words
   private String processResponses(String text) {
-    return text.replaceAll("(shit)|(fuck)|(damn)|(bitch)", "*");
+    return text.replaceAll("(shit)|(fuck)|(damn)|(bitch)|(Shit)|(Fuck)|(Damn)|(Bitch)|(ass)|(Ass)", "*");
   }
 
   private void PrintMain (PrintWriter out, String Q1, String Q2, String Q3, String Q4, String Q5, String allLines) // main index.html
