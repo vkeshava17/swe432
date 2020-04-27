@@ -271,30 +271,13 @@ public class assignment8 extends HttpServlet
     out.println("  </style>");
     out.println("  </head>");
     out.println("  <body>");
-    out.println("  <p>");
-    out.println("  Assignment 8");
-    out.println("     </br>");
-    out.println("     Developed by: Satyasaarika Putla, Vandana Keshavamurthy");
-    out.println("     </br>");
-    out.println("     For our collaboration summary, click");
-    out.println("     <a href=\"http://mason.gmu.edu/~vkeshava/asst8Collab\">here</a>");
-    out.println("  <h1 align=\"center\">All User Responses</h1>");
-    out.println("  </br>");
-
-    out.println("<h3 align=\"left\">Questions Key</h3>");
-    out.println("<p>Q1: How easy was it for you to find your textbooks in the store?</p>");
-    out.println("<p>Q2: How many times were the textbooks you needed (digital or hard copy) out of stock?</p>");
-    out.println("<p>Q3: How reasonable do you think the textbook prices were compared to other sellers?</p>");
-    out.println("<p>Q4: If given the option, do you prefer digital or hard copy textbooks?</p>");
-    out.println("<p>Q5: How accurate are the recommended and required textbook lists that the bookstore provides online?</p>");
-    out.println("  </br>");
 
     ArrayList<String[]> allParams = new ArrayList<String[]>();
 
     try {
       File file = new File(resourcePath);
       if(!file.exists()){
-        out.println("No entries persisted yet");
+        out.println("<p>No entries persisted yet</p>");
         return;
       }
 
@@ -302,7 +285,9 @@ public class assignment8 extends HttpServlet
       int index = 0;
       BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
       String line = "";
+      String allLines = "";
       while ((line = bufferedReader.readLine()) != null) {
+      	allLines += line;
         String[] parameters = new String[8];
         String[] entry = line.split(VALUE_SEPARATOR);
         i = 0;
@@ -338,21 +323,6 @@ public class assignment8 extends HttpServlet
       ex.printStackTrace();
     }
 
-    int submissionCounter = 1;
-    for (String[] parameters : allParams) {
-      out.println("<h3><b><u>Submission #" + submissionCounter + ":</u></b></h3>");
-      out.println("<p>Major: " + parameters[0] + "</p>");
-      out.println("<p>Year:  " + parameters[1] + "</p>");
-      out.println("<p>Q1: " + parameters[2] + "</p>");
-      out.println("<p>Q2: " + parameters[3] + "</p>");
-      out.println("<p>Q3: " + parameters[4] + "</p>");
-      out.println("<p>Q4: " + parameters[5] + "</p>");
-      out.println("<p>Q5: " + parameters[6] + "</p>");
-      out.println("<p>Comments: " + parameters[7] + "</p>");
-      out.println("</br>");
-      submissionCounter += 1;
-    }
-
 		String mostQ1 = "";
     String mostQ2 = "";
     String mostQ3 = "";
@@ -361,17 +331,40 @@ public class assignment8 extends HttpServlet
 
 		//Very Easy, Easy, Hard, Very Hard
     String[] Q1Values = {"Very Easy", "Easy", "Hard", "Very Hard"};
+    String[] Q2Values = {"Never", "1-3 times", "4-6 times", "Very Hard"};
+    String[] Q3Values = {"Very Reasonable", "Reasonable", "Expensive", "Very Expensive"};
+    String[] Q4Values = {"Yes", "No", "Depends"};
+    String[] Q5Values = {"Very Accurate", "Accurate", "Not Accurate"};
+
     int[] Q1 = {0,0,0,0};
-    int[] Q2 = new int[4];
-    int[] Q3 = new int[4];
-    int[] Q4 = new int[3];
-    int[] Q5 = new int[3];
+    int[] Q2 = {0,0,0,0};
+    int[] Q3 = {0,0,0,0};
+    int[] Q4 = {0,0,0};
+    int[] Q5 = {0,0,0};
+
 		for (String[] parameters : allParams) {
       if (parameters[2].equals("Very Easy")) {Q1[0] += 1;}
       else if (parameters[2].equals("Easy")) {Q1[1] += 1;}
       else if (parameters[2].equals("Hard")) {Q1[2] += 1;}
       else if (parameters[2].equals("Very Hard")) {Q1[3] += 1;}
 
+      if (parameters[3].equals("Never")) {Q2[0] += 1;}
+      else if (parameters[3].equals("1-3 times")) {Q2[1] += 1;}
+      else if (parameters[3].equals("4-6 times")) {Q2[2] += 1;}
+      else if (parameters[3].equals("7 or more times")) {Q2[3] += 1;}
+
+      if (parameters[4].equals("Very Reasonable")) {Q3[0] += 1;}
+      else if (parameters[4].equals("Reasonable")) {Q3[1] += 1;}
+      else if (parameters[4].equals("Expensive")) {Q3[2] += 1;}
+      else if (parameters[4].equals("Very Expensive")) {Q3[3] += 1;}
+
+      if (parameters[5].equals("Yes")) {Q4[0] += 1;}
+      else if (parameters[5].equals("No")) {Q4[1] += 1;}
+      else if (parameters[5].equals("Depends")) {Q4[2] += 1;}
+
+      if (parameters[6].equals("Very Accurate")) {Q5[0] += 1;}
+      else if (parameters[6].equals("Accurate")) {Q5[1] += 1;}
+      else if (parameters[6].equals("Not Accurate")) {Q5[2] += 1;}
     }
 
 
@@ -390,13 +383,91 @@ public class assignment8 extends HttpServlet
 			}
 		}
 
+    max = Q2[0];
+		int Q2index = 0;
+		for (int i = 0; i < Q2.length; i++)
+		{
+			if (max < Q2[i])
+			{
+				max = Q2[i];
+				Q2index = i;
+			}
+		}
+
+    max = Q3[0];
+		int Q3index = 0;
+		for (int i = 0; i < Q3.length; i++)
+		{
+			if (max < Q3[i])
+			{
+				max = Q3[i];
+				Q3index = i;
+			}
+		}
+
+    max = Q4[0];
+		int Q4index = 0;
+		for (int i = 0; i < Q4.length; i++)
+		{
+			if (max < Q4[i])
+			{
+				max = Q4[i];
+				Q4index = i;
+			}
+		}
+
+    max = Q5[0];
+		int Q5index = 0;
+		for (int i = 0; i < Q5.length; i++)
+		{
+			if (max < Q5[i])
+			{
+				max = Q5[i];
+				Q5index = i;
+			}
+		}
+
+    out.println("  <p>");
+    out.println("  Assignment 8");
+    out.println("     </br>");
+    out.println("     Developed by: Satyasaarika Putla, Vandana Keshavamurthy");
+    out.println("     </br>");
+    out.println("     For our collaboration summary, click");
+    out.println("     <a href=\"http://mason.gmu.edu/~vkeshava/asst8Collab\">here</a>");
+    out.println("  </p>");
+    out.println("  <h1 align=\"center\">All User Responses</h1>");
+    out.println("  </br>");
+
     String lifeCycleURL = "asst8part2";
-    out.println("<a href=\"" + lifeCycleURL + "?commonQ1=" + Q1Values[Q1index] + "\">");
-    out.println("Aggregate Summary</a>");
+    out.println("Second Servlet with Aggregate Summary of all Reviews: ")
+    out.println("<a href=\"" + lifeCycleURL + "?commonQ1=" + Q1Values[Q1index] + "&commonQ2=" + Q2Values[Q2index] +  "&commonQ3=" + Q3Values[Q3index] + "&commonQ4=" + Q4Values[Q4index] + "&commonQ5=" + Q5Values[Q5index] + "\">");
+    out.println("Click here!</a>");
+
+    out.println("<h3 align=\"left\">Questions Key</h3>");
+    out.println("<p>Q1: How easy was it for you to find your textbooks in the store?</p>");
+    out.println("<p>Q2: How many times were the textbooks you needed (digital or hard copy) out of stock?</p>");
+    out.println("<p>Q3: How reasonable do you think the textbook prices were compared to other sellers?</p>");
+    out.println("<p>Q4: If given the option, do you prefer digital or hard copy textbooks?</p>");
+    out.println("<p>Q5: How accurate are the recommended and required textbook lists that the bookstore provides online?</p>");
+    out.println("  </br>");
+
+    int submissionCounter = 1;
+    for (String[] parameters : allParams) {
+      out.println("<h3><b><u>Submission #" + submissionCounter + ":</u></b></h3>");
+      out.println("<p>Major: " + parameters[0] + "</p>");
+      out.println("<p>Year:  " + parameters[1] + "</p>");
+      out.println("<p>Q1: " + parameters[2] + "</p>");
+      out.println("<p>Q2: " + parameters[3] + "</p>");
+      out.println("<p>Q3: " + parameters[4] + "</p>");
+      out.println("<p>Q4: " + parameters[5] + "</p>");
+      out.println("<p>Q5: " + parameters[6] + "</p>");
+      out.println("<p>Comments: " + parameters[7] + "</p>");
+      out.println("</br>");
+      submissionCounter += 1;
+    }
 
     out.println("</body>");
     out.println("</html>");
-
   }
 
 }  // End assignment 8
