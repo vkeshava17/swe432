@@ -432,7 +432,6 @@ public class assignment8 extends HttpServlet
     out.println("     <a href=\"http://mason.gmu.edu/~vkeshava/asst8Collab\">here</a>");
     out.println("  </p>");
     out.println("  <h1 align=\"center\">All User Responses</h1>");
-    out.println("  </br>");
 
     String lifeCycleURL = "asst8part2";
     out.println("<h2>*Second Servlet with Aggregate Summary of all Reviews:");
