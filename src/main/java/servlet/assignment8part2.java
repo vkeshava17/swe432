@@ -59,15 +59,15 @@ private void PrintMain (PrintWriter out, String Q1, String Q2, String Q3, String
 
 			out.println("<table align=\"center\">");
   		out.println("<tr>");
-   		out.println("<th style=\"background-color:darkblue\" align=\"center\"><b>Submission #</b></td>");
-   		out.println("<th style=\"background-color:darkblue\" align=\"center\"><b>Major</b></td>");
-  		out.println("<th style=\"background-color:darkblue\" align=\"center\"><b>Year</b></td>");
-   		out.println("<th style=\"background-color:darkblue\" align=\"center\"><b>Q1</b></td>");
-   		out.println("<th style=\"background-color:darkblue\" align=\"center\"><b>Q2</b></td>");
-   		out.println("<th style=\"background-color:darkblue\" align=\"center\"><b>Q3</b></td>");
-   		out.println("<th style=\"background-color:darkblue\" align=\"center\"><b>Q4</b></td>");
-      out.println("<th style=\"background-color:darkblue\" align=\"center\"><b>Q5</b></td>");
-   		out.println("<th style=\"background-color:darkblue\" align=\"center\"><b>Additional Comments</b></td>");
+   		out.println("<th style=\"background-color:springgreen\" align=\"center\"><b>Submission #</b></td>");
+   		out.println("<th style=\"background-color:springgreen\" align=\"center\"><b>Major</b></td>");
+  		out.println("<th style=\"background-color:springgreen\" align=\"center\"><b>Year</b></td>");
+   		out.println("<th style=\"background-color:springgreen\" align=\"center\"><b>Q1</b></td>");
+   		out.println("<th style=\"background-color:springgreen\" align=\"center\"><b>Q2</b></td>");
+   		out.println("<th style=\"background-color:springgreen\" align=\"center\"><b>Q3</b></td>");
+   		out.println("<th style=\"background-color:springgreen\" align=\"center\"><b>Q4</b></td>");
+      out.println("<th style=\"background-color:springgreen\" align=\"center\"><b>Q5</b></td>");
+   		out.println("<th style=\"background-color:springgreen\" align=\"center\"><b>Additional Comments</b></td>");
   		out.println("</tr>");
 
 			out.println("<tr>");
