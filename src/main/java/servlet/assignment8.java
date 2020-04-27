@@ -51,11 +51,8 @@ public class assignment8 extends HttpServlet
 
     commentsTF = false;
     if (Comments == null || Comments.equals("") || Comments.equals("null")) {
-      Comments = "";
       commentsTF = true;
     }
-
-    Comments = processResponses(Comments);
 
     PrintWriter entriesPrintWriter = new PrintWriter(new FileWriter(RESOURCE_FILE, true), true);
     entriesPrintWriter.println(Major+VALUE_SEPARATOR+Year+VALUE_SEPARATOR+Q1+VALUE_SEPARATOR+Q2+VALUE_SEPARATOR+Q3+VALUE_SEPARATOR+Q4+VALUE_SEPARATOR+Q5+VALUE_SEPARATOR+Comments);
