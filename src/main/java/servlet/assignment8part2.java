@@ -60,7 +60,7 @@ private void PrintMain (PrintWriter out, String Q1, String Q2, String Q3, String
 			out.println("<table align=\"center\">");
   		out.println("<tr>");
    		out.println("<th style=\"background-color:darkblue\" align=\"center\"><b>Submission #</b></td>");
-   		out.println("<th style=\"background-color:darkblue\" align=\"center\"><b>Major</b></td>
+   		out.println("<th style=\"background-color:darkblue\" align=\"center\"><b>Major</b></td>");
   		out.println("<th style=\"background-color:darkblue\" align=\"center\"><b>Year</b></td>");
    		out.println("<th style=\"background-color:darkblue\" align=\"center\"><b>Q1</b></td>");
    		out.println("<th style=\"background-color:darkblue\" align=\"center\"><b>Q2</b></td>");
@@ -71,8 +71,8 @@ private void PrintMain (PrintWriter out, String Q1, String Q2, String Q3, String
   		out.println("</tr>");
 
 			out.println("<tr>");
-			out.println("<td style=\"background-color:#E1F3DB; border-left-color:#E1F3DB; border-bottom-color:#E1F3DB;\"></td>);
-      out.println("<td style=\"background-color:#E1F3DB; border-left-color:#E1F3DB; border-bottom-color:#E1F3DB;\"></td>);
+			out.println("<td style=\"background-color:#E1F3DB; border-left-color:#E1F3DB; border-bottom-color:#E1F3DB;\"></td>");
+      out.println("<td style=\"background-color:#E1F3DB; border-left-color:#E1F3DB; border-bottom-color:#E1F3DB;\"></td>");
 			out.println("<td style=\"background-color:gold\">Most Common Responses</td>");
 			out.println("<td style=\"background-color:gold\">" + Q1 + "</td>");
 			out.println("<td style=\"background-color:gold\">" + Q2 + "</td>");
