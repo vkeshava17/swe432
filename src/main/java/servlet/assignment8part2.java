@@ -59,6 +59,7 @@ private void PrintMain (PrintWriter out, String Q1, String Q2, String Q3, String
           params[current] = lines[i];
         }
       	if (i % 7 == 0) {
+          current = 0;
         	allParams.add(params);
         }
         current += 1;
