@@ -177,8 +177,8 @@ private void PrintBody (PrintWriter out, String input)
 {
    out.println("<body>");
    out.println("<p>");
-   out.println(" <br>");
    out.println("<h3> Welcome! </h3>");
+   out.println(" <br>");
    out.println("<h3> Please enter your boolean predicate below and click submit when done. </h3>");
    out.println(" <br>");
    out.println("For the AND logical operator you can use AND, and, &, &&.");
