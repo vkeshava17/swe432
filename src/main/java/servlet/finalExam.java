@@ -53,7 +53,7 @@ public void doPost (HttpServletRequest request, HttpServletResponse response)
    int num_clauses = 0;
 
    //find number of clauses
-   for (String s: parameters) {
+   for (String s : parameters) {
      //as long as s is not an operator, increment it
      if (!s.equals("AND") && !s.equals("and") && !s.equals("&") && !s.equals("&&") && !s.equals("OR") && !s.equals("or") && !s.equals("||") && !s.equals("|")) {
        num_clauses += 1;
@@ -63,7 +63,7 @@ public void doPost (HttpServletRequest request, HttpServletResponse response)
    //get all the clauses from user input
    String[] clauses = new String[num_clauses];
    int i = -1;
-   for (String s: parameters) {
+   for (String s : parameters) {
      //as long as s is not an operator, increment it
      if (!s.equals("AND") && !s.equals("and") && !s.equals("&") && !s.equals("&&") && !s.equals("OR") && !s.equals("or") && !s.equals("||") && !s.equals("|")) {
        i += 1;
@@ -75,6 +75,17 @@ public void doPost (HttpServletRequest request, HttpServletResponse response)
    printTruthTable(num_clauses, 0, new int[num_clauses]);
 
    String[] truth_table = output.split("\\s+");
+
+   //convert output to list of true and false instead of 0 and 1
+   i = 0;
+   for (String truth_value : truth_table) {
+     if (truth_value.equals("0")) {
+       truth_table[i] = "false";
+     }
+     else if (truth_value.equals("1")) {
+       truth_table[i] = "true";
+     }
+   }
 
    PrintResponse(out, input, clauses, truth_table, num_clauses);
    out.close();
