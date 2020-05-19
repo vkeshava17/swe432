@@ -76,7 +76,7 @@ public void doPost (HttpServletRequest request, HttpServletResponse response)
 
    String[] truth_table = output.split("\\s+");
 
-   PrintResponse(out, String.valueOf(N), clauses, truth_table);
+   PrintResponse(out, input, clauses, truth_table);
    out.close();
 
    output = "";
@@ -218,7 +218,7 @@ private void PrintResponse (PrintWriter out, String input, String[] clauses, Str
   //to print out clauses of table
   int i = 0;
   for (String clause : clauses) {
-    out.println("<td>" + clause + "</td>");
+    out.println("<th style=\"background-color:lightseagreen\" align=\"center\"><b>" + clause + "#</b></td>");
     i += 1;
   }
 
