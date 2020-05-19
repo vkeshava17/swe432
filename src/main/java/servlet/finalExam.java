@@ -80,10 +80,10 @@ public void doPost (HttpServletRequest request, HttpServletResponse response)
    i = 0;
    for (String truth_value : truth_table) {
      if (truth_value.equals("0")) {
-       truth_table[i] = "false";
+       truth_table[i] = "true";
      }
      else if (truth_value.equals("1")) {
-       truth_table[i] = "true";
+       truth_table[i] = "false";
      }
      i += 1;
    }
@@ -218,7 +218,6 @@ private void PrintResponse (PrintWriter out, String input, String[] clauses, Str
   out.println("  <p>");
   out.println("     </br>");
   out.println("     User's Predicate: " + input + "");
-  out.println("  </br>");
   out.println("  </br>");
   out.println("  </br>");
   out.println("  </br>");
