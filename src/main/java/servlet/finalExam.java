@@ -208,7 +208,6 @@ private void PrintResponse (PrintWriter out, String input, String[] clauses, Str
   out.println("     User's Predicate: " + input + "");
   out.println("  </br>");
   out.println("  </br>");
-  out.println("" + output + "");
   out.println("  </br>");
   out.println("  </br>");
 
@@ -225,12 +224,13 @@ private void PrintResponse (PrintWriter out, String input, String[] clauses, Str
   out.println("<tr>");
   int i = 0;
   for (String truth_value : truth_table) {
-    out.println("<td>" + truth_value + "</td>");
     i += 1;
+    out.println("<td>" + truth_value + "</td>");
     //move to the next row
     if (i == num_clauses && i != truth_table.length) {
       out.println("</tr>");
       out.println("<tr>");
+      i = 1;
     }
   }
   out.println("</tr>");
