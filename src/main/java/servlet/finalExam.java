@@ -64,10 +64,10 @@ public void doPost (HttpServletRequest request, HttpServletResponse response)
    String[] clauses = new String[N];
    int i = -1;
    for (String s: parameters) {
-     i += 1;
      //as long as s is not an operator, increment it
      if (s != "AND" && s != "and" && s != "&" && s != "&&" && s != "OR" && s != "or" && s != "||" && s != "|") {
        clauses[i] = s;
+       i += 1;
      }
    }
 
