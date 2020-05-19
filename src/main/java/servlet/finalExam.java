@@ -74,8 +74,10 @@ public void doPost (HttpServletRequest request, HttpServletResponse response)
    //gets string for truth table
    printTruthTable(N, 0, new int[N]);
 
-   PrintResponse(out, String.valueOf(N), parameters);
+   PrintResponse(out, String.valueOf(N), clauses);
    out.close();
+
+   output = "";
 }  // End doPost
 
 //print the truth table
@@ -188,7 +190,7 @@ private void PrintTail (PrintWriter out)
 /** *****************************************************
  *  Prints the output (truth table)
 ********************************************************* */
-private void PrintResponse (PrintWriter out, String input, String[] parameters) // response to survey html
+private void PrintResponse (PrintWriter out, String input, String[] clauses) // response to survey html
 {
   out.println("<html>");
   out.println("  <head>");
@@ -207,6 +209,21 @@ private void PrintResponse (PrintWriter out, String input, String[] parameters) 
   out.println("" + output + "");
   out.println("  </br>");
   out.println("  </br>");
+
+  out.println("<table align=\"left\">");
+
+  out.println("<tr>");
+
+  //to print out clauses of table
+  int i = 0;
+  for (String clause : clauses) {
+    out.println("<td>" + clause + "</td>");
+    i += 1;
+  }
+  out.println("</tr>");
+
+  out.println("</table>");
+
   out.println("  </body>");
 
   out.println("</html>");
