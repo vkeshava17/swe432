@@ -103,7 +103,6 @@ private void PrintBody (PrintWriter out, String input)
    out.println("For example -- A OR B | C || D -- is acceptable.");
    out.println("<br>");
    out.println(" <br>");
-   out.println("For example: X OR B");
    out.println(" <br>");
    out.println("</p>");
    out.print  ("<form method=\"post\"");
@@ -111,13 +110,13 @@ private void PrintBody (PrintWriter out, String input)
    out.println("");
    out.println(" <table>");
    out.println("  <tr>");
-   out.println("   <td>Input:");
+   out.println("   <td><b>Input:</b>");
    out.println("   <td><input type=\"text\" name=\"predicate\" value=\"" + input + "\" size=10>");
    out.println("  </tr>");
    out.println(" </table>");
    out.println(" <br>");
    out.println(" <br>");
-   out.println(" <input type=\"submit\" value=\"" + Submit + "\" name=\"submission\" style=\"width: 10%; height: 4%; font-size: 13px;\">");
+   out.println(" <input type=\"submit\" value=\"" + Submit + "\" name=\"submission\" style=\"width: 10%; height: 4%; font-size: 15px;\">");
    out.println("</form>");
    out.println("");
    out.println("</body>");
