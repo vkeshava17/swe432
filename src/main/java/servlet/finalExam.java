@@ -55,7 +55,7 @@ public void doPost (HttpServletRequest request, HttpServletResponse response)
    //find number of clauses
    for (String s: parameters) {
      //as long as s is not an operator, increment it
-     if (s != "AND" && s != "and" && s != "&" && s != "&&" && s != "OR" && s != "or" && s != "||" && s != "|") {
+     if (!s.equals("AND") && !s.equals("and") && !s.equals("&") && !s.equals("&&") && !s.equals("OR") && !s.equals("or") && !s.equals("||") && !s.equals("|")) {
        N += 1;
      }
    }
@@ -220,6 +220,7 @@ private void PrintResponse (PrintWriter out, String input, String[] clauses) // 
     out.println("<td>" + clause + "</td>");
     i += 1;
   }
+
   out.println("</tr>");
 
   out.println("</table>");
