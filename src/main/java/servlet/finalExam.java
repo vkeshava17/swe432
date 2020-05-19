@@ -150,7 +150,6 @@ private void PrintBody (PrintWriter out, String input)
    out.println("For example -- A OR B | C || D or E -- is acceptable.");
    out.println("<br>");
    out.println(" <br>");
-   out.println(" <br>");
    out.println("</p>");
    out.print  ("<form method=\"post\"");
    out.println(" action=\"https://" + Domain + Path + Servlet + "\">");
