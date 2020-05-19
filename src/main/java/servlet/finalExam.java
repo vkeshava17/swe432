@@ -50,18 +50,18 @@ public void doPost (HttpServletRequest request, HttpServletResponse response)
    String[] parameters = input.split("\\s+");
 
    //N is the number of clauses you have
-   int N = 0;
+   int num_clauses = 0;
 
    //find number of clauses
    for (String s: parameters) {
      //as long as s is not an operator, increment it
      if (!s.equals("AND") && !s.equals("and") && !s.equals("&") && !s.equals("&&") && !s.equals("OR") && !s.equals("or") && !s.equals("||") && !s.equals("|")) {
-       N += 1;
+       num_clauses += 1;
      }
    }
 
    //get all the clauses from user input
-   String[] clauses = new String[N];
+   String[] clauses = new String[num_clauses];
    int i = -1;
    for (String s: parameters) {
      //as long as s is not an operator, increment it
@@ -72,11 +72,11 @@ public void doPost (HttpServletRequest request, HttpServletResponse response)
    }
 
    //gets string for truth table
-   printTruthTable(N, 0, new int[N]);
+   printTruthTable(num_clauses, 0, new int[num_clauses]);
 
    String[] truth_table = output.split("\\s+");
 
-   PrintResponse(out, input, clauses, truth_table);
+   PrintResponse(out, input, clauses, truth_table, num_clauses);
    out.close();
 
    output = "";
@@ -191,7 +191,7 @@ private void PrintTail (PrintWriter out)
 /** *****************************************************
  *  Prints the output (truth table)
 ********************************************************* */
-private void PrintResponse (PrintWriter out, String input, String[] clauses, String[] truth_table) // response to survey html
+private void PrintResponse (PrintWriter out, String input, String[] clauses, String[] truth_table, int num_clauses)
 {
   out.println("<html>");
   out.println("  <head>");
@@ -216,17 +216,22 @@ private void PrintResponse (PrintWriter out, String input, String[] clauses, Str
 
   //to print out clauses for table headers
   out.println("<tr>");
-  int i = 0;
   for (String clause : clauses) {
     out.println("<th style=\"background-color:lightseagreen\" align=\"center\"><b>" + clause + "#</b></td>");
-    i += 1;
   }
   out.println("</tr>");
 
   //to print out actual truth values
   out.println("<tr>");
+  int i = 0;
   for (String truth_value : truth_table) {
     out.println("<td>" + truth_value + "</td>");
+    i += 1;
+    //move to the next row
+    if (i == num_clauses && i != truth_table.length) {
+      out.println("</tr>");
+      out.println("<tr>");
+    }
   }
   out.println("</tr>");
 
