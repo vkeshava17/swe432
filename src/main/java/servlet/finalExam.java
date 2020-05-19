@@ -48,7 +48,10 @@ public void doPost (HttpServletRequest request, HttpServletResponse response)
    String input = request.getParameter("predicate");
    String output_choice = request.getParameter("truth_value");
 
-   String[] parameters = input.split("\\s+");
+   //remove all parenthesis from string if they exist
+   String input_cleaned = input.replaceAll("[()]", "");
+
+   String[] parameters = input_cleaned.split("\\s+");
 
    //N is the number of clauses you have
    int num_clauses = 0;
@@ -112,7 +115,7 @@ public void doPost (HttpServletRequest request, HttpServletResponse response)
      i += 1;
    }
 
-   PrintResponse(out, input, clauses, truth_table, num_clauses);
+   PrintResponse(out, input_cleaned, clauses, truth_table, num_clauses);
    out.close();
 
    output = "";
