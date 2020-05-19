@@ -91,15 +91,15 @@ private void PrintBody (PrintWriter out, String input)
    out.println("<p>");
    out.println("Name: Vandana Keshavamurthy");
    out.println(" <br>");
-   out.println(" <br>");
    out.println("<h3> Please enter your boolean predicate below and click submit when done. </h3>");
-   out.println(" <br>");
    out.println(" <br>");
    out.println("For the AND logical operator you can use AND, &, &&.");
    out.println(" <br>");
    out.println("For example -- A AND B & C && D -- is acceptable.");
    out.println("<br>");
+   out.println("<br>");
    out.println("For the OR logical operator you can use OR, |, ||.");
+   out.println("<br>");
    out.println("For example -- A OR B | C || D -- is acceptable.");
    out.println("<br>");
    out.println(" <br>");
@@ -117,7 +117,7 @@ private void PrintBody (PrintWriter out, String input)
    out.println(" </table>");
    out.println(" <br>");
    out.println(" <br>");
-   out.println(" <input type=\"submit\" value=\"" + Submit + "\" name=\"submission\">");
+   out.println(" <input type=\"submit\" value=\" style=\"width: 10%; height: 4%; font-size: 13px;\"" + Submit + "\" name=\"submission\">");
    out.println("</form>");
    out.println("");
    out.println("</body>");
