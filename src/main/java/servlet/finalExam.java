@@ -74,7 +74,9 @@ public void doPost (HttpServletRequest request, HttpServletResponse response)
    //gets string for truth table
    printTruthTable(N, 0, new int[N]);
 
-   PrintResponse(out, String.valueOf(N), clauses);
+   String[] truth_table = output.split();
+
+   PrintResponse(out, String.valueOf(N), clauses, truth_table);
    out.close();
 
    output = "";
@@ -151,7 +153,7 @@ private void PrintBody (PrintWriter out, String input)
    out.println("<br>");
    out.println(" <br>");
    out.println("</p>");
-   out.print  ("<form method=\"post\"");
+   out.println("<form method=\"post\"");
    out.println(" action=\"https://" + Domain + Path + Servlet + "\">");
    out.println("");
    out.println(" <table>");
@@ -189,7 +191,7 @@ private void PrintTail (PrintWriter out)
 /** *****************************************************
  *  Prints the output (truth table)
 ********************************************************* */
-private void PrintResponse (PrintWriter out, String input, String[] clauses) // response to survey html
+private void PrintResponse (PrintWriter out, String input, String[] clauses, String[] truth_table) // response to survey html
 {
   out.println("<html>");
   out.println("  <head>");
