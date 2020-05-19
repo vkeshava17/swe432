@@ -74,7 +74,7 @@ public void doPost (HttpServletRequest request, HttpServletResponse response)
    //gets string for truth table
    printTruthTable(N, 0, new int[N]);
 
-   String[] truth_table = output.split();
+   String[] truth_table = output.split("\\s+");
 
    PrintResponse(out, String.valueOf(N), clauses, truth_table);
    out.close();
