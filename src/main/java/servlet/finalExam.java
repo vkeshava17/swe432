@@ -55,8 +55,10 @@ public void doPost (HttpServletRequest request, HttpServletResponse response)
    //find number of clauses
    for (String s : parameters) {
      //as long as s is not an operator, increment it
-     if (!s.equals("AND") && !s.equals("and") && !s.equals("&") && !s.equals("&&") && !s.equals("OR") && !s.equals("or") && !s.equals("||") && !s.equals("|")) {
-       num_clauses += 1;
+     if (!s.equals("AND") && !s.equals("and") && !s.equals("&") && !s.equals("&&") &&
+         !s.equals("OR") && !s.equals("or") && !s.equals("||") && !s.equals("|") &&
+         !s.equals("XOR") && !s.equals("xor") && !s.equals("^")) {
+           num_clauses += 1;
      }
    }
 
@@ -65,9 +67,11 @@ public void doPost (HttpServletRequest request, HttpServletResponse response)
    int i = -1;
    for (String s : parameters) {
      //as long as s is not an operator, increment it
-     if (!s.equals("AND") && !s.equals("and") && !s.equals("&") && !s.equals("&&") && !s.equals("OR") && !s.equals("or") && !s.equals("||") && !s.equals("|")) {
-       i += 1;
-       clauses[i] = s;
+     if (!s.equals("AND") && !s.equals("and") && !s.equals("&") && !s.equals("&&") &&
+         !s.equals("OR") && !s.equals("or") && !s.equals("||") && !s.equals("|") &&
+         !s.equals("XOR") && !s.equals("xor") && !s.equals("^")) {
+           i += 1;
+           clauses[i] = s;
      }
    }
 
@@ -162,6 +166,11 @@ private void PrintBody (PrintWriter out, String input)
    out.println("For the OR logical operator you can use OR, or, |, ||.");
    out.println("<br>");
    out.println("For example -- A OR B | C || D or E -- is acceptable.");
+   out.println("<br>");
+   out.println("<br>");
+   out.println("For the XOR logical operator you can use XOR, xor, ^.");
+   out.println("<br>");
+   out.println("For example -- A XOR B xor C ^ E -- is acceptable.");
    out.println("<br>");
    out.println(" <br>");
    out.println("</p>");
