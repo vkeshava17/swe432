@@ -74,7 +74,7 @@ public void doPost (HttpServletRequest request, HttpServletResponse response)
    //gets string for truth table
    printTruthTable(N, 0, new int[N]);
 
-   PrintResponse(out, input, parameters);
+   PrintResponse(out, String.valueOf(N), parameters);
    out.close();
 }  // End doPost
 
