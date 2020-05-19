@@ -230,7 +230,7 @@ private void PrintResponse (PrintWriter out, String input, String[] clauses, Str
     if (i == num_clauses && i != truth_table.length) {
       out.println("</tr>");
       out.println("<tr>");
-      i = 1;
+      i = 0;
     }
   }
   out.println("</tr>");
