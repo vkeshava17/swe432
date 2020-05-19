@@ -197,7 +197,7 @@ private void PrintResponse (PrintWriter out, String input, String[] clauses, Str
   out.println("  <head>");
   out.println("  <title>Responses</title>");
   out.println("		<style> ");
-  out.println("   table, th, td {padding: 5px; border: 1px solid black; border-collapse: collapse; font: 15px; table-layout: fixed; width: 98%; background-color: #F5FFFA;}");
+  out.println("   table, th, td {padding: 5px; border: 1px solid black; border-collapse: collapse; font: 15px; table-layout: fixed; width: 25%; background-color: #F5FFFA;}");
   out.println("			body {background-color:#E1F3DB}");
   out.println("		</style>");
   out.println("  </head>");
@@ -216,7 +216,7 @@ private void PrintResponse (PrintWriter out, String input, String[] clauses, Str
   //to print out clauses for table headers
   out.println("<tr>");
   for (String clause : clauses) {
-    out.println("<th style=\"background-color:lightseagreen\" align=\"center\"><b>" + clause + "#</b></td>");
+    out.println("<th style=\"background-color:lightseagreen\" align=\"center\"><b>" + clause + "</b></td>");
   }
   out.println("</tr>");
 
