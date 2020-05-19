@@ -87,15 +87,16 @@ public void doPost (HttpServletRequest request, HttpServletResponse response)
    //values to present in truth table
    String true_value = "true";
    String false_value = "false";
-   if (output_choice.equals("t-f")) {
+   //make sure output_choice is not null
+   if (output_choice != "" && output_choice != NULL && output_choice.equals("t-f")) {
      true_value = "t";
      false_value = "f";
    }
-   else if (output_choice.equals("T-F")) {
+   else if (output_choice != "" && output_choice != NULL && output_choice.equals("T-F")) {
      true_value = "T";
      false_value = "F";
    }
-   else if (output_choice.equals("1-0")) {
+   else if (output_choice != "" && output_choice != NULL && output_choice.equals("1-0")) {
      true_value = "1";
      false_value = "0";
    }
