@@ -217,7 +217,7 @@ private void PrintResponse (PrintWriter out, String input, String[] clauses, Str
   out.println("<h3>Below is a complete truth table for your predicate.</h3>");
   out.println("  <p>");
   out.println("     </br>");
-  out.println("     User's Predicate: " + input + "");
+  out.println("     User's Predicate String: " + input + "");
   out.println("  </br>");
   out.println("  </br>");
   out.println("  </br>");
