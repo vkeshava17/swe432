@@ -39,15 +39,14 @@ static String Style ="https://www.cs.gmu.edu/~offutt/classes/432/432-style.css";
 public void doPost (HttpServletRequest request, HttpServletResponse response)
    throws ServletException, IOException
 {
-
+   response.setContentType("text/html");
+   PrintWriter out = response.getWriter();
 
    String input = request.getParameter("predicate");
 
-   response.setContentType("text/html");
-   PrintWriter out = response.getWriter();
-   PrintHead(out);
-   //PrintBody(out, lhsStr, rhsStr, rslt.toString());
-   PrintTail(out);
+   String[] parameters = input.split("\\s+");
+   PrintResponse(out, parameters);
+   out.close();
 }  // End doPost
 
 /** *****************************************************
@@ -93,10 +92,11 @@ private void PrintBody (PrintWriter out, String input)
    out.println("Name: Vandana Keshavamurthy");
    out.println(" <br>");
    out.println(" <br>");
-   out.println("Hello! Please enter your boolean predicate below and click submit when done.");
+   out.println("<h3> Please enter your boolean predicate below and click submit when done. </h3>");
    out.println(" <br>");
    out.println(" <br>");
    out.println("For the AND logical operator you can use AND, &, &&.");
+   out.println(" <br>");
    out.println("For example -- A AND B & C && D -- is acceptable.");
    out.println("<br>");
    out.println("For the OR logical operator you can use OR, |, ||.");
@@ -140,5 +140,20 @@ private void PrintTail (PrintWriter out)
    out.println("");
    out.println("</html>");
 } // End PrintTail
+
+/** *****************************************************
+ *  Prints the form data's html
+********************************************************* */
+private void PrintResponse (PrintWriter out, String[] parameters) // response to survey html
+{
+  out.println("<html>");
+  out.println("  <head>");
+  out.println("  <title>Responses</title>");
+  out.println("  <style> ");
+  out.println("    body {background-color:#E1F3DB}");
+  out.println("  </style>");
+  out.println("  </head>");
+  out.println("</html>");
+}
 
 }  // End Final Exam
