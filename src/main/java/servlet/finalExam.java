@@ -59,7 +59,18 @@ public void doPost (HttpServletRequest request, HttpServletResponse response)
        N += 1;
      }
    }
-   
+
+   //get all the clauses from user input
+   String[] clauses = new String[N];
+   int i = -1;
+   for (String s: parameters) {
+     i += 1;
+     //as long as s is not an operator, increment it
+     if (s != "AND" && s != "and" && s != "&" && s != "&&" && s != "OR" && s != "or" && s != "||" && s != "|") {
+       clauses[i] = s;
+     }
+   }
+
    //gets string for truth table
    printTruthTable(N, 0, new int[N]);
 
@@ -193,6 +204,7 @@ private void PrintResponse (PrintWriter out, String input, String[] parameters) 
   out.println("     User's Predicate: " + input + "");
   out.println("  </br>");
   out.println("  </br>");
+  out.println("" + output + "");
   out.println("  </br>");
   out.println("  </br>");
   out.println("  </body>");
