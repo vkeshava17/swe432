@@ -46,6 +46,7 @@ public void doPost (HttpServletRequest request, HttpServletResponse response)
    PrintWriter out = response.getWriter();
 
    String input = request.getParameter("predicate");
+   String output_choice = request.getParameter("truth_value");
 
    String[] parameters = input.split("\\s+");
 
@@ -80,14 +81,33 @@ public void doPost (HttpServletRequest request, HttpServletResponse response)
 
    String[] truth_table = output.split("\\s+");
 
-   //convert output to list of true and false instead of 0 and 1
+   //values to present in truth table
+   String true_value = "";
+   String false_value = "";
+   if (output_choice.equals("t-f")) {
+     true_value = "t";
+     false_value = "f";
+   }
+   else if (output_choice.equals("T-F")) {
+     true_value = "T";
+     false_value = "F";
+   }
+   else if (output_choice.equals("1-0")) {
+     true_value = "1";
+     false_value = "0";
+   }
+   else {
+     true_value = "true";
+     false_value = "false";
+   }
+
    i = 0;
    for (String truth_value : truth_table) {
      if (truth_value.equals("0")) {
-       truth_table[i] = "true";
+       truth_table[i] = true_value;
      }
      else if (truth_value.equals("1")) {
-       truth_table[i] = "false";
+       truth_table[i] = false_value;
      }
      i += 1;
    }
@@ -180,14 +200,34 @@ private void PrintBody (PrintWriter out, String input)
    out.println(" <table>");
    out.println("  <tr>");
    out.println("   <td><b>Input:</b>");
-   out.println("   <td><input type=\"text\" name=\"predicate\" value=\"" + input + "\" size=13>");
+   out.println("   <td><input type=\"text\" name=\"predicate\" value=\"" + input + "\" size=13 style=\" height: 6%; \">>");
    out.println("  </tr>");
    out.println(" </table>");
    out.println(" <br>");
    out.println(" <br>");
+   out.println("");
+
+   out.println("			How would you like to display the truth-values in truth table?");
+   out.println("			<br>");
+   out.println("			<input type=\"radio\" name=\"truth-value\" id=\"t-f\" value=\"t-f\"/>");
+   out.println("			<label for=\"t-f\">t-f</label>");
+   out.println("			<br/>");
+   out.println("			<input type=\"radio\" name=\"truth-value\" id=\"T-F\" value=\"T-F\"/>");
+   out.println("			<label for=\"T-F\">T-F</label>");
+   out.println("			<br/>");
+   out.println("			<input type=\"radio\" name=\"truth-value\" id=\"1-0\" value=\"1-0\"/>");
+   out.println("			<label for=\"1-0\">1-0</label>");
+   out.println("			<br/>");
+   out.println("			<input type=\"radio\" name=\"truth-value\" id=\"true-false\" value=\"true-false\"/>");
+   out.println("			<label for=\"true-false\">true-false</label>");
+   out.println("			<br/>");
+   out.println("			<br>");
+
+   out.println(" <br>");
+   out.println(" <br>");
    out.println(" <input type=\"submit\" value=\"" + Submit + "\" name=\"submission\" style=\"width: 10%; height: 6%; font-size: 20px;\">");
    out.println("</form>");
-   out.println("");
+
    out.println("</body>");
 } // End PrintBody
 
