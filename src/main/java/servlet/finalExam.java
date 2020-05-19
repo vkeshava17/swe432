@@ -85,6 +85,7 @@ public void doPost (HttpServletRequest request, HttpServletResponse response)
      else if (truth_value.equals("1")) {
        truth_table[i] = "true";
      }
+     i += 1;
    }
 
    PrintResponse(out, input, clauses, truth_table, num_clauses);
@@ -170,12 +171,12 @@ private void PrintBody (PrintWriter out, String input)
    out.println(" <table>");
    out.println("  <tr>");
    out.println("   <td><b>Input:</b>");
-   out.println("   <td><input type=\"text\" name=\"predicate\" value=\"" + input + "\" size=10>");
+   out.println("   <td><input type=\"text\" name=\"predicate\" value=\"" + input + "\" size=13>");
    out.println("  </tr>");
    out.println(" </table>");
    out.println(" <br>");
    out.println(" <br>");
-   out.println(" <input type=\"submit\" value=\"" + Submit + "\" name=\"submission\" style=\"width: 10%; height: 4%; font-size: 15px;\">");
+   out.println(" <input type=\"submit\" value=\"" + Submit + "\" name=\"submission\" style=\"width: 10%; height: 6%; font-size: 20px;\">");
    out.println("</form>");
    out.println("");
    out.println("</body>");
