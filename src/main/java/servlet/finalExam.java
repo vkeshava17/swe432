@@ -85,8 +85,8 @@ public void doPost (HttpServletRequest request, HttpServletResponse response)
    String[] truth_table = output.split("\\s+");
 
    //values to present in truth table
-   String true_value = "";
-   String false_value = "";
+   String true_value = "true";
+   String false_value = "false";
    if (output_choice.equals("t-f")) {
      true_value = "t";
      false_value = "f";
@@ -178,6 +178,7 @@ private void PrintBody (PrintWriter out, String input)
    out.println("<body>");
    out.println("<p>");
    out.println(" <br>");
+   out.println("<h3> Welcome! </h3>");
    out.println("<h3> Please enter your boolean predicate below and click submit when done. </h3>");
    out.println(" <br>");
    out.println("For the AND logical operator you can use AND, and, &, &&.");
