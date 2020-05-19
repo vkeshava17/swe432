@@ -30,6 +30,9 @@ static String Submit = "Submit";
 // Other strings.
 static String Style ="https://www.cs.gmu.edu/~offutt/classes/432/432-style.css";
 
+//stores strings to print for truth table
+static String output = "";
+
 /** *****************************************************
  *  Overrides HttpServlet's doPost().
  *  Converts the values in the form, performs the operation
@@ -45,9 +48,40 @@ public void doPost (HttpServletRequest request, HttpServletResponse response)
    String input = request.getParameter("predicate");
 
    String[] parameters = input.split("\\s+");
+
+   //N is the number of clauses you have
+   int N = 0;
+
+   //find number of clauses
+   for (String s: parameters) {
+     //as long as s is not an operator, increment it
+     if (s != "AND" && s != "and" && s != "&" && s != "&&" && s != "OR" && s != "or" && s != "||" && s != "|") {
+       N += 1;
+     }
+   }
+   
+   //gets string for truth table
+   printTruthTable(N, 0, new int[N]);
+
    PrintResponse(out, input, parameters);
    out.close();
 }  // End doPost
+
+//print the truth table
+public void printTruthTable(int N, int index, int[] truthVals) {
+   if (index == N) {
+      for (int i=0; i<N; i++) {
+         output += truthVals[i] + " ";
+       }
+      output += "\n";
+   }
+   else {
+      for (int i=0; i<2; i++) {
+         truthVals[index] = i;
+         printTruthTable(N, index + 1, truthVals);
+      }
+   }
+}
 
 /** *****************************************************
  *  Overrides HttpServlet's doGet().
@@ -93,14 +127,14 @@ private void PrintBody (PrintWriter out, String input)
    out.println(" <br>");
    out.println("<h3> Please enter your boolean predicate below and click submit when done. </h3>");
    out.println(" <br>");
-   out.println("For the AND logical operator you can use AND, &, &&.");
+   out.println("For the AND logical operator you can use AND, and, &, &&.");
    out.println(" <br>");
-   out.println("For example -- A AND B & C && D -- is acceptable.");
+   out.println("For example -- A AND B & C && D and E -- is acceptable.");
    out.println("<br>");
    out.println("<br>");
-   out.println("For the OR logical operator you can use OR, |, ||.");
+   out.println("For the OR logical operator you can use OR, or, |, ||.");
    out.println("<br>");
-   out.println("For example -- A OR B | C || D -- is acceptable.");
+   out.println("For example -- A OR B | C || D or E -- is acceptable.");
    out.println("<br>");
    out.println(" <br>");
    out.println(" <br>");
