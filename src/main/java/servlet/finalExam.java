@@ -14,7 +14,7 @@ import javax.servlet.http.*;
 
 import javax.servlet.annotation.WebServlet;
 
-@WebServlet( name = "finalExamExam", urlPatterns = {"/rwoExam"} )
+@WebServlet( name = "finalExam", urlPatterns = {"/finalExam"} )
 
 // twoButtons class
 // CONSTRUCTOR: no constructor specified (default)
