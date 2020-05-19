@@ -225,8 +225,8 @@ private void PrintResponse (PrintWriter out, String input, String[] clauses, Str
 
   //to print out actual truth values
   out.println("<tr>");
-  for (String clause : clauses) {
-    out.println("<td>" + parameters[1] + "</td>");
+  for (String truth_value : truth_table) {
+    out.println("<td>" + truth_value + "</td>");
   }
   out.println("</tr>");
 
