@@ -65,7 +65,7 @@ public void doPost (HttpServletRequest request, HttpServletResponse response)
    int i = -1;
    for (String s: parameters) {
      //as long as s is not an operator, increment it
-     if (s != "AND" && s != "and" && s != "&" && s != "&&" && s != "OR" && s != "or" && s != "||" && s != "|") {
+     if (!s.equals("AND") && !s.equals("and") && !s.equals("&") && !s.equals("&&") && !s.equals("OR") && !s.equals("or") && !s.equals("||") && !s.equals("|")) {
        i += 1;
        clauses[i] = s;
      }
