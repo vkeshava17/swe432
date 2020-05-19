@@ -174,7 +174,6 @@ private void PrintBody (PrintWriter out, String input)
 {
    out.println("<body>");
    out.println("<p>");
-   out.println("Name: Vandana Keshavamurthy");
    out.println(" <br>");
    out.println("<h3> Please enter your boolean predicate below and click submit when done. </h3>");
    out.println(" <br>");
@@ -200,7 +199,7 @@ private void PrintBody (PrintWriter out, String input)
    out.println(" <table>");
    out.println("  <tr>");
    out.println("   <td><b>Input:</b>");
-   out.println("   <td><input type=\"text\" name=\"predicate\" value=\"" + input + "\" size=13 style=\" height: 6%; \">>");
+   out.println("   <td><input type=\"text\" name=\"predicate\" value=\"" + input + "\" size=13 style=\" height: 6%; \">");
    out.println("  </tr>");
    out.println(" </table>");
    out.println(" <br>");
@@ -209,19 +208,18 @@ private void PrintBody (PrintWriter out, String input)
 
    out.println("			How would you like to display the truth-values in truth table?");
    out.println("			<br>");
-   out.println("			<input type=\"radio\" name=\"truth-value\" id=\"t-f\" value=\"t-f\"/>");
+   out.println("			<input type=\"radio\" name=\"truth_value\" id=\"t-f\" value=\"t-f\"/>");
    out.println("			<label for=\"t-f\">t-f</label>");
    out.println("			<br/>");
-   out.println("			<input type=\"radio\" name=\"truth-value\" id=\"T-F\" value=\"T-F\"/>");
+   out.println("			<input type=\"radio\" name=\"truth_value\" id=\"T-F\" value=\"T-F\"/>");
    out.println("			<label for=\"T-F\">T-F</label>");
    out.println("			<br/>");
-   out.println("			<input type=\"radio\" name=\"truth-value\" id=\"1-0\" value=\"1-0\"/>");
+   out.println("			<input type=\"radio\" name=\"truth_value\" id=\"1-0\" value=\"1-0\"/>");
    out.println("			<label for=\"1-0\">1-0</label>");
    out.println("			<br/>");
-   out.println("			<input type=\"radio\" name=\"truth-value\" id=\"true-false\" value=\"true-false\"/>");
+   out.println("			<input type=\"radio\" name=\"truth_value\" id=\"true-false\" value=\"true-false\"/>");
    out.println("			<label for=\"true-false\">true-false</label>");
    out.println("			<br/>");
-   out.println("			<br>");
 
    out.println(" <br>");
    out.println(" <br>");
