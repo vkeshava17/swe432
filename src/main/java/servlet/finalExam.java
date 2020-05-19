@@ -75,6 +75,9 @@ private void PrintHead (PrintWriter out)
    out.println("<head>");
    out.println("<title>Final Exam</title>");
    out.println(" <link rel=\"stylesheet\" type=\"text/css\" href=\"" + Style + "\">");
+   out.println("		<style> ");
+   out.println("			body {background-color:#E1F3DB}");
+   out.println("		</style>");
    out.println("</head>");
    out.println("");
 } // End PrintHead
@@ -91,6 +94,17 @@ private void PrintBody (PrintWriter out, String input)
    out.println(" <br>");
    out.println(" <br>");
    out.println("Hello! Please enter your boolean predicate below and click submit when done.");
+   out.println(" <br>");
+   out.println(" <br>");
+   out.println("For the AND logical operator you can use AND, &, &&.");
+   out.println("For example -- A AND B & C && D -- is acceptable.");
+   out.println("<br>");
+   out.println("For the OR logical operator you can use OR, |, ||.");
+   out.println("For example -- A OR B | C || D -- is acceptable.");
+   out.println("<br>");
+   out.println(" <br>");
+   out.println("For example: X OR B");
+   out.println(" <br>");
    out.println("</p>");
    out.print  ("<form method=\"post\"");
    out.println(" action=\"https://" + Domain + Path + Servlet + "\">");
