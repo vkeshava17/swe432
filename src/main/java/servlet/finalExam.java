@@ -1,7 +1,7 @@
 /** *****************************************************************
-    twoButtons.java   servlet example
+    finalExam.java   servlet example
 
-        @author Jeff Offutt
+        @author Vandana Keshavamurthy
 ********************************************************************* */
 
 // Import Java Libraries
@@ -16,21 +16,6 @@ import javax.servlet.annotation.WebServlet;
 
 @WebServlet( name = "finalExam", urlPatterns = {"/finalExam"} )
 
-// twoButtons class
-// CONSTRUCTOR: no constructor specified (default)
-//
-// ***************  PUBLIC OPERATIONS  **********************************
-// public void doPost ()  --> prints a blank HTML page
-// public void doGet ()  --> prints a blank HTML page
-// private void PrintHead (PrintWriter out) --> Prints the HTML head section
-// private void PrintBody (PrintWriter out) --> Prints the HTML body with
-//              the form. Fields are blank.
-// private void PrintBody (PrintWriter out, String lhs, String rhs, String rslt)
-//              Prints the HTML body with the form.
-//              Fields are filled from the parameters.
-// private void PrintTail (PrintWriter out) --> Prints the HTML bottom
-//***********************************************************************
-
 public class finalExam extends HttpServlet
 {
 
@@ -40,9 +25,7 @@ static String Path    = "/";
 static String Servlet = "finalExam";
 
 // Button labels
-static String OperationAdd = "Add";
-static String OperationSub = "Subtract";
-static String OperationMultiply = "Multiply";
+static String Submit = "Submit";
 
 // Other strings.
 static String Style ="https://www.cs.gmu.edu/~offutt/classes/432/432-style.css";
@@ -56,35 +39,14 @@ static String Style ="https://www.cs.gmu.edu/~offutt/classes/432/432-style.css";
 public void doPost (HttpServletRequest request, HttpServletResponse response)
    throws ServletException, IOException
 {
-   Float rslt   = new Float(0.0);
-   Float lhsVal = new Float(0.0);
-   Float rhsVal = new Float(0.0);
-   String operation = request.getParameter("Operation");
-   String lhsStr = request.getParameter("LHS");
-   String rhsStr = request.getParameter("RHS");
-   if ((lhsStr != null) && (lhsStr.length() > 0))
-      lhsVal = new Float(lhsStr);
-   if ((rhsStr != null) && (rhsStr.length() > 0))
-      rhsVal = new Float(rhsStr);
 
-   if (operation.equals(OperationAdd))
-   {
-      rslt = new Float(lhsVal.floatValue() + rhsVal.floatValue());
-   }
-   else if (operation.equals(OperationSub))
-   {
-      rslt = new Float(lhsVal.floatValue() - rhsVal.floatValue());
-   }
-   else if (operation.equals(OperationMultiply))
-   {
-      rslt = new Float(lhsVal.floatValue() * rhsVal.floatValue());
-   }
 
+   String input = request.getParameter("predicate");
 
    response.setContentType("text/html");
    PrintWriter out = response.getWriter();
    PrintHead(out);
-   PrintBody(out, lhsStr, rhsStr, rslt.toString());
+   //PrintBody(out, lhsStr, rhsStr, rslt.toString());
    PrintTail(out);
 }  // End doPost
 
@@ -121,39 +83,27 @@ private void PrintHead (PrintWriter out)
  *  Prints the <BODY> of the HTML page with the form data
  *  values from the parameters.
 ********************************************************* */
-private void PrintBody (PrintWriter out, String lhs, String rhs, String rslt)
+private void PrintBody (PrintWriter out, String input)
 {
    out.println("<body>");
    out.println("<p>");
    out.println("Name: Vandana Keshavamurthy");
    out.println(" <br>");
    out.println(" <br>");
-   out.println("A simple example that demonstrates how to operate with");
-   out.println("multiple submit buttons.");
+   out.println("Hello! Please enter your boolean predicate below and click submit when done.");
    out.println("</p>");
    out.print  ("<form method=\"post\"");
    out.println(" action=\"https://" + Domain + Path + Servlet + "\">");
    out.println("");
    out.println(" <table>");
    out.println("  <tr>");
-   out.println("   <td>First value:");
-   out.println("   <td><input type=\"text\" name=\"LHS\" value=\"" + lhs + "\" size=5>");
-   out.println("  </tr>");
-   out.println("  <tr>");
-   out.println("   <td>Second value:");
-   out.println("   <td><input type=\"text\" name=\"RHS\" value=\"" + rhs + "\" size=5>");
-   out.println("  </tr>");
-   out.println("  <tr>");
-   out.println("   <td>Result:");
-   out.println("   <td><input type=\"text\" name=\"RHS\" value=\"" + rslt + "\" size=6>");
+   out.println("   <td>Input:");
+   out.println("   <td><input type=\"text\" name=\"predicate\" value=\"" + input + "\" size=5>");
    out.println("  </tr>");
    out.println(" </table>");
    out.println(" <br>");
    out.println(" <br>");
-   out.println(" <input type=\"submit\" value=\"" + OperationAdd + "\" name=\"Operation\">");
-   out.println(" <input type=\"submit\" value=\"" + OperationSub + "\" name=\"Operation\">");
-   out.println(" <input type=\"submit\" value=\"" + OperationMultiply + "\" name=\"Operation\">");
-   out.println(" <input type=\"reset\" value=\"Reset\" name=\"reset\">");
+   out.println(" <input type=\"submit\" value=\"" + Submit + "\" name=\"submission\">");
    out.println("</form>");
    out.println("");
    out.println("</body>");
@@ -165,7 +115,7 @@ private void PrintBody (PrintWriter out, String lhs, String rhs, String rslt)
 ********************************************************* */
 private void PrintBody (PrintWriter out)
 {
-   PrintBody(out, "", "", "");
+   PrintBody(out, "");
 }
 
 /** *****************************************************
