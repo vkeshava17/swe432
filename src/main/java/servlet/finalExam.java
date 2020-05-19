@@ -45,7 +45,7 @@ public void doPost (HttpServletRequest request, HttpServletResponse response)
    String input = request.getParameter("predicate");
 
    String[] parameters = input.split("\\s+");
-   PrintResponse(out, parameters);
+   PrintResponse(out, input, parameters);
    out.close();
 }  // End doPost
 
@@ -117,7 +117,7 @@ private void PrintBody (PrintWriter out, String input)
    out.println(" </table>");
    out.println(" <br>");
    out.println(" <br>");
-   out.println(" <input type=\"submit\" value=\" style=\"width: 10%; height: 4%; font-size: 13px;\"" + Submit + "\" name=\"submission\">");
+   out.println(" <input type=\"submit\" value=\"" + Submit + "\" name=\"submission\" style=\"width: 10%; height: 4%; font-size: 13px;\">");
    out.println("</form>");
    out.println("");
    out.println("</body>");
@@ -142,9 +142,9 @@ private void PrintTail (PrintWriter out)
 } // End PrintTail
 
 /** *****************************************************
- *  Prints the form data's html
+ *  Prints the output (truth table)
 ********************************************************* */
-private void PrintResponse (PrintWriter out, String[] parameters) // response to survey html
+private void PrintResponse (PrintWriter out, String input, String[] parameters) // response to survey html
 {
   out.println("<html>");
   out.println("  <head>");
@@ -153,7 +153,22 @@ private void PrintResponse (PrintWriter out, String[] parameters) // response to
   out.println("    body {background-color:#E1F3DB}");
   out.println("  </style>");
   out.println("  </head>");
+
+  out.println("  <body>");
+  out.println("  <p>");
+  out.println("  Assignment 6");
+  out.println("     </br>");
+  out.println("     User's Predicate: " + input + "");
+  out.println("  </br>");
+
+  out.println("  Below is a complete truth table for your predicate.");
+  out.println("  </br>");
+  out.println("  </br>");
+  out.println("  </body>");
+
   out.println("</html>");
+
+
 }
 
 }  // End Final Exam
