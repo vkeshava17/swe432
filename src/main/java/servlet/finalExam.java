@@ -112,7 +112,7 @@ private void PrintBody (PrintWriter out, String input)
    out.println(" <table>");
    out.println("  <tr>");
    out.println("   <td>Input:");
-   out.println("   <td><input type=\"text\" name=\"predicate\" value=\"" + input + "\" size=5>");
+   out.println("   <td><input type=\"text\" name=\"predicate\" value=\"" + input + "\" size=10>");
    out.println("  </tr>");
    out.println(" </table>");
    out.println(" <br>");
@@ -153,15 +153,13 @@ private void PrintResponse (PrintWriter out, String input, String[] parameters) 
   out.println("    body {background-color:#E1F3DB}");
   out.println("  </style>");
   out.println("  </head>");
-
   out.println("  <body>");
+  out.println("<h3>Below is a complete truth table for your predicate.</h3>");
   out.println("  <p>");
-  out.println("  Assignment 6");
   out.println("     </br>");
   out.println("     User's Predicate: " + input + "");
   out.println("  </br>");
-
-  out.println("  Below is a complete truth table for your predicate.");
+  out.println("  </br>");
   out.println("  </br>");
   out.println("  </br>");
   out.println("  </body>");
