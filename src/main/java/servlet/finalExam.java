@@ -187,7 +187,7 @@ private void PrintBody (PrintWriter out, String input)
    out.println("<form method=\"post\"");
    out.println(" action=\"https://" + Domain + Path + Servlet + "\">");
    out.println("");
-   out.println("Below are requirements for your input:");
+   out.println("Below are the requirements for your input:");
 
    out.println("<table align=\"left\" class=\"table1\">");
 
@@ -231,7 +231,7 @@ private void PrintBody (PrintWriter out, String input)
    out.println(" <br>");
    out.println(" <br>");
    out.println(" <br>");
-   
+
    out.println(" <table class=\"table2\">");
    out.println("  <tr>");
    out.println("   <td><b>Input your expression here:</b>");
