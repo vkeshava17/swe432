@@ -183,19 +183,19 @@ private void PrintBody (PrintWriter out, String input)
    out.println("<p>");
    out.println("<h3> Welcome! </h3>");
    out.println("<h3> Please enter your boolean predicate below and click submit when done. </h3>");
-   out.println("<br>");
-   out.println("<br>");
    out.println("</p>");
    out.println("<form method=\"post\"");
    out.println(" action=\"https://" + Domain + Path + Servlet + "\">");
    out.println("");
    out.println("<table align=\"left\" class=\"table1\">");
 
+   out.println("Below are requirements for your input:");
+
    //to print out clauses for table headers
    out.println("<tr>");
-   out.println("<th style=\"background-color:lightgoldenrodyellow\" align=\"center\"><b>" + "Component" + "</b></td>");
-   out.println("<th style=\"background-color:lightgoldenrodyellow\" align=\"center\"><b>" + "Acceptable Syntax" + "</b></td>");
-    out.println("<th style=\"background-color:lightgoldenrodyellow\" align=\"center\"><b>" + "Example" + "</b></td>");
+   out.println("<th style=\"background-color:lightgoldenrodyellow\" align=\"center\">" + "Component" + "</td>");
+   out.println("<th style=\"background-color:lightgoldenrodyellow\" align=\"center\">" + "Acceptable Syntax" + "</td>");
+    out.println("<th style=\"background-color:lightgoldenrodyellow\" align=\"center\">" + "Example" + "</td>");
    out.println("</tr>");
 
    out.println("<tr>");
@@ -207,13 +207,19 @@ private void PrintBody (PrintWriter out, String input)
    out.println("<tr>");
    out.println("<td>" + "OR" + "</td>");
    out.println("<td>" + "OR, or, |, ||" + "</td>");
-   out.println("<td>" + "A OR B | C || D or E" + "</td>");
+   out.println("<td>" + "A OR B | (C || D) or E" + "</td>");
    out.println("</tr>");
 
    out.println("<tr>");
    out.println("<td>" + "XOR" + "</td>");
    out.println("<td>" + "XOR, xor, ^" + "</td>");
-   out.println("<td>" + "A XOR B xor C ^ E" + "</td>");
+   out.println("<td>" + "(A XOR B) xor C ^ E" + "</td>");
+   out.println("</tr>");
+
+   out.println("<tr>");
+   out.println("<td>Include spaces between operators and variables.</td>");
+   out.println("<td></td>");
+   out.println("<td>A OR (B OR C)</td>");
    out.println("</tr>");
 
    out.println("</table class=\"table1\">");
@@ -224,10 +230,10 @@ private void PrintBody (PrintWriter out, String input)
    out.println(" <br>");
    out.println(" <br>");
    out.println(" <br>");
-   
+
    out.println(" <table class=\"table2\">");
    out.println("  <tr>");
-   out.println("   <td><b>Input:</b>");
+   out.println("   <td><b>Input your expression here:</b>");
    out.println("   <td><input type=\"text\" name=\"predicate\" value=\"" + input + "\" size=13 style=\" height: 6%; \">");
    out.println("  </tr>");
    out.println(" </table>");
