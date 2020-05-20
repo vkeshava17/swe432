@@ -184,12 +184,12 @@ private void PrintBody (PrintWriter out, String input)
    out.println("<h3> Welcome! </h3>");
    out.println("<h3> Please enter your boolean predicate below and click submit when done. </h3>");
    out.println(" <br>");
-   out.println("<table align=\"left\">");
+   out.println("<table align=\"left\" class="table1">");
 
    //to print out clauses for table headers
    out.println("<tr>");
    out.println("<th style=\"background-color:lightgoldenrodyellow\" align=\"center\"><b>" + "Component" + "</b></td>");
-   out.println("<th style=\"background-color:lightgoldenrodyellow\" align=\"center\"><b>" + "Accetable Syntax" + "</b></td>");
+   out.println("<th style=\"background-color:lightgoldenrodyellow\" align=\"center\"><b>" + "Acceptable Syntax" + "</b></td>");
     out.println("<th style=\"background-color:lightgoldenrodyellow\" align=\"center\"><b>" + "Example" + "</b></td>");
    out.println("</tr>");
 
@@ -214,12 +214,12 @@ private void PrintBody (PrintWriter out, String input)
    out.println("</table>");
 
    out.println("<br>");
-   out.println(" <br>");
+   out.println("<br>");
    out.println("</p>");
    out.println("<form method=\"post\"");
    out.println(" action=\"https://" + Domain + Path + Servlet + "\">");
    out.println("");
-   out.println(" <table>");
+   out.println(" <table class="table2">");
    out.println("  <tr>");
    out.println("   <td><b>Input:</b>");
    out.println("   <td><input type=\"text\" name=\"predicate\" value=\"" + input + "\" size=13 style=\" height: 6%; \">");
