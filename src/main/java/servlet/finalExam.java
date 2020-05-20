@@ -187,15 +187,14 @@ private void PrintBody (PrintWriter out, String input)
    out.println("<form method=\"post\"");
    out.println(" action=\"https://" + Domain + Path + Servlet + "\">");
    out.println("");
-   out.println("<table align=\"left\" class=\"table1\">");
-
    out.println("Below are requirements for your input:");
 
-   //to print out clauses for table headers
+   out.println("<table align=\"left\" class=\"table1\">");
+
    out.println("<tr>");
    out.println("<th style=\"background-color:lightgoldenrodyellow\" align=\"center\">" + "Component" + "</td>");
    out.println("<th style=\"background-color:lightgoldenrodyellow\" align=\"center\">" + "Acceptable Syntax" + "</td>");
-    out.println("<th style=\"background-color:lightgoldenrodyellow\" align=\"center\">" + "Example" + "</td>");
+   out.println("<th style=\"background-color:lightgoldenrodyellow\" align=\"center\">" + "Example" + "</td>");
    out.println("</tr>");
 
    out.println("<tr>");
@@ -230,7 +229,9 @@ private void PrintBody (PrintWriter out, String input)
    out.println(" <br>");
    out.println(" <br>");
    out.println(" <br>");
-
+   out.println(" <br>");
+   out.println(" <br>");
+   
    out.println(" <table class=\"table2\">");
    out.println("  <tr>");
    out.println("   <td><b>Input your expression here:</b>");
