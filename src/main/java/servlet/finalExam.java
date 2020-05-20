@@ -189,7 +189,7 @@ private void PrintBody (PrintWriter out, String input)
    out.println("<form method=\"post\"");
    out.println(" action=\"https://" + Domain + Path + Servlet + "\">");
    out.println("");
-   ut.println("<table align=\"left\" class=\"table1\">");
+   out.println("<table align=\"left\" class=\"table1\">");
 
    //to print out clauses for table headers
    out.println("<tr>");
