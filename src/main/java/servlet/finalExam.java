@@ -88,15 +88,15 @@ public void doPost (HttpServletRequest request, HttpServletResponse response)
    String true_value = "true";
    String false_value = "false";
    //make sure output_choice is not null
-   if (output_choice != "" && output_choice != NULL && output_choice.equals("t-f")) {
+   if (output_choice != NULL && output_choice != "" && output_choice.equals("t-f")) {
      true_value = "t";
      false_value = "f";
    }
-   else if (output_choice != "" && output_choice != NULL && output_choice.equals("T-F")) {
+   else if (output_choice != NULL && output_choice != "" && output_choice.equals("T-F")) {
      true_value = "T";
      false_value = "F";
    }
-   else if (output_choice != "" && output_choice != NULL && output_choice.equals("1-0")) {
+   else if (output_choice != NULL && output_choice != "" && output_choice.equals("1-0")) {
      true_value = "1";
      false_value = "0";
    }
