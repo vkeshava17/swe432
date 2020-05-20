@@ -226,12 +226,16 @@ private void PrintBody (PrintWriter out, String input)
 
    out.println("</p>");
 
-   out.println("<p>");
-   out.println("</p>");
-   out.println("<p>");
-   out.println("</p>");
-   out.println("<p>");
-   out.println("</p>");
+   out.println(" <br>");
+   out.println(" <br>");
+   out.println(" <br>");
+   out.println(" <br>");
+   out.println(" <br>");
+   out.println(" <br>");
+   out.println(" <br>");
+   out.println(" <br>");
+   out.println(" <br>");
+   out.println(" <br>");
 
    out.println("<p>");
    out.println(" <table class=\"table2\">");
