@@ -235,7 +235,6 @@ private void PrintBody (PrintWriter out, String input)
    out.println("  </tr>");
    out.println(" </table>");
    out.println(" <br>");
-   out.println(" <br>");
    out.println("");
 
    out.println("			How would you like to display the truth-values in truth table?");
