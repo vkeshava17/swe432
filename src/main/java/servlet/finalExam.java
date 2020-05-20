@@ -240,7 +240,7 @@ private void PrintBody (PrintWriter out, String input)
    out.println(" <table class=\"table2\">");
    out.println("  <tr>");
    out.println("   <td><b>Input your expression here:</b>");
-   out.println("   <td><input type=\"text\" name=\"predicate\" value=\"" + input + "\" size=30 style=\" border:3px height: 6%; \">");
+   out.println("   <td><input type=\"text\" name=\"predicate\" value=\"" + input + "\" size=30 style=\" border:10px height: 6%; \">");
    out.println("  </tr>");
    out.println(" </table>");
    out.println(" <br>");
