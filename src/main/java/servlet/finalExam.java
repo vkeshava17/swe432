@@ -184,7 +184,7 @@ private void PrintBody (PrintWriter out, String input)
    out.println("<h3> Welcome! </h3>");
    out.println("<h3> Please enter your boolean predicate below and click submit when done. </h3>");
    out.println(" <br>");
-   out.println("<table align=\"left\" class="table1">");
+   out.println("<table align=\"left\" class=\"table1\">");
 
    //to print out clauses for table headers
    out.println("<tr>");
@@ -219,7 +219,7 @@ private void PrintBody (PrintWriter out, String input)
    out.println("<form method=\"post\"");
    out.println(" action=\"https://" + Domain + Path + Servlet + "\">");
    out.println("");
-   out.println(" <table class="table2">");
+   out.println(" <table class=\"table2\">");
    out.println("  <tr>");
    out.println("   <td><b>Input:</b>");
    out.println("   <td><input type=\"text\" name=\"predicate\" value=\"" + input + "\" size=13 style=\" height: 6%; \">");
