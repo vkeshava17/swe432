@@ -234,6 +234,8 @@ private void PrintBody (PrintWriter out, String input)
    out.println(" <br>");
    out.println(" <br>");
    out.println(" <br>");
+   out.println(" <br>");
+   out.println(" <br>");
 
    out.println(" <table class=\"table2\">");
    out.println("  <tr>");
