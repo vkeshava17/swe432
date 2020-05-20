@@ -216,8 +216,11 @@ private void PrintBody (PrintWriter out, String input)
    out.println("<td>" + "A XOR B xor C ^ E" + "</td>");
    out.println("</tr>");
 
-   out.println("</table>");
+   out.println("</table class=\"table1\">");
 
+   out.println(" <br>");
+   out.println(" <br>");
+   
    out.println(" <table class=\"table2\">");
    out.println("  <tr>");
    out.println("   <td><b>Input:</b>");
