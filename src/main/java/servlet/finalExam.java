@@ -247,7 +247,7 @@ private void PrintBody (PrintWriter out, String input)
    out.println(" <br>");
    out.println("");
 
-   out.println("			How would you like to display the truth-values in truth table?");
+   out.println("			How would you like to display the truth-values in the truth table?");
    out.println("			<br>");
    out.println("			<input type=\"radio\" name=\"truth_value\" id=\"t-f\" value=\"t-f\"/>");
    out.println("			<label for=\"t-f\">t-f</label>");
