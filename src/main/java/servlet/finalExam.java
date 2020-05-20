@@ -224,6 +224,8 @@ private void PrintBody (PrintWriter out, String input)
 
    out.println("</table class=\"table1\">");
 
+   out.println("</p>");
+
    out.println(" <br>");
    out.println(" <br>");
    out.println(" <br>");
@@ -237,6 +239,7 @@ private void PrintBody (PrintWriter out, String input)
    out.println(" <br>");
    out.println(" <br>");
 
+   out.println("<p>");
    out.println(" <table class=\"table2\">");
    out.println("  <tr>");
    out.println("   <td><b>Input your expression here:</b>");
