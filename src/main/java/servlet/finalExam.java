@@ -46,7 +46,8 @@ public void doPost (HttpServletRequest request, HttpServletResponse response)
    PrintWriter out = response.getWriter();
 
    String input = request.getParameter("predicate");
-   String output_choice = request.getParameter("truth_value");
+   String output_choice = "";
+   output_choice = request.getParameter("truth_value");
 
    //remove all parenthesis from string if they exist
    String input_cleaned = input.replaceAll("[()]", "");
