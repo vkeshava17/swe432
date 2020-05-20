@@ -166,6 +166,7 @@ private void PrintHead (PrintWriter out)
    out.println("<title>Final Exam</title>");
    out.println(" <link rel=\"stylesheet\" type=\"text/css\" href=\"" + Style + "\">");
    out.println("		<style> ");
+   out.println("   table, th, td {padding: 5px; border: 1px solid black; border-collapse: collapse; font: 15px; table-layout: fixed; width: 25%; background-color: #F5FFFA;}");
    out.println("			body {background-color:#E1F3DB}");
    out.println("		</style>");
    out.println("</head>");
@@ -183,19 +184,33 @@ private void PrintBody (PrintWriter out, String input)
    out.println("<h3> Welcome! </h3>");
    out.println("<h3> Please enter your boolean predicate below and click submit when done. </h3>");
    out.println(" <br>");
-   out.println("For the AND logical operator you can use AND, and, &, &&.");
-   out.println(" <br>");
-   out.println("For example -- A AND B & C && D and E -- is acceptable.");
-   out.println("<br>");
-   out.println("<br>");
-   out.println("For the OR logical operator you can use OR, or, |, ||.");
-   out.println("<br>");
-   out.println("For example -- A OR B | C || D or E -- is acceptable.");
-   out.println("<br>");
-   out.println("<br>");
-   out.println("For the XOR logical operator you can use XOR, xor, ^.");
-   out.println("<br>");
-   out.println("For example -- A XOR B xor C ^ E -- is acceptable.");
+   out.println("<table align=\"left\">");
+
+   //to print out clauses for table headers
+   out.println("<tr>");
+   out.println("<th style=\"background-color:lightgoldenrodyellow\" align=\"center\"><b>" + "Component" + "</b></td>");
+   out.println("<th style=\"background-color:lightgoldenrodyellow\" align=\"center\"><b>" + "Accetable Syntax" + "</b></td>");
+    out.println("<th style=\"background-color:lightgoldenrodyellow\" align=\"center\"><b>" + "Example" + "</b></td>");
+   out.println("</tr>");
+
+   out.println("<tr>");
+   out.println("<td>" + "AND" + "</td>");
+   out.println("<td>" + "AND, and, &, &&" + "</td>");
+   out.println("<td>" + "A AND B & C && D and E" + "</td>");
+   out.println("</tr>");
+
+   out.println("<tr>");
+   out.println("<td>" + "OR" + "</td>");
+   out.println("<td>" + "OR, or, |, ||" + "</td>");
+   out.println("<td>" + "A OR B | C || D or E" + "</td>");
+   out.println("</tr>");
+
+   out.println("<tr>");
+   out.println("<td>" + "XOR" + "</td>");
+   out.println("<td>" + "XOR, xor, ^" + "</td>");
+   out.println("<td>" + "A XOR B xor C ^ E" + "</td>");
+   out.println("</tr>");
+
    out.println("<br>");
    out.println(" <br>");
    out.println("</p>");
