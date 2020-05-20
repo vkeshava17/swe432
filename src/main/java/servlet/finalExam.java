@@ -45,6 +45,7 @@ public void doPost (HttpServletRequest request, HttpServletResponse response)
    response.setContentType("text/html");
    PrintWriter out = response.getWriter();
 
+   //get input
    String input = request.getParameter("predicate");
    String output_choice = "";
    output_choice = request.getParameter("truth_value");
